@@ -9,7 +9,7 @@
 *{box-sizing:border-box}
 body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink)}
 .hero{
-  min-height:280px;
+  min-height:360px;
   background:
     linear-gradient(90deg,rgba(0,45,85,.68),rgba(0,45,85,.16)),
     url("montagnes-fis.png") center center/cover no-repeat;
@@ -41,46 +41,59 @@ main{max-width:1100px;margin:30px auto;padding:0 24px 50px}
 .card span{font-size:14px;line-height:1.45;color:var(--muted)}
 .card.active{border-left:5px solid var(--red)}
 .card.soon{opacity:.62;cursor:default}
+.reglement-links{margin:14px 0 0;padding:0;list-style:none}
+.reglement-links li+li{margin-top:8px}
+.reglement-links a{display:block;padding:7px 0;color:var(--blue);font-size:14px;line-height:1.5;text-underline-offset:3px}
+.reglement-links a:hover{text-decoration-thickness:2px}
+.reglement-links a:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:3px}
 footer{text-align:center;padding:20px;font-size:13px;color:var(--muted)}
 @media(max-width:650px){
-  .hero{min-height:220px}
+  .hero{min-height:300px}
   .hero-inner{padding:28px 18px;gap:17px;align-items:flex-start}
   .logo-box{width:92px;height:92px}.logo-box img{width:72px}
   .hero-text .kicker{font-size:11px}.hero-text p{font-size:15px}
   main{margin-top:20px;padding:0 14px 35px}.welcome{padding:21px}.welcome p{font-size:15.5px}
 }
 </style>
-<style>.hero-text{flex:1;min-width:0}.hero-qr{flex:0 0 164px;margin-left:auto;padding:8px 8px 12px;border-radius:12px;background:#fff;text-align:center;box-shadow:0 6px 22px #0002}.hero-qr img{display:block;width:148px;height:148px}.hero-qr p{font-size:12px;line-height:1.4;font-weight:650;color:#00549f;margin:4px 0 0}.hero-qr a:focus-visible{outline:3px solid #e30613;outline-offset:3px}@media(max-width:850px){.hero-inner{flex-wrap:wrap}.hero-text{flex-basis:calc(100% - 190px)}.hero-qr{margin:0 0 0 auto}}@media(max-width:650px){.hero-text{flex-basis:calc(100% - 110px)}.hero-qr{margin:0 auto}}</style><style>@media screen and (max-width:850px){.hero-qr{display:none}}</style><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="manifest" href="/manifest.json">
-</head>
+<style>.phone-access{display:flex;align-items:center;gap:24px;background:#fff;border:1px solid #e4e8ee;border-radius:14px;padding:22px;margin-top:28px}.phone-access img{display:block;width:148px;height:148px;max-width:none}.phone-access h2{color:#00549f;font-size:20px;margin:0 0 8px}.phone-access p{margin:0;line-height:1.6;color:#667085}.phone-access a{color:#00549f;overflow-wrap:anywhere}@media(max-width:500px){.phone-access{flex-direction:column;text-align:center;gap:14px}}</style></head>
 <body>
 <section class="hero">
   <div class="hero-inner">
     <div class="logo-box"><img src="logo_ffs.gif" alt="Fédération Française de Ski"></div>
     <div class="hero-text">
       <div class="kicker">Fédération Française de Ski</div>
-      <h1>Infos Circuits FIS</h1>
+      <h1>Info Circuits FIS</h1>
       <p>Calendriers, commissions, classements, règlements et outils.</p>
     </div>
-    <aside class="hero-qr" aria-label="Accéder au site sur téléphone"><a href="https://phil73200.github.io/" aria-label="Ouvrir le site sur téléphone"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASgAAAEoCAIAAABkZftOAAAFaUlEQVR4nO3dUW7jIBRA0XrU/W/ZswJ/WIJeMOd8R0na5opUT8B13/cP8Lf+/fHrAcKDhhUPAsKDgPAgIDwICA8CwoOA8CAgPAgIDwLCg4DwICA8CAgPAsKDgPAgIDwICA8CwoOA8CAgPAgIDwLCg4DwICA8CAgPAsKDgPAgIDwICA8Cv7Nf4Lqunx083RP49v27b/Dbn4dRrHgQEB4EhAcB4UFAeBAQHgSEB1+c46027xo1l3v7PE+Pn/17GPW6s+eZ9yafh1GseBAQHgSEBwHhQUB4EBAeBIQHJ83xZs9VZs+F3s73Rs3NZs8Vvzpnu6P3/8SKBwHhQUB4EBAeBIQHAeFBQHgQWG6Ot5pq/96o5xn1/NV+wq+y4kFAeBAQHgSEBwHhQUB4EBAeBMzxPn6O5Vf3s+3OigcB4UFAeBAQHgSEBwHhQUB4EFhujrfLvGi1/WxfPYfz3uTz8JYVDwLCg4DwICA8CAgPAsKDgPDgpDneqH1iuxh1n94uj3/rOuzzYMWDgPAgIDwICA8CwoOA8CAgPPjiHO+r+6lm72cbZdS8bvb7OY0VDwLCg4DwICA8CAgPAsKDgPAgcM2eq+x+nuRsu7zPXd7/PegewtldWPEgIDwICA8CwoOA8CAgPAgID06a4z2p5nujnqeaC632dxn1/Ncm88C3rHgQEB4EhAcB4UFAeBAQHgSEB1+c4+2+v261e+TeWm1uWc11n9iPBwfxVRMCwoOA8CAgPAgIDwLCg8By+/He2v18ztXmhLvMdZ/sMj+04kFAeBAQHgSEBwHhQUB4EBAeBH5/ItW86O08Z/d76mb/XLP3s92TPyfV59CKBwHhQUB4EBAeBIQHAeFBQHgQ2P5czVHPU52vWO3rG/X8u88/n9iPBx/kqyYEhAcB4UFAeBAQHgSEB1/cjzd7nlOdP/nVcyyred09+XVXu7fQigcB4UFAeBAQHgSEBwHhQUB4cNL9eLvPi1a7l2+1/XLVXO6J+/EAXzWh4H88CAgPAsKDgPAgIDw46VzN1c5dXG2uWP1+Rr2f1fYZXtG5qU+seBAQHgSEBwHhQUB4EBAeBIQHJ+3He1Ltc1vt+Wdbbf/baXNIKx4EhAcB4UFAeBAQHgSEBwHhwRfvx1vt3M7VHl/t91ttH2B1Dqr78eAgvmpCQHgQEB4EhAcB4UFAeHDSuZq73Nv21uw53mrzqF32y1324wG+akJAeBAQHgSEBwHhQUB4EFjuXM0nq+2vq8w+F/Tt6+7++7mi81GteBAQHgSEBwHhQUB4EBAeBIQHgeX2461ml3nXanO2Xe4hvMzx4By+akJAeBAQHgSEBwHhQUB48MX78Vbbr/Xk7Vxo1OOrOVI196vuD7wXm1db8SAgPAgIDwLCg4DwICA8CAgPvjjHW22usto9bLPnYLPvo6vmafdif5e3rHgQEB4EhAcB4YHw4AxWPAgID06a41X36VX7x2bPnWbP5Wa/n7eqfYyjWPEgIDwICA8CwoOA8CAgPAgIDwLLzfFWM+o8zGoe+KS6r281d/Q+rXgQEB4EhAcB4UFAeBAQHgSEBwFzvD8ye743+7zN1eZy16A5ZPXzWvEgIDwICA8CwoOA8CAgPAgIDwLLzfFWmxeNMupcytXme7Pdg/Yruh8P8FUTCv7Hg4DwICA8CAgPAsKDk+Z4q81Vnow6P/Ot3ffLrXY/4RPnasJBfNWEgPAgIDwICA8CwoOA8CBwrTb/gRNY8SAgPAgIDwLCg4DwICA8CAgPAsKDgPAgIDwICA8CwoOA8CAgPAgIDwLCg4DwICA8CAgPAsKDgPAgIDwICA8CwoOA8CAgPAgIDwLCg4DwICA8EB78HOE/BlknUIExtisAAAAASUVORK5CYII=" alt="QR code vers https://phil73200.github.io/" width="148" height="148"></a><p>Le site sur votre téléphone</p></aside>
   </div>
 </section>
 
 <main>
   <section class="welcome">
     <h2>Bienvenue</h2>
-    <p>Infos Circuits FIS : calendriers, règlements, classements Ski Chrono, etc.</p>
+    <p>Bienvenue sur la page Info des circuits FIS de la Fédération Française de Ski.
+    Vous trouverez ici des informations sur les calendriers, les travaux en cours dans les commissions de la FIS,
+    les classements Ski Chrono, les pages de règlement et d'autres contenus qui viendront progressivement s'ajouter.</p>
   </section>
 
   <h2 class="section-title">Informations & outils</h2>
   <div class="grid">
-    <a class="card active" href="classements/ski-chrono/index.html"><strong>Classements Ski Chrono</strong><span>Saisons 2026 et 2027 — classements en PDF.</span></a>
-    <div class="card soon"><strong>Règlements</strong><span>Pages de référence et documents utiles.</span></div>
-    <a class="card active" href="https://fis-cal.fr/" target="_blank" rel="noopener noreferrer"><strong>Calendriers FIS 2027</strong><span>Consulter les calendriers sur FISCal — connexion à un compte requise.</span></a>
-    <a class="card active" href="analyses/continental-cups.html"><strong>Coupes continentales</strong><span>Analyse 2026 et simulations en cours.</span></a>
+    <a class="card active" href="analyses/continental-cups.html">
+      <strong>Coupes continentales</strong><span>Analyse 2026 et simulations en cours.</span>
+    </a>
+    <div class="card soon"><strong>Calendriers FIS</strong><span>Informations et calendriers des circuits FIS.</span></div>
     <a class="card active" href="commissions/geneve-oct-2026/index.html"><strong>Réunions techniques FIS</strong><span>Genève • Octobre 2026 — synthèse et comptes rendus.</span></a>
+    <a class="card active" href="classements/ski-chrono/index.html"><strong>Classements Ski Chrono</strong><span>Saisons 2026 et 2027 — classements en PDF.</span></a>
+    <div class="card active">
+      <strong>Règlements</strong>
+      <span>Quotas et règlements de la saison 2027.</span>
+      <ul class="reglement-links">
+        <li><a href="reglements/recap-quota-fis-2027.html">Récapitulatif des quotas FIS 2027</a></li>
+        <li><a href="reglements/reglement-championnats-france-nc-njc-2027.html">Championnats de France NC / NJC 2027</a></li>
+      </ul>
+    </div>
   </div>
-</main>
-<footer>Infos Circuits FIS • Fédération Française de Ski</footer>
+<section class="phone-access" aria-label="Accéder au site sur téléphone"><a href="https://phil73200.github.io/" aria-label="Ouvrir le site Info Circuits FIS"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASgAAAEoCAIAAABkZftOAAAFaUlEQVR4nO3dUW7jIBRA0XrU/W/ZswJ/WIJeMOd8R0na5opUT8B13/cP8Lf+/fHrAcKDhhUPAsKDgPAgIDwICA8CwoOA8CAgPAgIDwLCg4DwICA8CAgPAsKDgPAgIDwICA8CwoOA8CAgPAgIDwLCg4DwICA8CAgPAsKDgPAgIDwICA8Cv7Nf4Lqunx083RP49v27b/Dbn4dRrHgQEB4EhAcB4UFAeBAQHgSEB1+c46027xo1l3v7PE+Pn/17GPW6s+eZ9yafh1GseBAQHgSEBwHhQUB4EBAeBIQHJ83xZs9VZs+F3s73Rs3NZs8Vvzpnu6P3/8SKBwHhQUB4EBAeBIQHAeFBQHgQWG6Ot5pq/96o5xn1/NV+wq+y4kFAeBAQHgSEBwHhQUB4EBAeBMzxPn6O5Vf3s+3OigcB4UFAeBAQHgSEBwHhQUB4EFhujrfLvGi1/WxfPYfz3uTz8JYVDwLCg4DwICA8CAgPAsKDgPDgpDneqH1iuxh1n94uj3/rOuzzYMWDgPAgIDwICA8CwoOA8CAgPPjiHO+r+6lm72cbZdS8bvb7OY0VDwLCg4DwICA8CAgPAsKDgPAgcM2eq+x+nuRsu7zPXd7/PegewtldWPEgIDwICA8CwoOA8CAgPAgID06a4z2p5nujnqeaC632dxn1/Ncm88C3rHgQEB4EhAcB4UFAeBAQHgSEB1+c4+2+v261e+TeWm1uWc11n9iPBwfxVRMCwoOA8CAgPAgIDwLCg8By+/He2v18ztXmhLvMdZ/sMj+04kFAeBAQHgSEBwHhQUB4EBAeBH5/ItW86O08Z/d76mb/XLP3s92TPyfV59CKBwHhQUB4EBAeBIQHAeFBQHgQ2P5czVHPU52vWO3rG/X8u88/n9iPBx/kqyYEhAcB4UFAeBAQHgSEB1/cjzd7nlOdP/nVcyyred09+XVXu7fQigcB4UFAeBAQHgSEBwHhQUB4cNL9eLvPi1a7l2+1/XLVXO6J+/EAXzWh4H88CAgPAsKDgPAgIDw46VzN1c5dXG2uWP1+Rr2f1fYZXtG5qU+seBAQHgSEBwHhQUB4EBAeBIQHJ+3He1Ltc1vt+Wdbbf/baXNIKx4EhAcB4UFAeBAQHgSEBwHhwRfvx1vt3M7VHl/t91ttH2B1Dqr78eAgvmpCQHgQEB4EhAcB4UFAeHDSuZq73Nv21uw53mrzqF32y1324wG+akJAeBAQHgSEBwHhQUB4EFjuXM0nq+2vq8w+F/Tt6+7++7mi81GteBAQHgSEBwHhQUB4EBAeBIQHgeX2461ml3nXanO2Xe4hvMzx4By+akJAeBAQHgSEBwHhQUB48MX78Vbbr/Xk7Vxo1OOrOVI196vuD7wXm1db8SAgPAgIDwLCg4DwICA8CAgPvjjHW22usto9bLPnYLPvo6vmafdif5e3rHgQEB4EhAcB4YHw4AxWPAgID06a41X36VX7x2bPnWbP5Wa/n7eqfYyjWPEgIDwICA8CwoOA8CAgPAgIDwLLzfFWM+o8zGoe+KS6r281d/Q+rXgQEB4EhAcB4UFAeBAQHgSEBwFzvD8ye743+7zN1eZy16A5ZPXzWvEgIDwICA8CwoOA8CAgPAgIDwLLzfFWmxeNMupcytXme7Pdg/Yruh8P8FUTCv7Hg4DwICA8CAgPAsKDk+Z4q81Vnow6P/Ot3ffLrXY/4RPnasJBfNWEgPAgIDwICA8CwoOA8CBwrTb/gRNY8SAgPAgIDwLCg4DwICA8CAgPAsKDgPAgIDwICA8CwoOA8CAgPAgIDwLCg4DwICA8CAgPAsKDgPAgIDwICA8CwoOA8CAgPAgIDwLCg4DwICA8EB78HOE/BlknUIExtisAAAAASUVORK5CYII=" alt="QR code vers https://phil73200.github.io/" width="148" height="148"></a><div><h2>Le site sur votre téléphone</h2><p>Scannez ce QR code avec l’appareil photo de votre téléphone.</p><p><a href="https://phil73200.github.io/">phil73200.github.io</a></p></div></section></main>
+<footer>Info Circuits FIS • Fédération Française de Ski</footer>
 </body>
 </html>
