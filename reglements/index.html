@@ -3,27 +3,9 @@
 :root{--blue:#00549f;--red:#e30613;--ink:#1f2937;--muted:#667085;--bg:#f5f7fa;--card:#fff}
 *{box-sizing:border-box}
 body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink)}
-.hero{
-  min-height:360px;
-  background:
-    linear-gradient(90deg,rgba(0,45,85,.68),rgba(0,45,85,.16)),
-    url("montagnes-fis.png") center center/cover no-repeat;
-  display:flex;align-items:center;
-}
-.hero-inner{
-  width:min(1100px,100%);margin:auto;padding:36px 24px;
-  display:flex;align-items:center;gap:28px;
-}
-.logo-box{
-  width:145px;height:145px;background:rgba(255,255,255,.94);border-radius:50%;
-  display:flex;align-items:center;justify-content:center;flex:none;
-  box-shadow:0 8px 28px rgba(0,0,0,.16)
-}
-.logo-box img{width:112px;height:auto}
-.hero-text{color:white;text-shadow:0 2px 10px rgba(0,0,0,.25)}
-.hero-text .kicker{font-size:15px;font-weight:750;letter-spacing:.055em;text-transform:uppercase;margin-bottom:8px}
-.hero-text h1{margin:0;font-size:clamp(35px,5.5vw,62px);line-height:1}
-.hero-text p{font-size:18px;margin:13px 0 0;font-weight:500}
+.championship-banner{width:100%;background:#0751a0;overflow:hidden}
+.championship-banner img{display:block;width:100%;height:auto}
+@media(max-width:650px){.championship-banner img{width:100%;height:auto}}
 main{max-width:1100px;margin:30px auto;padding:0 24px 50px}
 .welcome{background:white;border-radius:16px;padding:27px 30px;box-shadow:0 5px 22px rgba(0,0,0,.06)}
 .welcome h2{margin:0 0 10px;color:var(--blue);font-size:25px}
@@ -43,10 +25,6 @@ main{max-width:1100px;margin:30px auto;padding:0 24px 50px}
 .reglement-links a:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:3px}
 footer{text-align:center;padding:20px;font-size:13px;color:var(--muted)}
 @media(max-width:650px){
-  .hero{min-height:300px}
-  .hero-inner{padding:28px 18px;gap:17px;align-items:flex-start}
-  .logo-box{width:92px;height:92px}.logo-box img{width:72px}
-  .hero-text .kicker{font-size:11px}.hero-text p{font-size:15px}
   main{margin-top:20px;padding:0 14px 35px}.welcome{padding:21px}.welcome p{font-size:15.5px}
 }
-.return-menu{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 24px}.return-menu a{display:inline-block;padding:10px 15px;border:1px solid #ccd9e9;border-radius:8px;background:#fff;color:#00549f;font:600 14px/1.4 Arial,sans-serif;text-decoration:none}.return-menu a:hover{background:#eaf2fc}.return-menu a:focus-visible{outline:2px solid #00549f;outline-offset:3px}@media print{.return-menu{display:none}}h1{color:var(--blue);font-size:clamp(28px,5vw,40px)}.grid{margin-top:24px}.card{line-height:1.5}</style><style id="home-navigation-style">.return-menu{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 24px}.return-menu a{display:inline-flex;align-items:center;min-height:44px;padding:11px 16px;border:1px solid #00549f;border-radius:8px;background:#fff;color:#00549f;font:600 15px/1.4 Arial,sans-serif;text-decoration:none}.return-menu a.home-button{background:#00549f;color:#fff}.return-menu a:hover{background:#eaf2fc}.return-menu a.home-button:hover{background:#003e78}.return-menu a:focus-visible{outline:3px solid #e30613;outline-offset:3px}@media print{.return-menu{display:none}}</style></head><body><main><nav class="return-menu" aria-label="Navigation"><a class="home-button" href="../index.html">← Retour à l’accueil</a></nav><section class="welcome"><h1>Règlements</h1><p>Retrouvez les documents de référence pour la saison 2027.</p></section><div class="grid"><a class="card active" href="recap-quota-fis-2027.html"><strong>Récapitulatif des quotas FIS 2027</strong><span>Quotas FIS, NJC dames et hommes, et CIT.</span></a><a class="card active" href="reglement-championnats-france-nc-njc-2027.html"><strong>Championnats de France NC / NJC 2027</strong><span>Catégories, qualifications et cahier des charges organisateurs.</span></a><a class="card active" href="modalites-selections-hommes-2027.html"><strong>Modalités de sélection hommes 2027</strong><span>Coupes d’Europe, FIS à l’étranger et règles d’entraînement.</span></a></div><nav class="return-menu" aria-label="Navigation"><a class="home-button" href="../index.html">← Retour à l’accueil</a></nav></main><footer>Info Circuits FIS • Fédération Française de Ski</footer></body></html>
+.return-menu{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 24px}.return-menu a{display:inline-block;padding:10px 15px;border:1px solid #ccd9e9;border-radius:8px;background:#fff;color:#00549f;font:600 14px/1.4 Arial,sans-serif;text-decoration:none}.return-menu a:hover{background:#eaf2fc}.return-menu a:focus-visible{outline:2px solid #00549f;outline-offset:3px}@media print{.return-menu{display:none}}h1{color:var(--blue);font-size:clamp(28px,5vw,40px)}.grid{margin-top:24px}.card{line-height:1.5}</style><style id="home-navigation-style">.return-menu{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 24px}.return-menu a{display:inline-flex;align-items:center;min-height:44px;padding:11px 16px;border:1px solid #00549f;border-radius:8px;background:#fff;color:#00549f;font:600 15px/1.4 Arial,sans-serif;text-decoration:none}.return-menu a.home-button{background:#00549f;color:#fff}.return-menu a:hover{background:#eaf2fc}.return-menu a.home-button:hover{background:#003e78}.return-menu a:focus-visible{outline:3px solid #e30613;outline-offset:3px}@media print{.return-menu{display:none}}</style></head><body><div class="championship-banner"><img src="CHAMPIONNATS DE FRANCE MENUIRES.jpeg" alt="Championnats de France de ski alpin – Les Menuires – 29 mars au 4 avril"></div><main><nav class="return-menu" aria-label="Navigation"><a class="home-button" href="../index.html">← Retour à l’accueil</a></nav><section class="welcome"><h1>Règlements</h1><p>Retrouvez les documents de référence pour la saison 2027.</p></section><div class="grid"><a class="card active" href="recap-quota-fis-2027.html"><strong>Récapitulatif des quotas FIS 2027</strong><span>Quotas FIS, NJC dames et hommes, et CIT.</span></a><a class="card active" href="reglement-championnats-france-nc-njc-2027.html"><strong>Championnats de France NC / NJC 2027</strong><span>Catégories, qualifications et cahier des charges organisateurs.</span></a><a class="card active" href="modalites-selections-hommes-2027.html"><strong>Modalités de sélection hommes 2027</strong><span>Coupes d’Europe, FIS à l’étranger et règles d’entraînement.</span></a></div><nav class="return-menu" aria-label="Navigation"><a class="home-button" href="../index.html">← Retour à l’accueil</a></nav></main><footer>Info Circuits FIS • Fédération Française de Ski</footer></body></html>
