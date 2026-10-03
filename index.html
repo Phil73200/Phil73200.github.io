@@ -1,12 +1,9 @@
 <!doctype html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Info FIS 🇫🇷</title>
-<link rel="icon" type="image/png" sizes="192x192" href="images/icon-192.png">
-<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-<link rel="manifest" href="manifest.json">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Règlements 2027 — Infos FIS</title>
 <style>
 :root{
   --blue:#00549f;
@@ -14,16 +11,21 @@
   --red:#e30613;
   --ink:#1f2937;
   --muted:#667085;
-  --bg:#eef4fa;
+  --bg:#eef5fc;
   --card:#fff;
+  --line:#d8e5f2;
 }
 *{box-sizing:border-box}
 body{
   margin:0;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  background:
+    radial-gradient(circle at 75% 0%,rgba(0,84,159,.08),transparent 34%),
+    linear-gradient(180deg,#eef5fc 0%,#f8fbfe 100%);
   color:var(--ink);
-  background:linear-gradient(180deg,#edf3f8 0%,#f8fafc 100%);
 }
+
+/* ===== Bandeau générique InfoFIS ===== */
 .hero{
   position:relative;
   width:100%;
@@ -31,214 +33,201 @@ body{
   overflow:hidden;
   line-height:0;
 }
-.hero-banner{
+.hero img{
   display:block;
   width:100%;
   height:auto;
 }
-.hero-overlay{
-  line-height:normal;
+
+.hero-title{
   position:absolute;
   inset:0;
   display:flex;
   align-items:center;
   justify-content:center;
-  pointer-events:none;
-}
-.hero-title{
+  z-index:2;
   color:#fff;
-  font-size:clamp(34px,4.8vw,66px);
-  line-height:1;
+  font-size:clamp(32px,4.4vw,58px);
   font-weight:850;
   letter-spacing:-.035em;
-  text-shadow:0 3px 14px rgba(0,0,0,.28);
-  transform:translateX(3%);
-  white-space:nowrap;
+  text-shadow:0 3px 14px rgba(0,0,0,.3);
+  line-height:1;
 }
-.hero-title .flag{font-size:.68em;vertical-align:.08em;margin-left:10px}
-.hero-qr{
-  line-height:normal;
+.hero::after{
+  content:"";
   position:absolute;
-  right:3.4%;
-  top:50%;
-  transform:translateY(-50%);
-  background:rgba(255,255,255,.96);
-  padding:7px 8px 6px;
-  border-radius:12px;
-  box-shadow:0 8px 22px rgba(0,0,0,.2);
-  text-align:center;
-  width:126px;
-  z-index:3;
-}
-.hero-qr img{display:block;width:110px;height:110px;margin:auto}
-.hero-qr p{font-size:10px;line-height:1.2;color:var(--blue);font-weight:800;margin:4px 0 0}
-.partner-mask{
-  position:absolute;
-  top:0;
-  right:0;
-  width:30%;
-  height:100%;
-  background:linear-gradient(90deg,rgba(0,84,159,.15),rgba(0,84,159,.97) 28%,rgba(0,84,159,.99));
-  z-index:1;
+  inset:0;
+  background:linear-gradient(90deg,rgba(0,45,85,.08),rgba(0,45,85,.06) 45%,rgba(0,45,85,.16));
+  pointer-events:none;
 }
 .tricolor{
   height:5px;
   background:linear-gradient(90deg,#0055a4 0 33.333%,#fff 33.333% 66.666%,#ef4135 66.666% 100%);
 }
-main{max-width:1100px;margin:30px auto;padding:0 24px 52px}
-.section-title{margin:0 0 17px;font-size:23px;color:#004681}
-.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+
+/* ===== Contenu ===== */
+main{
+  max-width:1100px;
+  margin:28px auto 0;
+  padding:0 24px 50px;
+}
+.return-menu{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:0 0 22px;
+}
+.return-menu a{
+  display:inline-flex;
+  align-items:center;
+  min-height:44px;
+  padding:11px 16px;
+  border:1px solid var(--blue);
+  border-radius:9px;
+  background:var(--blue);
+  color:#fff;
+  font-size:15px;
+  font-weight:700;
+  line-height:1.3;
+  text-decoration:none;
+  box-shadow:0 4px 12px rgba(0,84,159,.12);
+}
+.return-menu a:hover{background:var(--blue-dark)}
+.return-menu a:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+
+.intro{
+  background:rgba(255,255,255,.96);
+  border:1px solid var(--line);
+  border-left:6px solid var(--blue);
+  border-radius:16px;
+  padding:24px 28px;
+  box-shadow:0 8px 24px rgba(22,63,105,.07);
+  margin-bottom:22px;
+}
+.intro h1{
+  margin:0 0 8px;
+  color:var(--blue-dark);
+  font-size:clamp(28px,4.8vw,40px);
+}
+.intro p{
+  margin:0;
+  color:#4a5a70;
+  font-size:16.5px;
+  line-height:1.55;
+}
+
+.section-title{
+  margin:30px 0 14px;
+  color:var(--blue-dark);
+  font-size:21px;
+}
+
+/* ===== Cartes ===== */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;
+}
 .card{
-  --accent:#7589a2;
-  --wash:#f7f9fc;
-  position:relative;
-  min-height:158px;
   display:block;
-  overflow:hidden;
-  background:linear-gradient(145deg,#fff 48%,var(--wash));
-  border:1px solid rgba(82,105,130,.18);
-  border-top:5px solid var(--accent);
-  border-left:6px solid var(--accent);
+  min-height:138px;
+  background:linear-gradient(145deg,#fff 55%,#f3f8fd);
+  border:1px solid #d9e5f0;
+  border-left:6px solid var(--blue);
   border-radius:14px;
-  padding:20px 26px 20px 22px;
+  padding:22px;
   text-decoration:none;
   color:var(--ink);
-  box-shadow:0 7px 18px rgba(22,51,80,.06);
+  box-shadow:0 6px 18px rgba(22,63,105,.055);
   transition:transform .18s ease,box-shadow .18s ease;
 }
-.card:hover{transform:translateY(-3px);box-shadow:0 12px 24px rgba(22,51,80,.12)}
-.card strong{display:block;color:var(--accent);font-size:18px;line-height:1.25;margin-bottom:9px}
-.card span{font-size:14.5px;line-height:1.45;color:#5d6980}
-.card.external::after{
-  content:"↗";
-  position:absolute;
-  right:13px;
-  top:11px;
-  color:var(--accent);
-  font-size:20px;
-  font-weight:800;
-  z-index:4;
+.card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 24px rgba(22,63,105,.1);
 }
-.card.has-media{
-  padding:0 22px 20px;
-  min-height:224px;
-}
-.card.has-media .card-media{
-  height:86px;
-  margin:0 -22px 17px;
-  overflow:hidden;
-  background:#e9eef5;
-  border-bottom:1px solid rgba(82,105,130,.14);
-}
-.card.has-media .card-media img{
-  width:100%;
-  height:100%;
+.card strong{
   display:block;
-  object-fit:cover;
-  transition:transform .25s ease;
+  color:var(--blue);
+  font-size:18px;
+  line-height:1.3;
+  margin-bottom:8px;
 }
-.card.has-media:hover .card-media img{transform:scale(1.025)}
-.card.has-media strong{margin-bottom:7px}
-
-
-.card.calendar{--accent:#6e819a;--wash:#f4f7fb}
-.card.foreign{--accent:#df3343;--wash:#fff3f5}
-.card.chrono{--accent:#c99400;--wash:#fff9e8}
-.card.rules{--accent:#005fa8;--wash:#eef6fd}
-.card.continental{--accent:#1b8190;--wash:#eefafb}
-.card.meetings{--accent:#6651ad;--wash:#f4f1fb}
-.card.data{--accent:#2b7e4d;--wash:#f0f9f4}
-.card.continental .card-media img{object-position:left center;object-fit:cover}
-.rules-photo img{object-position:center 48%;object-fit:cover}
-footer{text-align:center;padding:16px 20px 26px;font-size:13px;color:var(--muted)}
-
-@media(max-width:980px){
-  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .hero-title{font-size:clamp(30px,6vw,48px);transform:translateX(0)}
-  .hero-qr{right:2%;width:102px}
-  .hero-qr img{width:88px;height:88px}
+.card span{
+  display:block;
+  color:var(--muted);
+  font-size:14.5px;
+  line-height:1.5;
 }
-@media(max-width:700px){
-  .hero-title{font-size:clamp(24px,7vw,36px);max-width:62%;white-space:normal;text-align:center}
-  .hero-title .flag{display:inline-block;margin-left:6px}
-  .hero-qr{width:82px;padding:5px}
-  .hero-qr img{width:70px;height:70px}
-  .hero-qr p{font-size:8px}
-  .partner-mask{width:36%}
-  main{margin-top:22px;padding:0 14px 36px}
+
+/* ===== Bandeau Championnats de France ===== */
+.champ-block{
+  margin:30px 0 16px;
+}
+.champ-card{
+  margin-top:14px;
+  border-left-color:var(--red);
+  background:linear-gradient(145deg,#fff 52%,#fff5f6);
+}
+.champ-card strong{color:#c91120}
+
+footer{
+  text-align:center;
+  padding:18px 20px 28px;
+  font-size:13px;
+  color:var(--muted);
+}
+
+@media(max-width:760px){
+  .hero-title{font-size:clamp(25px,7vw,38px)}
+  main{margin-top:20px;padding:0 14px 36px}
+  .intro{padding:20px}
   .grid{grid-template-columns:1fr}
-  .card{min-height:128px}.card.has-media{min-height:205px}.card.has-media .card-media,}
-@media(max-width:430px){
-  .hero-qr{display:none}
-  .partner-mask{width:0}
-  .hero-title{max-width:82%;font-size:27px}
+  .card{min-height:120px}
+}
+@media print{
+  .return-menu{display:none}
 }
 </style>
 </head>
 <body>
 
-<header class="hero">
-  <img class="hero-banner" src="images/bandeau infosFIS.png?v=6" alt="Bandeau Info Circuits FIS">
-  <div class="partner-mask" aria-hidden="true"></div>
-  <div class="hero-overlay">
-    <div class="hero-title">Info Circuits FIS <span class="flag">🇫🇷</span></div>
-  </div>
-  <aside class="hero-qr" aria-label="Accéder au site sur téléphone">
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASgAAAEoCAIAAABkZftOAAAFaUlEQVR4nO3dUW7jIBRA0XrU/W/ZswJ/WIJeMOd8R0na5opUT8B13/cP8Lf+/fHrAcKDhhUPAsKDgPAgIDwICA8CwoOA8CAgPAgIDwLCg4DwICA8CAgPAsKDgPAgIDwICA8CwoOA8CAgPAgIDwLCg4DwICA8CAgPAsKDgPAgIDwICA8Cv7Nf4Lqunx083RP49v27b/Dbn4dRrHgQEB4EhAcB4UFAeBAQHgSEB1+c46027xo1l3v7PE+Pn/17GPW6s+eZ9yafh1GseBAQHgSEBwHhQUB4EBAeBIQHJ83xZs9VZs+F3s73Rs3NZs8Vvzpnu6P3/8SKBwHhQUB4EBAeBIQHAeFBQHgQWG6Ot5pq/96o5xn1/NV+wq+y4kFAeBAQHgSEBwHhQUB4EBAeBMzxPn6O5Vf3s+3OigcB4UFAeBAQHgSEBwHhQUB4EFhujrfLvGi1/WxfPYfz3uTz8JYVDwLCg4DwICA8CAgPAsKDgPDgpDneqH1iuxh1n94uj3/rOuzzYMWDgPAgIDwICA8CwoOA8CAgPPjiHO+r+6lm72cbZdS8bvb7OY0VDwLCg4DwICA8CAgPAsKDgPAgcM2eq+x+nuRsu7zPXd7/PegewtldWPEgIDwICA8CwoOA8CAgPAgID06a4z2p5nujnqeaC632dxn1/Ncm88C3rHgQEB4EhAcB4UFAeBAQHgSEB1+c4+2+v261e+TeWm1uWc11n9iPBwfxVRMCwoOA8CAgPAgIDwLCg8By+/He2v18ztXmhLvMdZ/sMj+04kFAeBAQHgSEBwHhQUB4EBAeBH5/ItW86O08Z/d76mb/XLP3s92TPyfV59CKBwHhQUB4EBAeBIQHAeFBQHgQ2P5czVHPU52vWO3rG/X8u88/n9iPBx/kqyYEhAcB4UFAeBAQHgSEB1/cjzd7nlOdP/nVcyyred09+XVXu7fQigcB4UFAeBAQHgSEBwHhQUB4cNL9eLvPi1a7l2+1/XLVXO6J+/EAXzWh4H88CAgPAsKDgPAgIDw46VzN1c5dXG2uWP1+Rr2f1fYZXtG5qU+seBAQHgSEBwHhQUB4EBAeBIQHJ+3He1Ltc1vt+Wdbbf/baXNIKx4EhAcB4UFAeBAQHgSEBwHhwRfvx1vt3M7VHl/t91ttH2B1Dqr78eAgvmpCQHgQEB4EhAcB4UFAeHDSuZq73Nv21uw53mrzqF32y1324wG+akJAeBAQHgSEBwHhQUB4EFjuXM0nq+2vq8w+F/Tt6+7++7mi81GteBAQHgSEBwHhQUB4EBAeBIQHgeX2461ml3nXanO2Xe4hvMzx4By+akJAeBAQHgSEBwHhQUB48MX78Vbbr/Xk7Vxo1OOrOVI196vuD7wXm1db8SAgPAgIDwLCg4DwICA8CAgPvjjHW22usto9bLPnYLPvo6vmafdif5e3rHgQEB4EhAcB4YHw4AxWPAgID06a41X36VX7x2bPnWbP5Wa/n7eqfYyjWPEgIDwICA8CwoOA8CAgPAgIDwLLzfFWM+o8zGoe+KS6r281d/Q+rXgQEB4EhAcB4UFAeBAQHgSEBwFzvD8ye743+7zN1eZy16A5ZPXzWvEgIDwICA8CwoOA8CAgPAgIDwLLzfFWmxeNMupcytXme7Pdg/Yruh8P8FUTCv7Hg4DwICA8CAgPAsKDk+Z4q81Vnow6P/Ot3ffLrXY/4RPnasJBfNWEgPAgIDwICA8CwoOA8CBwrTb/gRNY8SAgPAgIDwLCg4DwICA8CAgPAsKDgPAgIDwICA8CwoOA8CAgPAgIDwLCg4DwICA8CAgPAsKDgPAgIDwICA8CwoOA8CAgPAgIDwLCg4DwICA8EB78HOE/BlknUIExtisAAAAASUVORK5CYII=" alt="QR code vers https://phil73200.github.io/">
-    <p>Le site sur votre téléphone</p>
-  </aside>
+<header class="hero" aria-label="Règlements 2027">
+  <img src="../images/bandeau infosFIS.png?v=7" alt="Bandeau Info Circuits FIS">
+  <div class="hero-title">Règlements 2027</div>
 </header>
-
 <div class="tricolor" aria-hidden="true"></div>
 
 <main>
-  <h2 class="section-title">Informations &amp; outils</h2>
+  <nav class="return-menu" aria-label="Navigation">
+    <a href="../index.html">← Retour à l’accueil</a>
+  </nav>
 
+
+  <h2 class="section-title">Documents généraux</h2>
   <div class="grid">
-    <a class="card calendar external" href="https://fis-cal.fr/" target="_blank" rel="noopener noreferrer">
-      <strong>Calendriers FIS 2027</strong>
-      <span>Consulter les calendriers sur FISCal — connexion à un compte requise.</span>
+    <a class="card" href="recap-quota-fis-2027.html">
+      <strong>Récapitulatif des quotas FIS 2027</strong>
+      <span>Quotas FIS, NJC dames et hommes, et CIT.</span>
     </a>
 
-    <a class="card foreign external" href="https://www.inscriptions-fis-etranger.fr/" target="_blank" rel="noopener noreferrer">
-      <strong>Inscriptions à l’étranger</strong>
-      <span>Accéder au site des inscriptions aux courses FIS à l’étranger.</span>
-    </a>
-
-    <a class="card chrono has-media" href="classements/ski-chrono/index.html">
-      <div class="card-media"><img src="images/tuile-ski-chrono-hd.png?v=2" alt=""></div>
-      <strong>Classements Ski Chrono</strong>
-      <span>Saisons 2026 et 2027 — classements en PDF.</span>
-    </a>
-
-    <a class="card rules has-media" href="reglements/index.html">
-      <div class="card-media rules-photo">
-        <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Collection_of_colorful_binders_on_a_shelf_for_storing_documents_in_an_office_setting.jpg/1280px-Collection_of_colorful_binders_on_a_shelf_for_storing_documents_in_an_office_setting.jpg" alt="">
-      </div>
-      <strong>Règlements</strong>
-      <span>Consulter les quotas FIS, les règlements des Championnats de France et les modalités de sélection.</span>
-    </a>
-
-    <a class="card continental has-media" href="analyses/continental-cups.html">
-      <div class="card-media"><img src="images/tuile-fis-continental.png?v=3" alt=""></div>
-      <strong>Coupes continentales</strong>
-      <span>Analyse 2026 et simulations en cours.</span>
-    </a>
-
-    <a class="card meetings has-media" href="commissions/geneve-oct-2026/index.html">
-      <div class="card-media"><img src="images/tuile-reunions-fis-hd.png?v=2" alt=""></div>
-      <strong>Réunions techniques FIS</strong>
-      <span>Genève • Octobre 2026 — synthèse et comptes rendus.</span>
-    </a>
-
-    <a class="card data has-media" href="data-statistiques/index.html">
-      <div class="card-media"><img src="images/tuile-data-statistiques-hd.png?v=2" alt=""></div>
-      <strong>Data et statistiques</strong>
-      <span>Tableaux Google Sheets connectés à la base de données FIS. Synchronisation quotidienne à 16 h.</span>
+    <a class="card" href="modalites-selections-hommes-2027.html">
+      <strong>Modalités de sélection hommes 2027</strong>
+      <span>Coupes d’Europe, FIS à l’étranger et règles d’entraînement.</span>
     </a>
   </div>
+
+  <section class="champ-block" aria-label="Championnats de France">
+    <a class="card champ-card" href="reglement-championnats-france-nc-njc-2027.html">
+      <strong>Championnats de France NC / NJC 2027</strong>
+      <span>Catégories, qualifications et cahier des charges organisateurs.</span>
+    </a>
+  </section>
+
+  <nav class="return-menu" aria-label="Navigation">
+    <a href="../index.html">← Retour à l’accueil</a>
+  </nav>
 </main>
 
-<footer>Info Circuits FIS • Fédération Française de Ski<br><span style="font-size:10px;opacity:.6">Photo Règlements : Nenad Stojković / Wikimedia Commons / CC BY 2.0</span></footer>
+<footer>Info Circuits FIS • Fédération Française de Ski</footer>
 </body>
 </html>
