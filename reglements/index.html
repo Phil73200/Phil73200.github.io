@@ -1,30 +1,233 @@
 <!doctype html>
-<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Règlements 2027 — Infos FIS</title><style>
-:root{--blue:#00549f;--red:#e30613;--ink:#1f2937;--muted:#667085;--bg:#f5f7fa;--card:#fff}
-*{box-sizing:border-box}
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink)}
-.championship-banner{width:100%;background:#0751a0;overflow:hidden}
-.championship-banner img{display:block;width:100%;height:auto}
-@media(max-width:650px){.championship-banner img{width:100%;height:auto}}
-main{max-width:1100px;margin:30px auto;padding:0 24px 50px}
-.welcome{background:white;border-radius:16px;padding:27px 30px;box-shadow:0 5px 22px rgba(0,0,0,.06)}
-.welcome h2{margin:0 0 10px;color:var(--blue);font-size:25px}
-.welcome p{font-size:17px;line-height:1.6;margin:0;max-width:930px}
-.section-title{margin:33px 0 15px;font-size:21px;color:var(--blue)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:15px}
-.card{display:block;background:var(--card);border-radius:13px;padding:21px;text-decoration:none;color:var(--ink);border:1px solid #e4e8ee;box-shadow:0 3px 12px rgba(0,0,0,.035);transition:.15s ease}
-.card:hover{transform:translateY(-2px);box-shadow:0 7px 18px rgba(0,0,0,.08)}
-.card strong{display:block;color:var(--blue);font-size:17px;margin-bottom:6px}
-.card span{font-size:14px;line-height:1.45;color:var(--muted)}
-.card.active{border-left:5px solid var(--red)}
-.card.soon{opacity:.62;cursor:default}
-.reglement-links{margin:14px 0 0;padding:0;list-style:none}
-.reglement-links li+li{margin-top:8px}
-.reglement-links a{display:block;padding:7px 0;color:var(--blue);font-size:14px;line-height:1.5;text-underline-offset:3px}
-.reglement-links a:hover{text-decoration-thickness:2px}
-.reglement-links a:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:3px}
-footer{text-align:center;padding:20px;font-size:13px;color:var(--muted)}
-@media(max-width:650px){
-  main{margin-top:20px;padding:0 14px 35px}.welcome{padding:21px}.welcome p{font-size:15.5px}
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Règlements 2027 — Infos FIS</title>
+<style>
+:root{
+  --blue:#00549f;
+  --blue-dark:#003f78;
+  --red:#e30613;
+  --ink:#1f2937;
+  --muted:#667085;
+  --bg:#eef5fc;
+  --card:#fff;
+  --line:#d8e5f2;
 }
-.return-menu{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 24px}.return-menu a{display:inline-block;padding:10px 15px;border:1px solid #ccd9e9;border-radius:8px;background:#fff;color:#00549f;font:600 14px/1.4 Arial,sans-serif;text-decoration:none}.return-menu a:hover{background:#eaf2fc}.return-menu a:focus-visible{outline:2px solid #00549f;outline-offset:3px}@media print{.return-menu{display:none}}h1{color:var(--blue);font-size:clamp(28px,5vw,40px)}.grid{margin-top:24px}.card{line-height:1.5}</style><style id="home-navigation-style">.return-menu{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 24px}.return-menu a{display:inline-flex;align-items:center;min-height:44px;padding:11px 16px;border:1px solid #00549f;border-radius:8px;background:#fff;color:#00549f;font:600 15px/1.4 Arial,sans-serif;text-decoration:none}.return-menu a.home-button{background:#00549f;color:#fff}.return-menu a:hover{background:#eaf2fc}.return-menu a.home-button:hover{background:#003e78}.return-menu a:focus-visible{outline:3px solid #e30613;outline-offset:3px}@media print{.return-menu{display:none}}</style></head><body><div class="championship-banner"><img src="CHAMPIONNATS DE FRANCE MENUIRES.jpeg" alt="Championnats de France de ski alpin – Les Menuires – 29 mars au 4 avril"></div><main><nav class="return-menu" aria-label="Navigation"><a class="home-button" href="../index.html">← Retour à l’accueil</a></nav><section class="welcome"><h1>Règlements</h1><p>Retrouvez les documents de référence pour la saison 2027.</p></section><div class="grid"><a class="card active" href="recap-quota-fis-2027.html"><strong>Récapitulatif des quotas FIS 2027</strong><span>Quotas FIS, NJC dames et hommes, et CIT.</span></a><a class="card active" href="reglement-championnats-france-nc-njc-2027.html"><strong>Championnats de France NC / NJC 2027</strong><span>Catégories, qualifications et cahier des charges organisateurs.</span></a><a class="card active" href="modalites-selections-hommes-2027.html"><strong>Modalités de sélection hommes 2027</strong><span>Coupes d’Europe, FIS à l’étranger et règles d’entraînement.</span></a></div><nav class="return-menu" aria-label="Navigation"><a class="home-button" href="../index.html">← Retour à l’accueil</a></nav></main><footer>Info Circuits FIS • Fédération Française de Ski</footer></body></html>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  background:
+    radial-gradient(circle at 75% 0%,rgba(0,84,159,.08),transparent 34%),
+    linear-gradient(180deg,#eef5fc 0%,#f8fbfe 100%);
+  color:var(--ink);
+}
+
+/* ===== Bandeau générique InfoFIS ===== */
+.hero{
+  position:relative;
+  width:100%;
+  background:#00549f;
+  overflow:hidden;
+  line-height:0;
+}
+.hero img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+
+.hero-title{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:2;
+  color:#fff;
+  font-size:clamp(32px,4.4vw,58px);
+  font-weight:850;
+  letter-spacing:-.035em;
+  text-shadow:0 3px 14px rgba(0,0,0,.3);
+  line-height:1;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,rgba(0,45,85,.08),rgba(0,45,85,.06) 45%,rgba(0,45,85,.16));
+  pointer-events:none;
+}
+.tricolor{
+  height:5px;
+  background:linear-gradient(90deg,#0055a4 0 33.333%,#fff 33.333% 66.666%,#ef4135 66.666% 100%);
+}
+
+/* ===== Contenu ===== */
+main{
+  max-width:1100px;
+  margin:28px auto 0;
+  padding:0 24px 50px;
+}
+.return-menu{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:0 0 22px;
+}
+.return-menu a{
+  display:inline-flex;
+  align-items:center;
+  min-height:44px;
+  padding:11px 16px;
+  border:1px solid var(--blue);
+  border-radius:9px;
+  background:var(--blue);
+  color:#fff;
+  font-size:15px;
+  font-weight:700;
+  line-height:1.3;
+  text-decoration:none;
+  box-shadow:0 4px 12px rgba(0,84,159,.12);
+}
+.return-menu a:hover{background:var(--blue-dark)}
+.return-menu a:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+
+.intro{
+  background:rgba(255,255,255,.96);
+  border:1px solid var(--line);
+  border-left:6px solid var(--blue);
+  border-radius:16px;
+  padding:24px 28px;
+  box-shadow:0 8px 24px rgba(22,63,105,.07);
+  margin-bottom:22px;
+}
+.intro h1{
+  margin:0 0 8px;
+  color:var(--blue-dark);
+  font-size:clamp(28px,4.8vw,40px);
+}
+.intro p{
+  margin:0;
+  color:#4a5a70;
+  font-size:16.5px;
+  line-height:1.55;
+}
+
+.section-title{
+  margin:30px 0 14px;
+  color:var(--blue-dark);
+  font-size:21px;
+}
+
+/* ===== Cartes ===== */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;
+}
+.card{
+  display:block;
+  min-height:138px;
+  background:linear-gradient(145deg,#fff 55%,#f3f8fd);
+  border:1px solid #d9e5f0;
+  border-left:6px solid var(--blue);
+  border-radius:14px;
+  padding:22px;
+  text-decoration:none;
+  color:var(--ink);
+  box-shadow:0 6px 18px rgba(22,63,105,.055);
+  transition:transform .18s ease,box-shadow .18s ease;
+}
+.card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 24px rgba(22,63,105,.1);
+}
+.card strong{
+  display:block;
+  color:var(--blue);
+  font-size:18px;
+  line-height:1.3;
+  margin-bottom:8px;
+}
+.card span{
+  display:block;
+  color:var(--muted);
+  font-size:14.5px;
+  line-height:1.5;
+}
+
+/* ===== Bandeau Championnats de France ===== */
+.champ-block{
+  margin:30px 0 16px;
+}
+.champ-card{
+  margin-top:14px;
+  border-left-color:var(--red);
+  background:linear-gradient(145deg,#fff 52%,#fff5f6);
+}
+.champ-card strong{color:#c91120}
+
+footer{
+  text-align:center;
+  padding:18px 20px 28px;
+  font-size:13px;
+  color:var(--muted);
+}
+
+@media(max-width:760px){
+  .hero-title{font-size:clamp(25px,7vw,38px)}
+  main{margin-top:20px;padding:0 14px 36px}
+  .intro{padding:20px}
+  .grid{grid-template-columns:1fr}
+  .card{min-height:120px}
+}
+@media print{
+  .return-menu{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="hero" aria-label="Règlements 2027">
+  <img src="../images/bandeau infosFIS.png?v=7" alt="Bandeau Info Circuits FIS">
+  <div class="hero-title">Règlements 2027</div>
+</header>
+<div class="tricolor" aria-hidden="true"></div>
+
+<main>
+  <nav class="return-menu" aria-label="Navigation">
+    <a href="../index.html">← Retour à l’accueil</a>
+  </nav>
+
+
+  <h2 class="section-title">Documents généraux</h2>
+  <div class="grid">
+    <a class="card" href="recap-quota-fis-2027.html">
+      <strong>Récapitulatif des quotas FIS 2027</strong>
+      <span>Quotas FIS, NJC dames et hommes, et CIT.</span>
+    </a>
+
+    <a class="card" href="modalites-selections-hommes-2027.html">
+      <strong>Modalités de sélection hommes 2027</strong>
+      <span>Coupes d’Europe, FIS à l’étranger et règles d’entraînement.</span>
+    </a>
+  </div>
+
+  <section class="champ-block" aria-label="Championnats de France">
+    <a class="card champ-card" href="reglement-championnats-france-nc-njc-2027.html">
+      <strong>Championnats de France NC / NJC 2027</strong>
+      <span>Catégories, qualifications et cahier des charges organisateurs.</span>
+    </a>
+  </section>
+
+  <nav class="return-menu" aria-label="Navigation">
+    <a href="../index.html">← Retour à l’accueil</a>
+  </nav>
+</main>
+
+<footer>Info Circuits FIS • Fédération Française de Ski</footer>
+</body>
+</html>
