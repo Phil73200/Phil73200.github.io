@@ -94,6 +94,7 @@ main{max-width:1100px;margin:30px auto;padding:0 24px 52px}
   position:relative;
   min-height:158px;
   display:block;
+  overflow:hidden;
   background:linear-gradient(145deg,#fff 48%,var(--wash));
   border:1px solid rgba(82,105,130,.18);
   border-top:5px solid var(--accent);
@@ -116,7 +117,30 @@ main{max-width:1100px;margin:30px auto;padding:0 24px 52px}
   color:var(--accent);
   font-size:20px;
   font-weight:800;
+  z-index:4;
 }
+.card.has-media{
+  padding:0 22px 20px;
+  min-height:224px;
+}
+.card.has-media .card-media{
+  height:86px;
+  margin:0 -22px 17px;
+  overflow:hidden;
+  background:#e9eef5;
+  border-bottom:1px solid rgba(82,105,130,.14);
+}
+.card.has-media .card-media img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  transition:transform .25s ease;
+}
+.card.has-media:hover .card-media img{transform:scale(1.025)}
+.card.has-media strong{margin-bottom:7px}
+
+
 .card.calendar{--accent:#6e819a;--wash:#f4f7fb}
 .card.foreign{--accent:#df3343;--wash:#fff3f5}
 .card.chrono{--accent:#c99400;--wash:#fff9e8}
@@ -124,6 +148,8 @@ main{max-width:1100px;margin:30px auto;padding:0 24px 52px}
 .card.continental{--accent:#1b8190;--wash:#eefafb}
 .card.meetings{--accent:#6651ad;--wash:#f4f1fb}
 .card.data{--accent:#2b7e4d;--wash:#f0f9f4}
+.card.continental .card-media img{object-position:left center;object-fit:cover}
+.rules-photo img{object-position:center 48%;object-fit:cover}
 footer{text-align:center;padding:16px 20px 26px;font-size:13px;color:var(--muted)}
 
 @media(max-width:980px){
@@ -141,8 +167,7 @@ footer{text-align:center;padding:16px 20px 26px;font-size:13px;color:var(--muted
   .partner-mask{width:36%}
   main{margin-top:22px;padding:0 14px 36px}
   .grid{grid-template-columns:1fr}
-  .card{min-height:128px}
-}
+  .card{min-height:128px}.card.has-media{min-height:205px}.card.has-media .card-media,}
 @media(max-width:430px){
   .hero-qr{display:none}
   .partner-mask{width:0}
@@ -153,7 +178,7 @@ footer{text-align:center;padding:16px 20px 26px;font-size:13px;color:var(--muted
 <body>
 
 <header class="hero">
-  <img class="hero-banner" src="images/bandeau infosFIS.png" alt="Bandeau Info Circuits FIS">
+  <img class="hero-banner" src="images/bandeau infosFIS.png?v=6" alt="Bandeau Info Circuits FIS">
   <div class="partner-mask" aria-hidden="true"></div>
   <div class="hero-overlay">
     <div class="hero-title">Info Circuits FIS <span class="flag">🇫🇷</span></div>
@@ -180,33 +205,40 @@ footer{text-align:center;padding:16px 20px 26px;font-size:13px;color:var(--muted
       <span>Accéder au site des inscriptions aux courses FIS à l’étranger.</span>
     </a>
 
-    <a class="card chrono" href="classements/ski-chrono/index.html">
+    <a class="card chrono has-media" href="classements/ski-chrono/index.html">
+      <div class="card-media"><img src="images/tuile-ski-chrono-hd.png?v=2" alt=""></div>
       <strong>Classements Ski Chrono</strong>
       <span>Saisons 2026 et 2027 — classements en PDF.</span>
     </a>
 
-    <a class="card rules" href="reglements/index.html">
+    <a class="card rules has-media" href="reglements/index.html">
+      <div class="card-media rules-photo">
+        <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Collection_of_colorful_binders_on_a_shelf_for_storing_documents_in_an_office_setting.jpg/1280px-Collection_of_colorful_binders_on_a_shelf_for_storing_documents_in_an_office_setting.jpg" alt="">
+      </div>
       <strong>Règlements</strong>
       <span>Consulter les quotas FIS, les règlements des Championnats de France et les modalités de sélection.</span>
     </a>
 
-    <a class="card continental" href="analyses/continental-cups.html">
+    <a class="card continental has-media" href="analyses/continental-cups.html">
+      <div class="card-media"><img src="images/tuile-fis-continental.png?v=3" alt=""></div>
       <strong>Coupes continentales</strong>
       <span>Analyse 2026 et simulations en cours.</span>
     </a>
 
-    <a class="card meetings" href="commissions/geneve-oct-2026/index.html">
+    <a class="card meetings has-media" href="commissions/geneve-oct-2026/index.html">
+      <div class="card-media"><img src="images/tuile-reunions-fis-hd.png?v=2" alt=""></div>
       <strong>Réunions techniques FIS</strong>
       <span>Genève • Octobre 2026 — synthèse et comptes rendus.</span>
     </a>
 
-    <a class="card data" href="data-statistiques/index.html">
+    <a class="card data has-media" href="data-statistiques/index.html">
+      <div class="card-media"><img src="images/tuile-data-statistiques-hd.png?v=2" alt=""></div>
       <strong>Data et statistiques</strong>
       <span>Tableaux Google Sheets connectés à la base de données FIS. Synchronisation quotidienne à 16 h.</span>
     </a>
   </div>
 </main>
 
-<footer>Info Circuits FIS • Fédération Française de Ski</footer>
+<footer>Info Circuits FIS • Fédération Française de Ski<br><span style="font-size:10px;opacity:.6">Photo Règlements : Nenad Stojković / Wikimedia Commons / CC BY 2.0</span></footer>
 </body>
 </html>
