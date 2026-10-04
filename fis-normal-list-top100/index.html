@@ -441,7 +441,49 @@ button.active{
   }
 
   .tip{
-    max-width:calc(100vw - 16px);
+    left:8px!important;
+    right:8px!important;
+    top:auto!important;
+    bottom:8px!important;
+    width:auto;
+    min-width:0;
+    max-width:none;
+    max-height:44vh;
+    overflow:auto;
+    padding:10px 12px;
+    border-radius:12px;
+    font-size:11px;
+    line-height:1.25;
+    pointer-events:auto;
+  }
+
+  .tip-title{
+    font-size:13px;
+    margin-bottom:4px;
+  }
+
+  .tip-summary{
+    display:none;
+  }
+
+  .athlete{
+    grid-template-columns:24px 1fr;
+    gap:6px;
+    padding:2px 0;
+  }
+
+  .athlete .pts{
+    display:none;
+  }
+
+  .tip-mobile-note{
+    display:block;
+    margin-top:7px;
+    padding-top:6px;
+    border-top:1px solid #ffffff2e;
+    color:#b9c4d3;
+    font-size:10px;
+    text-align:center;
   }
 
   .evolution-key{
@@ -1054,7 +1096,8 @@ function deltaClass(delta){
 function tooltipHtml(
   sex,
   disc,
-  nation
+  nation,
+  compact = false
 ){
 
   const sexName =
@@ -1112,8 +1155,13 @@ function tooltipHtml(
 
   if(list.length){
 
+    const visibleList =
+      compact
+        ? list.slice(0,8)
+        : list;
+
     detail =
-      list.map(
+      visibleList.map(
         function(a){
 
           return `
@@ -1138,6 +1186,20 @@ function tooltipHtml(
 
         }
       ).join("");
+
+    if(compact && list.length > visibleList.length){
+      detail += `
+        <div class="tip-mobile-note">
+          + ${list.length-visibleList.length} autre(s) athlète(s) · touchez ailleurs pour fermer
+        </div>
+      `;
+    }else if(compact){
+      detail += `
+        <div class="tip-mobile-note">
+          Touchez ailleurs pour fermer
+        </div>
+      `;
+    }
 
   }else{
 
@@ -1576,45 +1638,89 @@ function bindTips(){
   const tip =
     document.getElementById("tip");
 
+  const isMobile =
+    window.matchMedia("(max-width:680px)").matches;
 
   document
     .querySelectorAll(".nation-row")
     .forEach(
       function(row){
 
-        row.onmousemove =
-          function(e){
+        row.onmousemove = null;
+        row.onmouseleave = null;
+        row.onclick = null;
 
-            tip.innerHTML =
-              tooltipHtml(
-                row.dataset.sex,
-                row.dataset.disc,
-                row.dataset.nation
+        if(isMobile){
+
+          row.onclick =
+            function(e){
+
+              e.stopPropagation();
+
+              tip.innerHTML =
+                tooltipHtml(
+                  row.dataset.sex,
+                  row.dataset.disc,
+                  row.dataset.nation,
+                  true
+                );
+
+              tip.style.display =
+                "block";
+
+            };
+
+        }else{
+
+          row.onmousemove =
+            function(e){
+
+              tip.innerHTML =
+                tooltipHtml(
+                  row.dataset.sex,
+                  row.dataset.disc,
+                  row.dataset.nation,
+                  false
+                );
+
+              tip.style.display =
+                "block";
+
+              positionTip(
+                tip,
+                e
               );
 
+            };
 
-            tip.style.display =
-              "block";
+          row.onmouseleave =
+            function(){
 
+              tip.style.display =
+                "none";
 
-            positionTip(
-              tip,
-              e
-            );
+            };
 
-          };
-
-
-        row.onmouseleave =
-          function(){
-
-            tip.style.display =
-              "none";
-
-          };
+        }
 
       }
     );
+
+  if(isMobile){
+
+    document.onclick =
+      function(e){
+
+        if(
+          tip.style.display === "block" &&
+          !tip.contains(e.target)
+        ){
+          tip.style.display = "none";
+        }
+
+      };
+
+  }
 
 }
 
