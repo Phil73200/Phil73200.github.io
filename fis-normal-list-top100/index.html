@@ -672,47 +672,25 @@ function colorFor(nation){
 }
 
 
-function athleteAge(a){
+function athleteBirthYear(a){
 
-  let birthDate = null;
+  if(a.Birthyear){
+
+    const year = Number(a.Birthyear);
+
+    return year >= 1900 && year <= 2100
+      ? year
+      : null;
+
+  }
 
   if(a.Birthdate){
 
     const parsed = new Date(a.Birthdate);
 
     if(!Number.isNaN(parsed.getTime())){
-      birthDate = parsed;
+      return parsed.getFullYear();
     }
-
-  }
-
-  if(birthDate){
-
-    const now = new Date();
-    let age = now.getFullYear() - birthDate.getFullYear();
-
-    const beforeBirthday =
-      now.getMonth() < birthDate.getMonth() ||
-      (
-        now.getMonth() === birthDate.getMonth() &&
-        now.getDate() < birthDate.getDate()
-      );
-
-    if(beforeBirthday){
-      age -= 1;
-    }
-
-    return age >= 0 && age < 100 ? age : null;
-
-  }
-
-  if(a.Birthyear){
-
-    const age =
-      new Date().getFullYear() -
-      Number(a.Birthyear);
-
-    return age >= 0 && age < 100 ? age : null;
 
   }
 
@@ -1247,7 +1225,7 @@ function tooltipHtml(
 
               <span class="name">
                 ${escapeHtml(a.Fullname)}
-                ${athleteAge(a) !== null ? ` — ${athleteAge(a)} ans` : ""}
+                ${athleteBirthYear(a) !== null ? ` — ${athleteBirthYear(a)}` : ""}
               </span>
 
               <span class="pts">
