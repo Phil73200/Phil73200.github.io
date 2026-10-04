@@ -672,6 +672,55 @@ function colorFor(nation){
 }
 
 
+function athleteAge(a){
+
+  let birthDate = null;
+
+  if(a.Birthdate){
+
+    const parsed = new Date(a.Birthdate);
+
+    if(!Number.isNaN(parsed.getTime())){
+      birthDate = parsed;
+    }
+
+  }
+
+  if(birthDate){
+
+    const now = new Date();
+    let age = now.getFullYear() - birthDate.getFullYear();
+
+    const beforeBirthday =
+      now.getMonth() < birthDate.getMonth() ||
+      (
+        now.getMonth() === birthDate.getMonth() &&
+        now.getDate() < birthDate.getDate()
+      );
+
+    if(beforeBirthday){
+      age -= 1;
+    }
+
+    return age >= 0 && age < 100 ? age : null;
+
+  }
+
+  if(a.Birthyear){
+
+    const age =
+      new Date().getFullYear() -
+      Number(a.Birthyear);
+
+    return age >= 0 && age < 100 ? age : null;
+
+  }
+
+  return null;
+
+}
+
+
 function escapeHtml(value){
 
   return String(value).replace(
@@ -750,6 +799,30 @@ function normalizeAthletes(source){
           String(
             a.Fullname ??
             a.fullname ??
+            ""
+          ).trim(),
+
+        Birthyear:
+          Number(
+            a.Birthyear ??
+            a.BirthYear ??
+            a.birthyear ??
+            a.birthYear ??
+            a.YearOfBirth ??
+            a.yearOfBirth ??
+            a.YOB ??
+            a.yob ??
+            0
+          ) || null,
+
+        Birthdate:
+          String(
+            a.Birthdate ??
+            a.BirthDate ??
+            a.birthdate ??
+            a.birthDate ??
+            a.DateOfBirth ??
+            a.dateOfBirth ??
             ""
           ).trim(),
 
@@ -1174,6 +1247,7 @@ function tooltipHtml(
 
               <span class="name">
                 ${escapeHtml(a.Fullname)}
+                ${athleteAge(a) !== null ? ` — ${athleteAge(a)} ans` : ""}
               </span>
 
               <span class="pts">
@@ -1657,6 +1731,21 @@ function bindTips(){
 
               e.stopPropagation();
 
+              const sameSelection =
+                tip.style.display === "block" &&
+                tip.dataset.sex === row.dataset.sex &&
+                tip.dataset.disc === row.dataset.disc &&
+                tip.dataset.nation === row.dataset.nation;
+
+              if(sameSelection){
+                tip.style.display = "none";
+                return;
+              }
+
+              tip.dataset.sex = row.dataset.sex;
+              tip.dataset.disc = row.dataset.disc;
+              tip.dataset.nation = row.dataset.nation;
+
               tip.innerHTML =
                 tooltipHtml(
                   row.dataset.sex,
@@ -1706,19 +1795,25 @@ function bindTips(){
       }
     );
 
-  if(isMobile){
+  if(isMobile && !document.body.dataset.tipCloseBound){
 
-    document.onclick =
+    document.body.dataset.tipCloseBound = "1";
+
+    document.addEventListener(
+      "pointerdown",
       function(e){
 
         if(
           tip.style.display === "block" &&
-          !tip.contains(e.target)
+          !tip.contains(e.target) &&
+          !e.target.closest(".nation-row")
         ){
           tip.style.display = "none";
         }
 
-      };
+      },
+      true
+    );
 
   }
 
