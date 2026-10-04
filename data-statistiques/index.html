@@ -3,253 +3,2026 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Data et statistiques — Infos FIS</title>
+<meta http-equiv="Cache-Control" content="no-cache">
+
+<title>Top 30 / 60 / 100 mondial – Normal List FIS</title>
+
 <style>
+
 :root{
-  --green:#2b7e4d;
-  --green-dark:#1f633b;
-  --green-soft:#eef8f2;
-  --blue:#00549f;
-  --red:#e30613;
-  --ink:#1f2937;
-  --muted:#667085;
-  --line:#d8e8df;
+  --ink:#16345f;
+  --muted:#6c7888;
+  --line:#dbe3ec;
+  --fra:#1969d2;
+  --men:#244e86;
+  --women:#9d234b;
+  --gain:#188038;
+  --loss:#c00000;
+  --stable:#7b8490;
 }
-*{box-sizing:border-box}
+
+*{box-sizing:border-box;}
+
 body{
   margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#fff;
+  color:#182230;
+}
+
+main{
+  max-width:1580px;
+  margin:auto;
+  padding:24px 28px 20px;
+}
+
+h1{
+  margin:0;
   color:var(--ink);
-  background:
-    radial-gradient(circle at 75% 0%,rgba(43,126,77,.10),transparent 34%),
-    linear-gradient(180deg,#eef8f2 0%,#f8fbf9 100%);
+  font-size:30px;
 }
-.hero{
-  position:relative;
-  width:100%;
-  background:#00549f;
+
+.sub{
+  margin:6px 0 18px;
+  color:var(--muted);
+  font-size:15px;
+}
+
+.summary{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin:0 0 18px;
+}
+
+.badge{
+  background:#eef4fb;
+  border:1px solid #cad9eb;
+  color:#244e86;
+  padding:7px 11px;
+  border-radius:999px;
+  font-size:13px;
+  font-weight:700;
+}
+
+.controls{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  margin:4px 0 10px;
+}
+
+button{
+  border:1px solid #b8c6d8;
+  background:#fff;
+  color:var(--ink);
+  padding:10px 24px;
+  border-radius:999px;
+  font-weight:800;
+  font-size:15px;
+  cursor:pointer;
+}
+
+button.active{
+  background:var(--ink);
+  color:#fff;
+  border-color:var(--ink);
+}
+
+/* ============================================================
+   LEGENDE EVOLUTION
+   ============================================================ */
+
+.evolution-key{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:8px 16px;
+  flex-wrap:wrap;
+  margin:0 0 18px;
+  color:#596779;
+  font-size:12px;
+}
+
+.evolution-key-title{
+  font-weight:700;
+  color:#44546a;
+}
+
+.evolution-example{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+}
+
+.evolution-example strong{
+  font-size:13px;
+}
+
+.evolution-example.gain strong{
+  color:var(--gain);
+}
+
+.evolution-example.loss strong{
+  color:var(--loss);
+}
+
+.evolution-example.stable strong{
+  color:var(--stable);
+}
+
+.sex{
+  border:1px solid #ccd9e8;
+  border-radius:16px;
+  padding:15px;
+  margin-bottom:18px;
+  background:linear-gradient(#fff,#fafcff);
+}
+
+.sex.w{
+  border-color:#e8c9d1;
+}
+
+.sex h2{
+  text-align:center;
+  margin:0 0 13px;
+  color:var(--men);
+  font-size:23px;
+}
+
+.sex.w h2{
+  color:var(--women);
+}
+
+.disc-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:13px;
+}
+
+.card{
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:#fff;
+  padding:11px 10px 10px;
+  min-width:0;
+}
+
+.card h3{
+  text-align:center;
+  color:#243b66;
+  margin:0 0 3px;
+  font-size:17px;
+}
+
+.card .small{
+  text-align:center;
+  color:#7a8594;
+  font-size:11px;
+  margin-bottom:9px;
+}
+
+.nation-row{
+  display:grid;
+  grid-template-columns:34px 1fr 55px;
+  gap:6px;
+  align-items:center;
+  margin:5px 0;
+  min-height:24px;
+  border-radius:5px;
+  cursor:default;
+}
+
+.nation-row:hover{
+  outline:2px solid #90a8c7;
+  outline-offset:1px;
+  background:#f7faff;
+}
+
+.nation{
+  font-size:12px;
+  font-weight:800;
+  text-align:right;
+  color:var(--nation,#475569);
+}
+
+.track{
+  height:23px;
+  border-radius:5px;
+  background:#eef2f6;
   overflow:hidden;
-  line-height:0;
 }
-.hero img{
-  display:block;
-  width:100%;
-  height:auto;
+
+.bar{
+  height:100%;
+  min-width:10px;
+  border-radius:5px;
+  display:flex;
+  align-items:center;
+  padding-left:6px;
+  color:#fff;
+  font-size:11px;
+  font-weight:800;
+  transition:width .35s ease;
 }
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(90deg,rgba(12,73,45,.04),rgba(18,92,53,.08) 52%,rgba(20,93,57,.22));
+
+.nation-row.fra .nation{
+  color:var(--fra);
+}
+
+.nation-row.fra .track{
+  background:#dceaff;
+}
+
+.nation-row.fra .bar{
+  background:var(--fra)!important;
+}
+
+.nation-row.zero .bar{
+  min-width:0;
+}
+
+.value{
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  gap:5px;
+  white-space:nowrap;
+}
+
+.count{
+  font-size:13px;
+  font-weight:800;
+  text-align:center;
+  color:var(--nation,#243b66);
+  min-width:16px;
+}
+
+.delta{
+  font-size:11px;
+  font-weight:800;
+  min-width:24px;
+  text-align:left;
+}
+
+.delta.gain{color:var(--gain);}
+.delta.loss{color:var(--loss);}
+.delta.stable{color:var(--stable);}
+
+.tip{
+  display:none;
+  position:fixed;
+  z-index:50;
+  min-width:280px;
+  max-width:410px;
+  max-height:75vh;
+  overflow:auto;
+  background:#111827;
+  color:#fff;
+  padding:12px 14px;
+  border-radius:9px;
+  font-size:12px;
+  line-height:1.35;
   pointer-events:none;
+  box-shadow:0 8px 26px #0005;
 }
-.hero-title{
-  position:absolute;
+
+.tip-title{
+  font-size:14px;
+  font-weight:800;
+  margin-bottom:6px;
+}
+
+.tip-summary{
+  color:#cdd9e8;
+  padding-bottom:7px;
+  margin-bottom:7px;
+  border-bottom:1px solid #ffffff38;
+}
+
+.tip-evolution{
+  margin-top:4px;
+  font-weight:800;
+}
+
+.tip-evolution.gain{color:#7ee2a8;}
+.tip-evolution.loss{color:#ff9292;}
+.tip-evolution.stable{color:#cbd5e1;}
+
+.athlete{
+  display:grid;
+  grid-template-columns:26px 1fr auto;
+  gap:7px;
+  align-items:baseline;
+  padding:3px 0;
+}
+
+.athlete .rank{
+  font-weight:800;
+  color:#9ec5fa;
+  text-align:right;
+}
+
+.athlete .name{
+  font-weight:700;
+}
+
+.athlete .pts{
+  color:#d1dae7;
+  white-space:nowrap;
+}
+
+.legend{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+  margin:5px 0 8px;
+  color:#566274;
+  font-size:13px;
+}
+
+.legend span{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+
+.sw{
+  width:22px;
+  height:12px;
+  border-radius:3px;
+  background:var(--fra);
+}
+
+.evo-legend{
+  font-weight:800;
+}
+
+.evo-legend .plus{color:var(--gain);}
+.evo-legend .minus{color:var(--loss);}
+.evo-legend .zero{color:var(--stable);}
+
+.note{
+  text-align:center;
+  color:#7b8490;
+  font-size:12px;
+  margin-top:7px;
+}
+
+.status{
+  text-align:center;
+  padding:35px;
+  color:var(--muted);
+  font-weight:700;
+}
+
+.status.error{
+  color:#9d234b;
+}
+
+
+/* ECRAN DE CHARGEMENT INITIAL */
+#loadingOverlay{
+  position:fixed;
   inset:0;
-  z-index:2;
+  z-index:9999;
   display:flex;
   align-items:center;
   justify-content:center;
-  color:#fff;
-  font-size:clamp(32px,4.5vw,58px);
-  font-weight:850;
-  letter-spacing:-.035em;
-  line-height:1;
-  text-shadow:0 3px 14px rgba(0,0,0,.3);
+  background:rgba(255,255,255,.97);
+  padding:24px;
 }
-.tricolor{
-  height:5px;
-  background:linear-gradient(90deg,#0055a4 0 33.333%,#fff 33.333% 66.666%,#ef4135 66.666% 100%);
-}
-main{
-  max-width:1100px;
-  margin:28px auto 0;
-  padding:0 24px 50px;
-}
-.return-menu{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin:0 0 22px;
-}
-.return-menu a{
-  display:inline-flex;
-  align-items:center;
-  min-height:44px;
-  padding:11px 16px;
-  border:1px solid var(--green);
-  border-radius:9px;
-  background:var(--green);
-  color:#fff;
-  font-size:15px;
-  font-weight:700;
-  line-height:1.3;
-  text-decoration:none;
-  box-shadow:0 4px 12px rgba(43,126,77,.13);
-}
-.return-menu a:hover{background:var(--green-dark)}
-.return-menu a:focus-visible{outline:3px solid var(--red);outline-offset:3px}
-
-.intro{
-  background:rgba(255,255,255,.96);
-  border:1px solid var(--line);
-  border-left:6px solid var(--green);
-  border-radius:16px;
-  padding:24px 28px;
-  box-shadow:0 8px 24px rgba(30,92,56,.07);
-  margin-bottom:22px;
-}
-.intro h1{
-  margin:0 0 8px;
-  color:var(--green-dark);
-  font-size:clamp(28px,4.8vw,40px);
-}
-.intro p{
-  margin:0;
-  color:#4a5a70;
-  font-size:16.5px;
-  line-height:1.55;
-}
-.schedule{
-  display:inline-block;
-  margin-top:13px;
-  padding:7px 12px;
-  border-radius:8px;
-  background:#e4f3e9;
-  color:var(--green-dark);
-  font-size:14px;
-  font-weight:700;
-}
-.section-title{
-  margin:30px 0 14px;
-  color:var(--green-dark);
-  font-size:21px;
-}
-.tables{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:16px;
-  margin:0 0 28px;
-}
-.sheet-card{
-  position:relative;
-  display:block;
-  min-height:160px;
-  padding:22px;
-  border:1px solid var(--line);
-  border-left:6px solid var(--green);
-  border-radius:14px;
-  background:linear-gradient(145deg,#fff 54%,#f0f8f3);
-  color:var(--ink);
-  text-decoration:none;
-  box-shadow:0 6px 18px rgba(30,92,56,.055);
-  transition:transform .18s ease,box-shadow .18s ease;
-}
-.sheet-card:hover{
-  transform:translateY(-2px);
-  box-shadow:0 10px 24px rgba(30,92,56,.10);
-}
-.sheet-card:focus-visible{outline:3px solid var(--green);outline-offset:3px}
-.sheet-card h2{
-  margin:0 0 9px;
-  color:var(--green);
-  font-size:18px;
-  line-height:1.35;
-}
-.sheet-card p{
-  margin:0;
-  color:var(--muted);
-  font-size:14.5px;
-  line-height:1.5;
-}
-.open-sheet{
-  display:inline-block;
-  margin-top:15px;
-  color:var(--green-dark);
-  font-size:14px;
-  font-weight:750;
-}
-footer{
+.loading-box{
+  max-width:520px;
   text-align:center;
-  padding:18px 20px 28px;
-  font-size:13px;
+  color:var(--ink);
+}
+.loading-spinner{
+  width:54px;
+  height:54px;
+  margin:0 auto 18px;
+  border:6px solid #dbe7f4;
+  border-top-color:var(--fra);
+  border-radius:50%;
+  animation:loadingSpin .9s linear infinite;
+}
+.loading-title{
+  font-size:22px;
+  font-weight:800;
+  margin-bottom:10px;
+}
+.loading-text{
+  font-size:15px;
+  line-height:1.5;
   color:var(--muted);
 }
-@media(max-width:760px){
-  .hero-title{font-size:clamp(25px,7vw,38px)}
-  main{margin-top:20px;padding:0 14px 36px}
-  .intro{padding:20px}
-  .tables{grid-template-columns:1fr}
-  .sheet-card{min-height:140px}
+@keyframes loadingSpin{
+  to{transform:rotate(360deg);}
 }
-@media print{
-  .return-menu{display:none}
+
+@media(max-width:1220px){
+  .disc-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
 }
+
+@media(max-width:680px){
+  main{
+    padding:15px;
+  }
+
+  h1{
+    font-size:24px;
+  }
+
+  .disc-grid{
+    grid-template-columns:1fr;
+  }
+
+  .tip{
+    max-width:calc(100vw - 16px);
+  }
+
+  .evolution-key{
+    gap:6px 12px;
+  }
+}
+
 </style>
 </head>
+
 <body>
 
-<header class="hero" aria-label="Data et statistiques">
-  <img src="../images/bandeau infosFIS.png?v=2" alt="Bandeau Info Circuits FIS">
-  <div class="hero-title">Data et statistiques</div>
-</header>
-<div class="tricolor" aria-hidden="true"></div>
+<div id="loadingOverlay" role="status" aria-live="polite">
+  <div class="loading-box">
+    <div class="loading-spinner" aria-hidden="true"></div>
+    <div class="loading-title">Chargement des données FIS…</div>
+    <div class="loading-text">
+      Le premier affichage peut prendre <strong>plusieurs minutes</strong>.<br>
+      Merci de patienter.
+    </div>
+  </div>
+</div>
 
 <main>
-  <nav class="return-menu" aria-label="Navigation">
-    <a href="/">← Retour à l’accueil</a>
-  </nav>
 
-  <section class="intro">
-    <h1>Data et statistiques</h1>
-    <p>Consultez les tableaux Google Sheets connectés à la base de données FIS.</p>
-    <span class="schedule">Synchronisation quotidienne des tableaux à 16 h</span>
-  </section>
+<h1>
+Top 30, Top 60 et Top 100 mondial – Répartition par nation
+</h1>
 
-  <h2 class="section-title">Tableaux et analyses</h2>
-  <section class="tables" aria-label="Tableaux Google Sheets">
-    <a href="https://docs.google.com/spreadsheets/d/1-l9I_B30cIlggOOtJE4WSQu36W66BgKn5HX629ABz-g/edit?gid=403608582#gid=403608582" class="sheet-card" target="_blank" rel="noopener noreferrer">
-      <h2>Liste des courses — pénalités calculées et appliquées</h2>
-      <p>Liste des courses avec les pénalités calculées et appliquées.</p>
-      <span class="open-sheet">Ouvrir dans Google Sheets ↗</span>
-    </a>
-    <a href="https://docs.google.com/spreadsheets/d/1g7DH_d_SPcGRh2Z5VvayEfsMSm74orXi2hXwqiRtXYA/edit?gid=849367372#gid=849367372" class="sheet-card" target="_blank" rel="noopener noreferrer">
-      <h2>Résultats chronologiques des coureurs FRA — Saison 2027</h2>
-      <p>Résultats des coureurs français, présentés dans l’ordre chronologique.</p>
-      <span class="open-sheet">Ouvrir dans Google Sheets ↗</span>
-    </a>
-    <a href="https://docs.google.com/spreadsheets/d/1LS2R264dE46_l2mcZ4PG1lnRjz0NQm10FqlmpDXY4ao/edit?gid=1864139887#gid=1864139887" class="sheet-card" target="_blank" rel="noopener noreferrer">
-      <h2>3 perfs pour 2028 — GS et SL</h2>
-      <p>Suivi des trois performances pour 2028 en GS et SL</p>
-      <span class="open-sheet">Ouvrir dans Google Sheets ↗</span>
-    </a>
-    <a href="https://docs.google.com/spreadsheets/d/1lmCyKtlGyGIKm3haO9x1KFuqTYA9wygFR8voirxFXhA/edit?gid=616310534#gid=616310534" class="sheet-card" target="_blank" rel="noopener noreferrer">
-      <h2>Listing des courses par athlète 🇫🇷 — Saison en cours</h2>
-      <p>Liste des courses par athlète français pour la saison en cours.</p>
-      <span class="open-sheet">Ouvrir dans Google Sheets ↗</span>
-    </a>
-    <a href="https://docs.google.com/spreadsheets/d/1-GAtRnmStxEb2T809dq_q1LHKX7aD_Km3c-bwNbQ1UA/edit?gid=0#gid=0" class="sheet-card" target="_blank" rel="noopener noreferrer">
-      <h2>Liste FIS actuelle</h2>
-      <p>Consulter la liste FIS actuelle.</p>
-      <span class="open-sheet">Ouvrir dans Google Sheets ↗</span>
-    </a>
-    <a href="https://infos-fis.fr/-reservoir-u21/" class="sheet-card">
-      <h2>Réservoir U21</h2>
-      <p>Consulter les données et statistiques du réservoir U21.</p>
-      <span class="open-sheet">Consulter la page →</span>
-    </a>
-    <a href="https://infos-fis.fr/fis-normal-list-top100/" class="sheet-card">
-      <h2>Normal List FIS — Top 100</h2>
-      <p>Répartition par nation dans les Top 30, Top 60 et Top 100 mondiaux.</p>
-      <span class="open-sheet">Consulter la page →</span>
-    </a>
-  </section>
+<div class="sub" id="subtitle">
+Chargement de la Normal List FIS…
+</div>
 
-  <nav class="return-menu" aria-label="Navigation">
-    <a href="/">← Retour à l’accueil</a>
-  </nav>
+<div class="summary" id="summary"></div>
+
+<div class="controls">
+  <button data-level="30" class="active">TOP 30</button>
+  <button data-level="60">TOP 60</button>
+  <button data-level="100">TOP 100</button>
+</div>
+
+<!-- LEGENDE AJOUTEE -->
+<div class="evolution-key">
+  <span class="evolution-key-title">
+    Évolution depuis la Basic List 2027 :
+  </span>
+
+  <span class="evolution-example gain">
+    <strong>+1</strong> = 1 athlète de plus
+  </span>
+
+  <span class="evolution-example loss">
+    <strong>−1</strong> = 1 athlète de moins
+  </span>
+
+  <span class="evolution-example stable">
+    <strong>0</strong> = stable
+  </span>
+</div>
+
+<div id="app">
+  <div class="status">
+    Chargement initial des données FIS…
+  </div>
+</div>
+
+<div class="legend">
+
+<span>
+<i class="sw"></i>
+France
+</span>
+
+<span id="legendText">
+La longueur de la barre représente le nombre d’athlètes de la nation dans le Top 30.
+</span>
+
+<span>
+Survol : noms, rangs et points.
+</span>
+
+</div>
+
+<div class="note">
+Les mêmes dix nations, dans le même ordre et avec la même couleur,
+sont comparées dans chaque discipline.
+L’évolution indique l’écart du nombre de présences par rapport à la Basic List de début de saison.
+Une même personne peut apparaître dans plusieurs disciplines.
+</div>
+
 </main>
 
-<footer>Info Circuits FIS • Fédération Française de Ski</footer>
+<div class="tip" id="tip"></div>
+
+<script>
+
+/* ============================================================
+   SOURCE
+   ============================================================ */
+
+const DATA_URL =
+"https://script.google.com/macros/s/AKfycbyYT7LiAKIbiYQqdAs9cyNRGXNbwLmNNkxC2u2aILzuBv5gW1rYHNrQ4uYRaJNhRd4SqA/exec";
+
+
+/* ============================================================
+   CACHE LOCAL
+   ============================================================ */
+
+const CACHE_KEY =
+"fis_normal_list_top100_v4";
+
+
+let ATHLETES = [];
+let BASIC = [];
+let BASIC_SEASON = null;
+let FIS_LIST = "";
+let UPDATED = "";
+let level = 30;
+
+
+/* ============================================================
+   NATIONS
+   ============================================================ */
+
+const selectedNations = [
+  "FRA",
+  "NOR",
+  "SUI",
+  "AUT",
+  "ITA",
+  "USA",
+  "GER",
+  "CAN",
+  "SWE",
+  "SLO"
+];
+
+
+const disciplines = [
+  ["SL","Slalom"],
+  ["GS","Géant"],
+  ["SG","Super-G"],
+  ["DH","Descente"]
+];
+
+
+const colors = {
+  FRA:"#1969d2",
+  NOR:"#7d7d7d",
+  SUI:"#d72d37",
+  AUT:"#2d2d2d",
+  ITA:"#239146",
+  USA:"#7656b5",
+  GER:"#c99200",
+  CAN:"#981f3d",
+  SWE:"#d5ad00",
+  SLO:"#009c9c"
+};
+
+
+const groupMap = new Map();
+const basicMap = new Map();
+
+
+/* ============================================================
+   OUTILS
+   ============================================================ */
+
+function key(sex,disc,nation){
+
+  return (
+    String(sex).trim().toUpperCase() +
+    "|" +
+    String(disc).trim().toUpperCase() +
+    "|" +
+    String(nation).trim().toUpperCase()
+  );
+
+}
+
+
+function colorFor(nation){
+
+  return colors[nation] || "#64748b";
+
+}
+
+
+function escapeHtml(value){
+
+  return String(value).replace(
+    /[&<>"']/g,
+    function(ch){
+
+      return {
+        "&":"&amp;",
+        "<":"&lt;",
+        ">":"&gt;",
+        '"':"&quot;",
+        "'":"&#039;"
+      }[ch];
+
+    }
+  );
+
+}
+
+
+/* ============================================================
+   DATE
+   ============================================================ */
+
+function formatUpdateDate(value){
+
+  if(!value){
+    return "";
+  }
+
+  const date = new Date(value);
+
+  if(Number.isNaN(date.getTime())){
+    return String(value);
+  }
+
+  return new Intl.DateTimeFormat(
+    "fr-FR",
+    {
+      timeZone:"Europe/Paris",
+      day:"2-digit",
+      month:"2-digit",
+      year:"numeric",
+      hour:"2-digit",
+      minute:"2-digit",
+      hour12:false
+    }
+  ).format(date).replace(",", " à");
+
+}
+
+
+/* ============================================================
+   NORMALISATION ATHLETES
+   ============================================================ */
+
+function normalizeAthletes(source){
+
+  if(!Array.isArray(source)){
+    return [];
+  }
+
+  return source
+    .map(function(a){
+
+      return {
+
+        Fiscode:
+          String(
+            a.Fiscode ??
+            a.fiscode ??
+            ""
+          ),
+
+        Fullname:
+          String(
+            a.Fullname ??
+            a.fullname ??
+            ""
+          ).trim(),
+
+        Gender:
+          String(
+            a.Gender ??
+            a.gender ??
+            ""
+          ).trim().toUpperCase(),
+
+        Discipline:
+          String(
+            a.Discipline ??
+            a.discipline ??
+            ""
+          ).trim().toUpperCase(),
+
+        Nation:
+          String(
+            a.Nation ??
+            a.nation ??
+            ""
+          ).trim().toUpperCase(),
+
+        Fispoints:
+          Number(
+            a.Fispoints ??
+            a.points
+          ),
+
+        WorldRank:
+          Number(
+            a.WorldRank ??
+            a.rank
+          ),
+
+        Liste_FIS:
+          String(
+            a.Liste_FIS ??
+            a.list ??
+            ""
+          ).trim()
+
+      };
+
+    })
+
+    .filter(function(a){
+
+      return (
+        ["M","W"].includes(a.Gender) &&
+        ["SL","GS","SG","DH"].includes(a.Discipline) &&
+        Number.isFinite(a.WorldRank) &&
+        a.WorldRank <= 100
+      );
+
+    });
+
+}
+
+
+/* ============================================================
+   NORMALISATION BASIC LIST
+   ============================================================ */
+
+function normalizeBasic(source){
+
+  if(!Array.isArray(source)){
+    return [];
+  }
+
+  return source
+    .map(function(b){
+
+      return {
+
+        Nation:
+          String(
+            b.Nation ??
+            b.nation ??
+            ""
+          ).trim().toUpperCase(),
+
+        Gender:
+          String(
+            b.Gender ??
+            b.gender ??
+            ""
+          ).trim().toUpperCase(),
+
+        Discipline:
+          String(
+            b.Discipline ??
+            b.discipline ??
+            ""
+          ).trim().toUpperCase(),
+
+        Top30:
+          Number(
+            b.Top30 ??
+            b.top30 ??
+            0
+          ),
+
+        Top60:
+          Number(
+            b.Top60 ??
+            b.top60 ??
+            0
+          ),
+
+        Top100:
+          Number(
+            b.Top100 ??
+            b.top100 ??
+            0
+          )
+
+      };
+
+    })
+
+    .filter(function(b){
+
+      return (
+        b.Nation &&
+        ["M","W"].includes(b.Gender) &&
+        ["SL","GS","SG","DH"].includes(b.Discipline)
+      );
+
+    });
+
+}
+
+
+/* ============================================================
+   GROUPES NORMAL LIST
+   ============================================================ */
+
+function rebuildGroups(){
+
+  groupMap.clear();
+
+  for(const athlete of ATHLETES){
+
+    const k =
+      key(
+        athlete.Gender,
+        athlete.Discipline,
+        athlete.Nation
+      );
+
+    if(!groupMap.has(k)){
+      groupMap.set(k,[]);
+    }
+
+    groupMap.get(k).push(athlete);
+
+  }
+
+
+  for(const list of groupMap.values()){
+
+    list.sort(function(a,b){
+
+      return (
+        (a.WorldRank - b.WorldRank) ||
+        a.Fullname.localeCompare(b.Fullname,"fr")
+      );
+
+    });
+
+  }
+
+}
+
+
+/* ============================================================
+   INDEX BASIC
+   ============================================================ */
+
+function rebuildBasicMap(){
+
+  basicMap.clear();
+
+  for(const item of BASIC){
+
+    basicMap.set(
+      key(
+        item.Gender,
+        item.Discipline,
+        item.Nation
+      ),
+      item
+    );
+
+  }
+
+}
+
+
+/* ============================================================
+   MEMBRES
+   ============================================================ */
+
+function members(sex,disc,nation){
+
+  return (
+    groupMap.get(
+      key(sex,disc,nation)
+    ) || []
+  );
+
+}
+
+
+/* ============================================================
+   BASIC COUNT
+   ============================================================ */
+
+function basicCount(
+  sex,
+  disc,
+  nation,
+  requestedLevel
+){
+
+  const item =
+    basicMap.get(
+      key(
+        sex,
+        disc,
+        nation
+      )
+    );
+
+
+  if(!item){
+    return 0;
+  }
+
+
+  if(requestedLevel === 30){
+    return Number(item.Top30) || 0;
+  }
+
+
+  if(requestedLevel === 60){
+    return Number(item.Top60) || 0;
+  }
+
+
+  return Number(item.Top100) || 0;
+
+}
+
+
+/* ============================================================
+   NATIONS
+   ============================================================ */
+
+function nationsFor(sex,disc){
+
+  return selectedNations.map(
+    function(nation){
+
+      const list =
+        members(
+          sex,
+          disc,
+          nation
+        )
+        .filter(
+          function(a){
+            return a.WorldRank <= level;
+          }
+        );
+
+
+      const count =
+        list.length;
+
+
+      const basic =
+        basicCount(
+          sex,
+          disc,
+          nation,
+          level
+        );
+
+
+      return {
+        nation:nation,
+        count:count,
+        basic:basic,
+        delta:count-basic
+      };
+
+    }
+  );
+
+}
+
+
+/* ============================================================
+   DELTA
+   ============================================================ */
+
+function deltaText(delta){
+
+  if(delta > 0){
+    return "+" + delta;
+  }
+
+  if(delta < 0){
+    return String(delta);
+  }
+
+  return "0";
+
+}
+
+
+function deltaClass(delta){
+
+  if(delta > 0){
+    return "gain";
+  }
+
+  if(delta < 0){
+    return "loss";
+  }
+
+  return "stable";
+
+}
+
+
+/* ============================================================
+   INFOBULLE
+   ============================================================ */
+
+function tooltipHtml(
+  sex,
+  disc,
+  nation
+){
+
+  const sexName =
+    sex === "M"
+      ? "HOMMES"
+      : "DAMES";
+
+
+  const discipline =
+    disciplines.find(
+      function(d){
+        return d[0] === disc;
+      }
+    );
+
+
+  const discName =
+    discipline
+      ? discipline[1]
+      : disc;
+
+
+  const list =
+    members(
+      sex,
+      disc,
+      nation
+    )
+    .filter(
+      function(a){
+        return a.WorldRank <= level;
+      }
+    );
+
+
+  const basic =
+    basicCount(
+      sex,
+      disc,
+      nation,
+      level
+    );
+
+
+  const delta =
+    list.length - basic;
+
+
+  const dClass =
+    deltaClass(delta);
+
+
+  let detail = "";
+
+
+  if(list.length){
+
+    detail =
+      list.map(
+        function(a){
+
+          return `
+
+            <div class="athlete">
+
+              <span class="rank">
+                ${a.WorldRank}
+              </span>
+
+              <span class="name">
+                ${escapeHtml(a.Fullname)}
+              </span>
+
+              <span class="pts">
+                ${Number(a.Fispoints).toFixed(2)} pts
+              </span>
+
+            </div>
+
+          `;
+
+        }
+      ).join("");
+
+  }else{
+
+    detail = `
+
+      <div>
+        Aucun athlète dans ce Top ${level}
+      </div>
+
+    `;
+
+  }
+
+
+  return `
+
+    <div class="tip-title">
+
+      ${sexName}
+      ·
+      ${discName}
+      ·
+      ${nation}
+
+    </div>
+
+    <div class="tip-summary">
+
+      <strong>
+        Normal List :
+        ${list.length}
+      </strong>
+
+      <br>
+
+      Basic List ${BASIC_SEASON || ""} :
+      ${basic}
+
+      <div class="tip-evolution ${dClass}">
+        Évolution :
+        ${deltaText(delta)}
+      </div>
+
+    </div>
+
+    ${detail}
+
+  `;
+
+}
+
+
+/* ============================================================
+   SOUS-TITRE
+   ============================================================ */
+
+function updateSubtitle(){
+
+  let text =
+    `Normal List FIS ${FIS_LIST}` +
+    ` · 10 nations de référence` +
+    ` · Slalom, Géant, Super-G et Descente`;
+
+
+  const formattedDate =
+    formatUpdateDate(UPDATED);
+
+
+  if(formattedDate){
+
+    text +=
+      ` · Mise à jour : ${formattedDate}`;
+
+  }
+
+
+  document
+    .getElementById("subtitle")
+    .textContent =
+      text;
+
+
+  document.title =
+    `Top 30 / 60 / 100 mondial – Normal List FIS ${FIS_LIST}`;
+
+}
+
+
+/* ============================================================
+   AFFICHAGE
+   ============================================================ */
+
+function render(){
+
+  const app =
+    document.getElementById("app");
+
+
+  app.innerHTML = "";
+
+
+  for(
+    const [sex,label,cls]
+    of [
+      ["M","HOMMES",""],
+      ["W","DAMES","w"]
+    ]
+  ){
+
+    const section =
+      document.createElement("section");
+
+
+    section.className =
+      "sex " + cls;
+
+
+    section.innerHTML =
+      `<h2>${label}</h2>
+       <div class="disc-grid"></div>`;
+
+
+    const grid =
+      section.querySelector(".disc-grid");
+
+
+    for(
+      const [disc,name]
+      of disciplines
+    ){
+
+      const nations =
+        nationsFor(
+          sex,
+          disc
+        );
+
+
+      const max =
+        Math.max(
+          1,
+          ...nations.map(
+            function(n){
+              return n.count;
+            }
+          )
+        );
+
+
+      const card =
+        document.createElement("article");
+
+
+      card.className =
+        "card";
+
+
+      let html =
+
+        `<h3>
+          ${name} (${disc})
+         </h3>
+
+         <div class="small">
+          Nombre d’athlètes dans le Top ${level}
+         </div>`;
+
+
+      for(const item of nations){
+
+        const width =
+          item.count
+            ?
+            Math.max(
+              9,
+              item.count / max * 100
+            )
+            :
+            0;
+
+
+        const dClass =
+          deltaClass(
+            item.delta
+          );
+
+
+        html += `
+
+          <div
+
+            class="
+              nation-row
+              ${item.nation==="FRA"?"fra":""}
+              ${item.count===0?"zero":""}
+            "
+
+            style="
+              --nation:${colorFor(item.nation)}
+            "
+
+            data-sex="${sex}"
+            data-disc="${disc}"
+            data-nation="${item.nation}"
+
+          >
+
+            <div class="nation">
+              ${item.nation}
+            </div>
+
+            <div class="track">
+
+              <div
+
+                class="bar"
+
+                style="
+                  width:${width}%;
+                  background:${colorFor(item.nation)}
+                "
+
+              ></div>
+
+            </div>
+
+            <div class="value">
+
+              <span class="count">
+                ${item.count}
+              </span>
+
+              <span class="delta ${dClass}">
+                ${deltaText(item.delta)}
+              </span>
+
+            </div>
+
+          </div>
+
+        `;
+
+      }
+
+
+      card.innerHTML =
+        html;
+
+
+      grid.appendChild(
+        card
+      );
+
+    }
+
+
+    app.appendChild(
+      section
+    );
+
+  }
+
+
+  const current =
+    ATHLETES.filter(
+      function(a){
+        return a.WorldRank <= level;
+      }
+    );
+
+
+  const fra =
+    current.filter(
+      function(a){
+        return a.Nation === "FRA";
+      }
+    );
+
+
+  const fraTotal =
+    fra.length;
+
+
+  const fraMen =
+    fra.filter(
+      function(a){
+        return a.Gender === "M";
+      }
+    ).length;
+
+
+  const fraWomen =
+    fra.filter(
+      function(a){
+        return a.Gender === "W";
+      }
+    ).length;
+
+
+  document
+    .getElementById("summary")
+    .innerHTML = `
+
+      <span class="badge">
+        🇫🇷 France : ${fraTotal} présences
+      </span>
+
+      <span class="badge">
+        Hommes : ${fraMen}
+      </span>
+
+      <span class="badge">
+        Dames : ${fraWomen}
+      </span>
+
+      ${
+        FIS_LIST
+          ?
+          `<span class="badge">
+             Liste FIS ${escapeHtml(FIS_LIST)}
+           </span>`
+          :
+          ""
+      }
+
+      ${
+        BASIC.length
+          ?
+          `<span class="badge">
+             Référence : Basic List ${BASIC_SEASON || ""}
+           </span>`
+          :
+          ""
+      }
+
+    `;
+
+
+  document
+    .querySelectorAll(
+      "button[data-level]"
+    )
+    .forEach(
+      function(button){
+
+        button.classList.toggle(
+          "active",
+          Number(button.dataset.level) === level
+        );
+
+      }
+    );
+
+
+  document
+    .getElementById("legendText")
+    .textContent =
+      `La longueur de la barre représente le nombre d’athlètes de la nation dans le Top ${level}.`;
+
+
+  bindTips();
+
+}
+
+
+/* ============================================================
+   POSITION INFOBULLE
+   ============================================================ */
+
+function positionTip(tip,e){
+
+  const gap = 14;
+  const margin = 8;
+
+
+  let left =
+    e.clientX + gap;
+
+
+  let top =
+    e.clientY + gap;
+
+
+  const rect =
+    tip.getBoundingClientRect();
+
+
+  if(
+    left + rect.width >
+    window.innerWidth - margin
+  ){
+
+    left =
+      e.clientX -
+      rect.width -
+      gap;
+
+  }
+
+
+  if(
+    top + rect.height >
+    window.innerHeight - margin
+  ){
+
+    top =
+      e.clientY -
+      rect.height -
+      gap;
+
+  }
+
+
+  tip.style.left =
+    Math.max(
+      margin,
+      left
+    ) + "px";
+
+
+  tip.style.top =
+    Math.max(
+      margin,
+      top
+    ) + "px";
+
+}
+
+
+/* ============================================================
+   INFOBULLES
+   ============================================================ */
+
+function bindTips(){
+
+  const tip =
+    document.getElementById("tip");
+
+
+  document
+    .querySelectorAll(".nation-row")
+    .forEach(
+      function(row){
+
+        row.onmousemove =
+          function(e){
+
+            tip.innerHTML =
+              tooltipHtml(
+                row.dataset.sex,
+                row.dataset.disc,
+                row.dataset.nation
+              );
+
+
+            tip.style.display =
+              "block";
+
+
+            positionTip(
+              tip,
+              e
+            );
+
+          };
+
+
+        row.onmouseleave =
+          function(){
+
+            tip.style.display =
+              "none";
+
+          };
+
+      }
+    );
+
+}
+
+
+/* ============================================================
+   ECRAN DE CHARGEMENT
+   ============================================================ */
+
+function hideLoadingOverlay(){
+  const overlay = document.getElementById("loadingOverlay");
+  if(!overlay) return;
+  overlay.style.display = "none";
+}
+
+/* ============================================================
+   CACHE V4
+   ============================================================ */
+
+function loadCache(){
+
+  try{
+
+    const stored =
+      localStorage.getItem(
+        CACHE_KEY
+      );
+
+
+    if(!stored){
+      return false;
+    }
+
+
+    const payload =
+      JSON.parse(stored);
+
+
+    if(
+      !payload ||
+      !Array.isArray(payload.athletes)
+    ){
+
+      return false;
+
+    }
+
+
+    const cachedAthletes =
+      normalizeAthletes(
+        payload.athletes
+      );
+
+
+    if(!cachedAthletes.length){
+      return false;
+    }
+
+
+    ATHLETES =
+      cachedAthletes;
+
+
+    BASIC =
+      normalizeBasic(
+        payload.basic
+      );
+
+
+    BASIC_SEASON =
+      Number(
+        payload.basicSeason
+      ) || null;
+
+
+    FIS_LIST =
+      String(
+        payload.list ||
+        ATHLETES[0]?.Liste_FIS ||
+        ""
+      );
+
+
+    UPDATED =
+      String(
+        payload.updated ||
+        ""
+      );
+
+
+    rebuildGroups();
+    rebuildBasicMap();
+    updateSubtitle();
+    render();
+    hideLoadingOverlay();
+
+
+    return true;
+
+
+  }catch(error){
+
+    console.warn(
+      "Cache FIS v4 inutilisable",
+      error
+    );
+
+
+    return false;
+
+  }
+
+}
+
+
+/* ============================================================
+   SAUVEGARDE CACHE
+   ============================================================ */
+
+function saveCache(payload){
+
+  try{
+
+    localStorage.setItem(
+      CACHE_KEY,
+      JSON.stringify(payload)
+    );
+
+  }catch(error){
+
+    console.warn(
+      "Impossible d'enregistrer le cache FIS",
+      error
+    );
+
+  }
+
+}
+
+
+/* ============================================================
+   APPLICATION DU JSON
+   ============================================================ */
+
+function applyPayload(payload){
+
+  if(
+    !payload ||
+    !Array.isArray(payload.athletes)
+  ){
+
+    throw new Error(
+      "Format JSON inattendu : athletes absent."
+    );
+
+  }
+
+
+  const newAthletes =
+    normalizeAthletes(
+      payload.athletes
+    );
+
+
+  if(!newAthletes.length){
+
+    throw new Error(
+      "Aucune donnée athlète valide."
+    );
+
+  }
+
+
+  const newBasic =
+    normalizeBasic(
+      payload.basic
+    );
+
+
+  if(!newBasic.length){
+
+    throw new Error(
+      "Basic List absente du JSON."
+    );
+
+  }
+
+
+  ATHLETES =
+    newAthletes;
+
+
+  BASIC =
+    newBasic;
+
+
+  BASIC_SEASON =
+    Number(
+      payload.basicSeason
+    ) || null;
+
+
+  FIS_LIST =
+    String(
+      payload.list ||
+      ATHLETES[0]?.Liste_FIS ||
+      ""
+    );
+
+
+  UPDATED =
+    String(
+      payload.updated ||
+      ""
+    );
+
+
+  rebuildGroups();
+  rebuildBasicMap();
+  updateSubtitle();
+  render();
+  hideLoadingOverlay();
+
+}
+
+
+/* ============================================================
+   SERVEUR
+   ============================================================ */
+
+async function refreshFromServer(hasCache){
+
+  try{
+
+    const separator =
+      DATA_URL.includes("?")
+        ? "&"
+        : "?";
+
+
+    const url =
+      DATA_URL +
+      separator +
+      "_=" +
+      Date.now();
+
+
+    const response =
+      await fetch(
+        url,
+        {
+          cache:"no-store"
+        }
+      );
+
+
+    if(!response.ok){
+
+      throw new Error(
+        `HTTP ${response.status}`
+      );
+
+    }
+
+
+    const payload =
+      await response.json();
+
+
+    if(payload.error){
+
+      throw new Error(
+        payload.error
+      );
+
+    }
+
+
+    if(
+      !Array.isArray(payload.athletes)
+    ){
+
+      throw new Error(
+        "Format JSON inattendu : athletes absent."
+      );
+
+    }
+
+
+    if(
+      !Array.isArray(payload.basic) ||
+      payload.basic.length === 0
+    ){
+
+      throw new Error(
+        "Le Web App ne renvoie aucune donnée Basic List."
+      );
+
+    }
+
+
+    applyPayload(
+      payload
+    );
+
+
+    saveCache(
+      payload
+    );
+
+
+  }catch(error){
+
+    console.warn(
+      "Vérification FIS impossible :",
+      error
+    );
+
+
+    if(hasCache){
+      return;
+    }
+
+
+    hideLoadingOverlay();
+
+
+    document
+      .getElementById("subtitle")
+      .textContent =
+        "Impossible de charger les données FIS.";
+
+
+    document
+      .getElementById("app")
+      .innerHTML = `
+
+        <div class="status error">
+
+          Erreur de chargement des données FIS.
+
+          <br><br>
+
+          <small>
+            ${escapeHtml(error.message)}
+          </small>
+
+        </div>
+
+      `;
+
+  }
+
+}
+
+
+/* ============================================================
+   BOUTONS
+   ============================================================ */
+
+document
+  .querySelectorAll(
+    "button[data-level]"
+  )
+  .forEach(
+    function(button){
+
+      button.onclick =
+        function(){
+
+          level =
+            Number(
+              button.dataset.level
+            );
+
+
+          if(ATHLETES.length){
+            render();
+          }
+
+        };
+
+    }
+  );
+
+
+/* ============================================================
+   DEMARRAGE
+   ============================================================ */
+
+const hasCache =
+  loadCache();
+
+
+if(!hasCache){
+
+  document
+    .getElementById("subtitle")
+    .textContent =
+      "Chargement de la Normal List et de la Basic List FIS…";
+
+}
+
+
+refreshFromServer(
+  hasCache
+);
+
+</script>
+
 </body>
 </html>
