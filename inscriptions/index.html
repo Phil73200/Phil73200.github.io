@@ -19,6 +19,8 @@ h1{font-size:30px;margin:24px 0 18px;color:#003f78}
 .card::after{content:'↗';position:absolute;right:14px;top:22px;color:#c01825;font-weight:800}
 .card h2{margin:0 0 10px;font-size:21px;color:#c01825}
 .card p{margin:0;font-size:16px;line-height:1.5;color:#000}
+.card.webffs{border-left-color:#00549f}
+.card.webffs h2,.card.webffs::after{color:#00549f}
 a:focus-visible{outline:3px solid #00549f;outline-offset:3px}
 footer{text-align:center;font-size:13px;color:#667085;padding:20px}
 @media(max-width:700px){main{margin:16px auto;padding:0 12px 24px}h1{font-size:26px;margin:20px 0 14px}.grid{grid-template-columns:1fr;gap:12px}.card{padding:20px 34px 20px 16px}.card h2{font-size:19px}.card p{font-size:15px}}
@@ -35,10 +37,10 @@ footer{text-align:center;font-size:13px;color:#667085;padding:20px}
 <h1>Inscriptions FIS</h1>
 <div class="grid">
 <a class="card" href="https://www.inscriptions-fis-etranger.fr/" target="_blank" rel="noopener noreferrer">
-<h2>Inscriptions FIS à l’étranger</h2><p>Courses FIS hors de France.</p>
+<h2><span aria-hidden="true">🌍</span> Inscriptions FIS à l’étranger</h2><p>Courses hors de France (FIS, NJR, NJC, NC, FCL, UNI…).</p>
 </a>
-<a class="card" href="https://inscription.ffs.fr/public/index.php?page=login" target="_blank" rel="noopener noreferrer">
-<h2>Inscriptions WebFFS</h2><p>Circuit FIS France.</p>
+<a class="card webffs" href="https://inscription.ffs.fr/public/index.php?page=login" target="_blank" rel="noopener noreferrer">
+<h2><span aria-hidden="true">🇫🇷</span> Inscriptions WebFFS</h2><p>Circuit FIS France.</p>
 </a>
 </div>
 </main>
