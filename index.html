@@ -25,10 +25,13 @@ body{
   background:linear-gradient(180deg,#edf3f8 0%,#f8fafc 100%);
 }
 .site-header{background:var(--blue);color:#fff;position:relative;z-index:100}
-.site-header-inner{max-width:1100px;margin:auto;padding:16px 24px;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:10px 16px}
+.site-header-inner{max-width:1100px;margin:auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.site-heading{min-width:0}
+.site-title-row{display:flex;align-items:center;gap:20px;flex-wrap:nowrap}
+.site-heading p{margin:6px 0 0;font-size:14px;line-height:1.4;color:#e0ecf7}
 .site-brand{color:#fff;text-decoration:none;display:block}
 .site-brand h1{margin:0;font-size:30px;line-height:1.15;font-weight:800;letter-spacing:-.025em}
-.site-brand p{margin:6px 0 0;font-size:14px;line-height:1.4;color:#e0ecf7}
+.site-brand h1{white-space:nowrap}
 .menu-button{width:44px;height:44px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;background:rgba(0,0,0,.14);border:1px solid rgba(255,255,255,.25);border-radius:10px;cursor:pointer;color:#fff;flex:none}
 .menu-button span{display:block;width:20px;height:2px;background:currentColor;border-radius:2px}
 .menu-button:focus-visible,.site-nav a:focus-visible{outline:3px solid #fff;outline-offset:3px}
@@ -36,20 +39,30 @@ body{
 .site-nav{position:absolute;right:max(24px,calc((100% - 1052px)/2));top:calc(100% - 4px);width:min(320px,calc(100% - 24px));padding:8px;background:#fff;border:1px solid #dce3eb;border-radius:12px;box-shadow:0 12px 30px #003f7833;z-index:110}
 .site-nav a{display:block;padding:12px;color:var(--blue-dark);text-decoration:none;border-radius:6px;font-size:15px;font-weight:600}
 .site-nav a:hover,.site-nav a:focus-visible{background:#eef4fa;outline-color:var(--blue)}
-.header-partners{grid-column:1/-1;display:flex;align-items:center;gap:12px;height:26px}
+.header-partners{display:flex;align-items:center;gap:12px;height:26px;flex:none}
 .header-partners svg{display:block;flex:none;height:24px;width:auto}
 .header-partners .partner-ffs{height:26px}
 @media(max-width:700px){
- .site-header-inner{padding:16px}
- .site-brand h1{font-size:25px}
- .site-brand p{font-size:12px;margin-top:4px}
+ .site-header-inner{padding:14px 12px;gap:10px}
+ .site-title-row{gap:8px}
+ .site-brand h1{font-size:22px}
+ .site-heading p{font-size:12px;margin-top:4px}
+ .menu-button{width:36px;height:36px}
  .site-nav{right:12px}
  .tricolor{height:3px}
- .header-partners{gap:10px;height:24px}
- .header-partners svg{height:20px}
- .header-partners .partner-ffs{height:24px}
+ .header-partners{gap:4px;height:20px}
+ .header-partners svg{height:14px}
+ .header-partners .partner-ffs{height:20px}
 }
 
+@media(max-width:360px){
+ .site-header-inner{padding:12px 10px;gap:8px}
+ .site-title-row{gap:6px}
+ .site-brand h1{font-size:18px}
+ .header-partners{gap:3px;height:16px}
+ .header-partners svg{height:10px}
+ .header-partners .partner-ffs{height:16px}
+}
 .tricolor{
   height:5px;
   background:linear-gradient(90deg,#0055a4 0 33.333%,#fff 33.333% 66.666%,#ef4135 66.666% 100%);
@@ -199,18 +212,19 @@ footer{text-align:center;padding:16px 20px 26px;font-size:13px;color:var(--muted
 
 <header class="site-header">
   <div class="site-header-inner">
-    <a class="site-brand" href="/" aria-label="Infos FIS — accueil">
-      <h1>Infos FIS 🇫🇷</h1>
-      <p>Circuits, calendriers &amp; outils</p>
-    </a>
-    <button class="menu-button" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
+    <div class="site-heading">
+      <div class="site-title-row">
+        <a class="site-brand" href="/" aria-label="Infos FIS — accueil"><h1>Infos FIS 🇫🇷</h1></a>
     <div class="header-partners" aria-label="Fédération et partenaires">
-      <svg class="partner-fis" xmlns="http://www.w3.org/2000/svg" viewBox="20 74 80 80" width="24" height="24" role="img" aria-label="FIS"><title>FIS</title><image href="images/bandeau infosFIS.png?v=6" width="1536" height="242"/></svg>
       <svg class="partner-ffs" xmlns="http://www.w3.org/2000/svg" viewBox="123 32 172 172" width="26" height="26" role="img" aria-label="Fédération Française de Ski"><title>Fédération Française de Ski</title><image href="images/bandeau infosFIS.png?v=6" width="1536" height="242"/></svg>
       <svg class="partner-chrono" xmlns="http://www.w3.org/2000/svg" viewBox="1195 37 124 63" width="47" height="24" role="img" aria-label="Ski Chrono"><title>Ski Chrono</title><image href="images/bandeau infosFIS.png?v=6" width="1536" height="242"/></svg>
       <svg class="partner-samse" xmlns="http://www.w3.org/2000/svg" viewBox="1364 39 137 56" width="59" height="24" role="img" aria-label="SAMSE"><title>SAMSE</title><image href="images/bandeau infosFIS.png?v=6" width="1536" height="242"/></svg>
       <svg class="partner-caisse" xmlns="http://www.w3.org/2000/svg" viewBox="1321 123 170 58" width="70" height="24" role="img" aria-label="Caisse d’Épargne Rhône Alpes"><title>Caisse d’Épargne Rhône Alpes</title><image href="images/bandeau infosFIS.png?v=6" width="1536" height="242"/></svg>
     </div>
+      </div>
+      <p>Circuits, calendriers &amp; outils</p>
+    </div>
+    <button class="menu-button" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
   </div>
   <nav class="site-nav" id="site-nav" aria-label="Rubriques du site" hidden>
     <a href="https://fis-cal.fr/" target="_blank" rel="noopener noreferrer">Calendrier France 2027 ↗</a>
