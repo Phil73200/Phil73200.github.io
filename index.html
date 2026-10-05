@@ -109,6 +109,7 @@ main{max-width:1100px;margin:30px auto;padding:0 24px 52px}
 .card:hover{transform:translateY(-3px);box-shadow:0 12px 24px rgba(22,51,80,.12)}
 .card strong{display:block;color:var(--accent);font-size:18px;line-height:1.25;margin-bottom:9px}
 .card span{font-size:14.5px;line-height:1.45;color:#5d6980}
+.card .description-mobile{display:none}
 .card.external::after{
   content:"↗";
   position:absolute;
@@ -165,9 +166,33 @@ footer{text-align:center;padding:16px 20px 26px;font-size:13px;color:var(--muted
   .hero-qr img{width:70px;height:70px}
   .hero-qr p{font-size:8px}
   .partner-mask{width:36%}
-  main{margin-top:22px;padding:0 14px 36px}
-  .grid{grid-template-columns:1fr}
-  .card{min-height:128px}.card.has-media{min-height:205px}.card.has-media .card-media,}
+  main{margin:16px auto 0;padding:0 12px 20px}
+  .section-title{font-size:19px;margin-bottom:12px}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .card,.card.has-media{
+    min-height:0;
+    padding:13px 12px;
+    background:#fff;
+    border:1px solid #dce3eb;
+    border-left:3px solid var(--accent);
+    border-radius:6px;
+    box-shadow:none;
+  }
+  .card.has-media .card-media{display:none}
+  .card strong,.card.has-media strong{
+    font-size:15px;
+    line-height:1.3;
+    margin-bottom:7px;
+    overflow-wrap:anywhere;
+  }
+  .card.external strong{padding-right:12px}
+  .card span{display:block;font-size:12px;line-height:1.4;color:#667085}
+  .card .description-desktop{display:none}
+  .card .description-mobile{display:block}
+  .card.external::after{right:7px;top:12px;font-size:15px}
+  .card:hover{transform:none;box-shadow:none}
+  footer{padding:14px 12px 18px;font-size:12px}
+}
 @media(max-width:430px){
   .hero-qr{display:none}
   .partner-mask{width:0}
@@ -202,25 +227,29 @@ footer{text-align:center;padding:16px 20px 26px;font-size:13px;color:var(--muted
     <a class="card calendar external has-media" href="https://www.fis-ski.com/DB/general/calendar-results.html?eventselection=&amp;place=&amp;sectorcode=AL&amp;seasoncode=2027&amp;categorycode=&amp;disciplinecode=&amp;gendercode=&amp;racedate=&amp;racecodex=&amp;nationcode=fra,mon,mar,&amp;seasonmonth=X-2027&amp;saveselection=-1&amp;seasonselection=" target="_blank" rel="noopener noreferrer">
       <div class="card-media"><img src="images/tuile-calendrier-fis.png" alt="Aperçu du calendrier fis-ski.com France hommes et dames" style="object-position:center 35%"></div>
       <strong>fis-ski.com → France 🇫🇷 H + D</strong>
-      <span>Consulter le calendrier FIS des courses en France, hommes et dames.</span>
+      <span class="description-desktop">Consulter le calendrier FIS des courses en France, hommes et dames.</span>
+      <span class="description-mobile">Calendrier FIS — site officiel.</span>
     </a>
 
     <a class="card calendar external has-media" href="https://fis-cal.fr/" target="_blank" rel="noopener noreferrer">
       <div class="card-media"><img src="images/tuile-calendrier-france.png" alt="Aperçu du calendrier FISCal dames et hommes"></div>
       <strong>Calendrier France 2027</strong>
-      <span>Consulter les calendriers sur FISCal — connexion à un compte requise.</span>
+      <span class="description-desktop">Consulter les calendriers sur FISCal — connexion à un compte requise.</span>
+      <span class="description-mobile">Calendriers FISCal — compte requis.</span>
     </a>
 
     <a class="card foreign external has-media" href="https://www.inscriptions-fis-etranger.fr/" target="_blank" rel="noopener noreferrer">
       <div class="card-media"><img src="images/tuile-inscriptions-etranger.png" alt="Aperçu du site des inscriptions aux courses FIS à l’étranger"></div>
       <strong>Inscriptions à l’étranger</strong>
-      <span>Accéder au site des inscriptions aux courses FIS à l’étranger.</span>
+      <span class="description-desktop">Accéder au site des inscriptions aux courses FIS à l’étranger.</span>
+      <span class="description-mobile">Courses FIS hors de France.</span>
     </a>
 
     <a class="card chrono has-media" href="/classements/ski-chrono/">
       <div class="card-media"><img src="images/tuile-ski-chrono-hd.png?v=2" alt=""></div>
       <strong>Classements Ski Chrono</strong>
-      <span>Saisons 2026 et 2027 — classements en PDF.</span>
+      <span class="description-desktop">Saisons 2026 et 2027 — classements en PDF.</span>
+      <span class="description-mobile">Classements 2026 et 2027 — PDF.</span>
     </a>
 
     <a class="card rules has-media" href="/reglements/">
@@ -228,25 +257,29 @@ footer{text-align:center;padding:16px 20px 26px;font-size:13px;color:var(--muted
         <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Collection_of_colorful_binders_on_a_shelf_for_storing_documents_in_an_office_setting.jpg/1280px-Collection_of_colorful_binders_on_a_shelf_for_storing_documents_in_an_office_setting.jpg" alt="">
       </div>
       <strong>Règlements</strong>
-      <span>Consulter les quotas FIS, les règlements des Championnats de France et les modalités de sélection.</span>
+      <span class="description-desktop">Consulter les quotas FIS, les règlements des Championnats de France et les modalités de sélection.</span>
+      <span class="description-mobile">Quotas, championnats et sélections.</span>
     </a>
 
     <a class="card continental has-media" href="/analyses/continental-cups.html">
       <div class="card-media"><img src="images/tuile-fis-continental.png?v=3" alt=""></div>
       <strong>Coupes continentales</strong>
-      <span>Analyse 2026 et simulations en cours.</span>
+      <span class="description-desktop">Analyse 2026 et simulations en cours.</span>
+      <span class="description-mobile">Analyses et simulations 2026.</span>
     </a>
 
     <a class="card data has-media" href="/data-statistiques/">
       <div class="card-media"><img src="images/tuile-data-statistiques-hd.png?v=2" alt=""></div>
       <strong>Data et statistiques</strong>
-      <span>Tableaux Google Sheets connectés à la base de données FIS. Synchronisation quotidienne à 16 h.</span>
+      <span class="description-desktop">Tableaux Google Sheets connectés à la base de données FIS. Synchronisation quotidienne à 16 h.</span>
+      <span class="description-mobile">Données FIS — mise à jour à 16 h.</span>
     </a>
 
     <a class="card meetings has-media" href="/commissions/geneve-oct-2026/">
       <div class="card-media"><img src="images/tuile-reunions-fis-hd.png?v=2" alt=""></div>
       <strong>Réunions techniques FIS</strong>
-      <span>Genève • Octobre 2026 — synthèse et comptes rendus.</span>
+      <span class="description-desktop">Genève • Octobre 2026 — synthèse et comptes rendus.</span>
+      <span class="description-mobile">Genève 2026 — comptes rendus.</span>
     </a>
   </div>
 </main>
