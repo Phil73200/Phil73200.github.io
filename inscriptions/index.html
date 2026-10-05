@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Inscriptions FIS — Info Circuits FIS</title>
+<link rel="icon" href="/images/icon-192.png">
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:#1f2937;background:#f4f7fb}
+.hero{position:relative;overflow:hidden;background:#00549f}
+.hero img{display:block;width:100%;height:auto}
+.tricolor{height:5px;background:linear-gradient(90deg,#0055a4 0 33.333%,#fff 33.333% 66.666%,#ef4135 66.666%)}
+main{max-width:1000px;margin:26px auto;padding:0 24px 40px}
+.back{display:inline-block;padding:10px 14px;color:#003f78;text-decoration:none;border:1px solid #ccd7e3;border-radius:6px;background:#fff;font-weight:700}
+h1{font-size:30px;margin:24px 0 18px;color:#003f78}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.card{display:block;position:relative;padding:24px 34px 24px 20px;background:#fff;border:1px solid #dce3eb;border-left:4px solid #c01825;border-radius:8px;text-decoration:none;color:#1f2937}
+.card::after{content:'↗';position:absolute;right:14px;top:22px;color:#c01825;font-weight:800}
+.card h2{margin:0 0 10px;font-size:21px;color:#c01825}
+.card p{margin:0;font-size:16px;line-height:1.5;color:#000}
+a:focus-visible{outline:3px solid #00549f;outline-offset:3px}
+footer{text-align:center;font-size:13px;color:#667085;padding:20px}
+@media(max-width:700px){main{margin:16px auto;padding:0 12px 24px}h1{font-size:26px;margin:20px 0 14px}.grid{grid-template-columns:1fr;gap:12px}.card{padding:20px 34px 20px 16px}.card h2{font-size:19px}.card p{font-size:15px}}
+</style>
+</head>
+<body>
+<header class="hero"><img src="/images/bandeau infosFIS.png?v=6" alt="Info Circuits FIS"></header>
+<div class="tricolor" aria-hidden="true"></div>
+<main>
+<a class="back" href="/">← Accueil</a>
+<h1>Inscriptions FIS</h1>
+<div class="grid">
+<a class="card" href="https://www.inscriptions-fis-etranger.fr/" target="_blank" rel="noopener noreferrer">
+<h2>Inscriptions FIS à l’étranger</h2><p>Courses FIS hors de France.</p>
+</a>
+<a class="card" href="https://inscription.ffs.fr/public/index.php?page=login" target="_blank" rel="noopener noreferrer">
+<h2>Inscriptions WebFFS</h2><p>Circuit FIS France.</p>
+</a>
+</div>
+</main>
+<footer>Info Circuits FIS • Fédération Française de Ski</footer>
+</body>
+</html>

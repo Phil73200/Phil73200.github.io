@@ -204,6 +204,35 @@ footer{text-align:center;padding:16px 20px 26px;font-size:13px;color:var(--muted
 @media (max-width: 768px) {
   .section-title { width: 100%; text-align: center; }
 }
+
+.upcoming-races[hidden]{display:none}
+.upcoming-races{max-width:1052px;margin:18px auto 0;padding:16px 18px;background:#fff;border:1px solid #dce3eb;border-left:4px solid var(--blue);border-radius:8px}
+.race-heading{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:12px}
+.race-heading h2{margin:0;font-size:18px;color:var(--blue-dark)}
+.race-heading span{font-size:13px;color:#334155}
+.race-tabs{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap}
+.race-tabs button{font:inherit;font-size:14px;font-weight:700;border:1px solid #ccd7e3;background:#fff;color:#003f78;padding:8px 12px;border-radius:5px;cursor:pointer}
+.race-tabs button[aria-pressed="true"]{background:#003f78;color:#fff;border-color:#003f78}
+.race-tabs button:disabled{opacity:.45;cursor:default}
+.race-tabs button:focus-visible{outline:3px solid #c99400;outline-offset:2px}
+.race-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.race-item{display:flex;align-items:center;gap:14px;padding:12px;background:#f3f7fb;border-radius:5px;text-decoration:none;color:#172b42}
+.race-date{flex:0 0 105px;font-size:15px;font-weight:800;color:var(--blue-dark)}
+.race-item strong{display:block;font-size:17px}
+.race-category{font-size:.85em;color:#c01825}
+.race-details{display:block;margin-top:4px;font-size:14px;color:#000}
+.race-item>span:last-child{margin-left:auto;color:var(--blue);font-weight:800}
+@media(max-width:1100px){.upcoming-races{margin-left:24px;margin-right:24px}}
+@media(max-width:700px){
+ .upcoming-races{margin:12px 12px 0;padding:13px 12px}
+ .race-heading{display:block}
+ .race-heading span{display:block;margin-top:4px}
+ .race-list{grid-template-columns:1fr;gap:8px}
+ .race-item{gap:10px;padding:10px}
+ .race-date{flex-basis:92px;font-size:14px}
+ .race-item strong{font-size:16px}
+ .race-details{font-size:13px}
+}
 </style>
 </head>
 <body>
@@ -221,6 +250,16 @@ footer{text-align:center;padding:16px 20px 26px;font-size:13px;color:var(--muted
 </header>
 
 <div class="tricolor" aria-hidden="true"></div>
+
+<section id="upcoming-races" class="upcoming-races" aria-labelledby="race-heading" hidden>
+  <div class="race-heading"><h2 id="race-heading">Prochaine course à suivre</h2><span>Calendrier officiel FIS</span></div>
+  <div class="race-tabs" role="group" aria-label="Choisir un circuit">
+    <button type="button" data-circuit="france" aria-pressed="true">France</button>
+    <button type="button" data-circuit="ec" aria-pressed="false">Coupe d’Europe</button>
+    <button type="button" data-circuit="wc" aria-pressed="false">Coupe du monde</button>
+  </div>
+  <div class="race-list" aria-live="polite"></div>
+</section>
 
 <main>
   <h2 class="section-title">Informations &amp; outils</h2>
@@ -240,11 +279,11 @@ footer{text-align:center;padding:16px 20px 26px;font-size:13px;color:var(--muted
       <span class="description-mobile">Calendriers FISCal — compte requis.</span>
     </a>
 
-    <a class="card foreign external has-media" href="https://www.inscriptions-fis-etranger.fr/" target="_blank" rel="noopener noreferrer">
+    <a class="card foreign has-media" href="/inscriptions/">
       <div class="card-media"><img src="images/tuile-inscriptions-etranger.png" alt="Aperçu du site des inscriptions aux courses FIS à l’étranger"></div>
-      <strong>Inscriptions à l’étranger</strong>
-      <span class="description-desktop">Accéder au site des inscriptions aux courses FIS à l’étranger.</span>
-      <span class="description-mobile">Courses FIS hors de France.</span>
+      <strong>Inscriptions FIS</strong>
+      <span class="description-desktop">Inscriptions à l’étranger et WebFFS pour le circuit FIS France.</span>
+      <span class="description-mobile">Étranger et circuit FIS France.</span>
     </a>
 
     <a class="card chrono has-media" href="/classements/ski-chrono/">
@@ -287,5 +326,6 @@ footer{text-align:center;padding:16px 20px 26px;font-size:13px;color:var(--muted
 </main>
 
 <footer>Info Circuits FIS • Fédération Française de Ski<br><span style="font-size:10px;opacity:.6">Photo Règlements : Nenad Stojković / Wikimedia Commons / CC BY 2.0</span></footer>
+<script src="assets/fis-banner.js" defer></script>
 </body>
 </html>

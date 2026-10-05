@@ -1,0 +1,3296 @@
+{
+  "updatedAt": "2026-10-05T09:52:07.705121+02:00",
+  "calendars": {
+    "france": {
+      "source": "https://www.fis-ski.com/DB/services/public/icalendar-feed-fis-events.html?seasoncode=2027&sectorcode=AL&nationcode=FRA",
+      "races": [
+        {
+          "date": "2026-11-23",
+          "place": "Amneville",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "ENL",
+          "categoryName": "Entry League FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134437"
+        },
+        {
+          "date": "2026-11-23",
+          "place": "Amneville",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "ENL",
+          "categoryName": "Entry League FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134436"
+        },
+        {
+          "date": "2026-11-24",
+          "place": "Amneville",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "ENL",
+          "categoryName": "Entry League FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134438"
+        },
+        {
+          "date": "2026-11-24",
+          "place": "Amneville",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "ENL",
+          "categoryName": "Entry League FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134439"
+        },
+        {
+          "date": "2026-11-28",
+          "place": "Bonneval S/Arc",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134441"
+        },
+        {
+          "date": "2026-11-28",
+          "place": "Bonneval S/Arc",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "NJR",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134442"
+        },
+        {
+          "date": "2026-11-28",
+          "place": "Bonneval S/Arc",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134440"
+        },
+        {
+          "date": "2026-11-29",
+          "place": "Bonneval S/Arc",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134444"
+        },
+        {
+          "date": "2026-11-29",
+          "place": "Bonneval S/Arc",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "NJR",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134445"
+        },
+        {
+          "date": "2026-11-29",
+          "place": "Bonneval S/Arc",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134443"
+        },
+        {
+          "date": "2026-12-05",
+          "place": "Val Cenis",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134446"
+        },
+        {
+          "date": "2026-12-06",
+          "place": "Val Cenis",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "NC",
+          "categoryName": "National Championships",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=135602"
+        },
+        {
+          "date": "2026-12-07",
+          "place": "Tignes",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "NC",
+          "categoryName": "National Championships",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=135230"
+        },
+        {
+          "date": "2026-12-08",
+          "place": "Tignes",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134449"
+        },
+        {
+          "date": "2026-12-09",
+          "place": "Tignes",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "NC",
+          "categoryName": "National Championships",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=135231"
+        },
+        {
+          "date": "2026-12-10",
+          "place": "Tignes",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134451"
+        },
+        {
+          "date": "2026-12-12",
+          "place": "Val d'Isere",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131706"
+        },
+        {
+          "date": "2026-12-13",
+          "place": "Val d'Isere",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131707"
+        },
+        {
+          "date": "2026-12-14",
+          "place": "Puy Saint Vincent",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134456"
+        },
+        {
+          "date": "2026-12-14",
+          "place": "Valloire",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131759"
+        },
+        {
+          "date": "2026-12-15",
+          "place": "Isola 2000 - Auron",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "NJR",
+          "categoryName": "National Junior Race",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134458"
+        },
+        {
+          "date": "2026-12-15",
+          "place": "Puy Saint Vincent",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134457"
+        },
+        {
+          "date": "2026-12-15",
+          "place": "Valloire",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131760"
+        },
+        {
+          "date": "2026-12-16",
+          "place": "Isola 2000 - Auron",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "NJR",
+          "categoryName": "National Junior Race",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134459"
+        },
+        {
+          "date": "2026-12-17",
+          "place": "Isola 2000 - Auron",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "NJR",
+          "categoryName": "National Junior Race",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134460"
+        },
+        {
+          "date": "2026-12-17",
+          "place": "Les Saisies",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "NC",
+          "categoryName": "National Championships",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=135036"
+        },
+        {
+          "date": "2026-12-18",
+          "place": "Isola 2000 - Auron",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "NJR",
+          "categoryName": "National Junior Race",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134461"
+        },
+        {
+          "date": "2026-12-18",
+          "place": "Les Saisies",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134463"
+        },
+        {
+          "date": "2026-12-21",
+          "place": "Valmeinier",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134464"
+        },
+        {
+          "date": "2026-12-22",
+          "place": "Courchevel",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131607"
+        },
+        {
+          "date": "2026-12-22",
+          "place": "Valmeinier",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134465"
+        },
+        {
+          "date": "2026-12-28",
+          "place": "Courchevel-Meribel",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "NC",
+          "categoryName": "National Championships",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=135636"
+        },
+        {
+          "date": "2026-12-28",
+          "place": "Courchevel-Meribel",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "NC",
+          "categoryName": "National Championships",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=135635"
+        },
+        {
+          "date": "2026-12-29",
+          "place": "Courchevel-Meribel",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "NC",
+          "categoryName": "National Championships",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=135637"
+        },
+        {
+          "date": "2026-12-29",
+          "place": "Courchevel-Meribel",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "NC",
+          "categoryName": "National Championships",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=135638"
+        },
+        {
+          "date": "2027-01-05",
+          "place": "Val Cenis",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131815"
+        },
+        {
+          "date": "2027-01-05",
+          "place": "Vars",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134470"
+        },
+        {
+          "date": "2027-01-06",
+          "place": "Val Cenis",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131816"
+        },
+        {
+          "date": "2027-01-06",
+          "place": "Vars",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134471"
+        },
+        {
+          "date": "2027-01-07",
+          "place": "Chamonix",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134473"
+        },
+        {
+          "date": "2027-01-08",
+          "place": "Chamonix",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134472"
+        },
+        {
+          "date": "2027-01-09",
+          "place": "Meribel",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134474"
+        },
+        {
+          "date": "2027-01-10",
+          "place": "Meribel",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134475"
+        },
+        {
+          "date": "2027-01-11",
+          "place": "Val d'Isere",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134476"
+        },
+        {
+          "date": "2027-01-12",
+          "place": "Val d'Isere",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134477"
+        },
+        {
+          "date": "2027-01-13",
+          "place": "Vars",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134478"
+        },
+        {
+          "date": "2027-01-14",
+          "place": "Font Romeu Pyrénées 2000",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134481"
+        },
+        {
+          "date": "2027-01-14",
+          "place": "Font Romeu Pyrénées 2000",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134480"
+        },
+        {
+          "date": "2027-01-14",
+          "place": "Vars",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134479"
+        },
+        {
+          "date": "2027-01-15",
+          "place": "Font Romeu Pyrénées 2000",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134484"
+        },
+        {
+          "date": "2027-01-15",
+          "place": "Font Romeu Pyrénées 2000",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134482"
+        },
+        {
+          "date": "2027-01-16",
+          "place": "Font Romeu Pyrénées 2000",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134485"
+        },
+        {
+          "date": "2027-01-16",
+          "place": "Font Romeu Pyrénées 2000",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134486"
+        },
+        {
+          "date": "2027-01-17",
+          "place": "Font Romeu Pyrénées 2000",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134487"
+        },
+        {
+          "date": "2027-01-17",
+          "place": "Font Romeu Pyrénées 2000",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134488"
+        },
+        {
+          "date": "2027-01-18",
+          "place": "Chatel",
+          "gender": "Women",
+          "discipline": "Super G",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134489"
+        },
+        {
+          "date": "2027-01-18",
+          "place": "Chatel",
+          "gender": "Women",
+          "discipline": "Super G",
+          "category": "CIT",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134490"
+        },
+        {
+          "date": "2027-01-19",
+          "place": "Chatel",
+          "gender": "Women",
+          "discipline": "Super G",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134491"
+        },
+        {
+          "date": "2027-01-19",
+          "place": "Chatel",
+          "gender": "Women",
+          "discipline": "Super G",
+          "category": "CIT",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134492"
+        },
+        {
+          "date": "2027-01-19",
+          "place": "Serre Chevalier-Montgenevre",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134497"
+        },
+        {
+          "date": "2027-01-20",
+          "place": "Serre Chevalier-Montgenevre",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134494"
+        },
+        {
+          "date": "2027-01-21",
+          "place": "Serre Chevalier-Montgenevre",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134493"
+        },
+        {
+          "date": "2027-01-22",
+          "place": "Serre Chevalier-Montgenevre",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134498"
+        },
+        {
+          "date": "2027-01-24",
+          "place": "La Plagne",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "CIT",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134504"
+        },
+        {
+          "date": "2027-01-24",
+          "place": "La Plagne",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134503"
+        },
+        {
+          "date": "2027-01-25",
+          "place": "La Plagne",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "CIT",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134506"
+        },
+        {
+          "date": "2027-01-25",
+          "place": "La Plagne",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134505"
+        },
+        {
+          "date": "2027-01-25",
+          "place": "Orcieres Merlette",
+          "gender": "Men",
+          "discipline": "Downhill Training Training",
+          "category": "TRA",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131772"
+        },
+        {
+          "date": "2027-01-26",
+          "place": "Orcieres Merlette",
+          "gender": "Men",
+          "discipline": "Downhill Training Training",
+          "category": "TRA",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131773"
+        },
+        {
+          "date": "2027-01-26",
+          "place": "Vaujany",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134507"
+        },
+        {
+          "date": "2027-01-27",
+          "place": "Orcieres Merlette",
+          "gender": "Men",
+          "discipline": "Downhill",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131774"
+        },
+        {
+          "date": "2027-01-27",
+          "place": "Vaujany",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134509"
+        },
+        {
+          "date": "2027-01-28",
+          "place": "Orcieres Merlette",
+          "gender": "Men",
+          "discipline": "Downhill",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131775"
+        },
+        {
+          "date": "2027-01-29",
+          "place": "Orcieres Merlette",
+          "gender": "Men",
+          "discipline": "Super G",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131776"
+        },
+        {
+          "date": "2027-01-29",
+          "place": "Pra Loup",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134510"
+        },
+        {
+          "date": "2027-01-30",
+          "place": "Chamonix",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131734"
+        },
+        {
+          "date": "2027-01-30",
+          "place": "Montalbert",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134513"
+        },
+        {
+          "date": "2027-01-30",
+          "place": "Montalbert",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134512"
+        },
+        {
+          "date": "2027-01-30",
+          "place": "Pra Loup",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134511"
+        },
+        {
+          "date": "2027-01-31",
+          "place": "Montalbert",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134516"
+        },
+        {
+          "date": "2027-01-31",
+          "place": "Montalbert",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134515"
+        },
+        {
+          "date": "2027-02-01",
+          "place": "Orcieres Merlette",
+          "gender": "Men",
+          "discipline": "Super G",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134518"
+        },
+        {
+          "date": "2027-02-01",
+          "place": "Orcieres Merlette",
+          "gender": "Women",
+          "discipline": "Super G",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134517"
+        },
+        {
+          "date": "2027-02-02",
+          "place": "Orcieres Merlette",
+          "gender": "Men",
+          "discipline": "Super G",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134519"
+        },
+        {
+          "date": "2027-02-02",
+          "place": "Orcieres Merlette",
+          "gender": "Women",
+          "discipline": "Super G",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134520"
+        },
+        {
+          "date": "2027-02-06",
+          "place": "Prapoutel 7 Laux",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134560"
+        },
+        {
+          "date": "2027-02-06",
+          "place": "Prapoutel 7 Laux",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134559"
+        },
+        {
+          "date": "2027-02-07",
+          "place": "Prapoutel 7 Laux",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134561"
+        },
+        {
+          "date": "2027-02-07",
+          "place": "Prapoutel 7 Laux",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134562"
+        },
+        {
+          "date": "2027-02-14",
+          "place": "Les Menuires",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134563"
+        },
+        {
+          "date": "2027-02-15",
+          "place": "Les Menuires",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134564"
+        },
+        {
+          "date": "2027-02-16",
+          "place": "Les Menuires",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134565"
+        },
+        {
+          "date": "2027-02-17",
+          "place": "Courchevel",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134567"
+        },
+        {
+          "date": "2027-02-17",
+          "place": "Les Menuires",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134566"
+        },
+        {
+          "date": "2027-02-18",
+          "place": "Courchevel",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134568"
+        },
+        {
+          "date": "2027-02-27",
+          "place": "Prapoutel 7 Laux",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134570"
+        },
+        {
+          "date": "2027-02-27",
+          "place": "Prapoutel 7 Laux",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134569"
+        },
+        {
+          "date": "2027-02-28",
+          "place": "Prapoutel 7 Laux",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134571"
+        },
+        {
+          "date": "2027-02-28",
+          "place": "Prapoutel 7 Laux",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134572"
+        },
+        {
+          "date": "2027-03-02",
+          "place": "Megeve",
+          "gender": "Men",
+          "discipline": "Downhill Training Training",
+          "category": "TRA",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134577"
+        },
+        {
+          "date": "2027-03-03",
+          "place": "La Plagne",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134573"
+        },
+        {
+          "date": "2027-03-03",
+          "place": "Megeve",
+          "gender": "Men",
+          "discipline": "Downhill Training Training",
+          "category": "TRA",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134578"
+        },
+        {
+          "date": "2027-03-04",
+          "place": "La Plagne",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134574"
+        },
+        {
+          "date": "2027-03-04",
+          "place": "Megeve",
+          "gender": "Men",
+          "discipline": "Downhill",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134579"
+        },
+        {
+          "date": "2027-03-05",
+          "place": "Megeve",
+          "gender": "Men",
+          "discipline": "Downhill",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134580"
+        },
+        {
+          "date": "2027-03-06",
+          "place": "Saint-Gervais",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134581"
+        },
+        {
+          "date": "2027-03-07",
+          "place": "Saint-Gervais",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134582"
+        },
+        {
+          "date": "2027-03-08",
+          "place": "La Clusaz",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134583"
+        },
+        {
+          "date": "2027-03-09",
+          "place": "La Clusaz",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134584"
+        },
+        {
+          "date": "2027-03-09",
+          "place": "Peyragudes St Lary Soulan",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134589"
+        },
+        {
+          "date": "2027-03-09",
+          "place": "Peyragudes St Lary Soulan",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134590"
+        },
+        {
+          "date": "2027-03-10",
+          "place": "Megeve",
+          "gender": "Women",
+          "discipline": "Downhill Training Training",
+          "category": "TRA",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134585"
+        },
+        {
+          "date": "2027-03-10",
+          "place": "Megeve",
+          "gender": "Women",
+          "discipline": "Downhill Training Training",
+          "category": "TRA",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134586"
+        },
+        {
+          "date": "2027-03-10",
+          "place": "Peyragudes St Lary Soulan",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134591"
+        },
+        {
+          "date": "2027-03-10",
+          "place": "Peyragudes St Lary Soulan",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134592"
+        },
+        {
+          "date": "2027-03-11",
+          "place": "Megeve",
+          "gender": "Women",
+          "discipline": "Downhill",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134587"
+        },
+        {
+          "date": "2027-03-11",
+          "place": "Megeve",
+          "gender": "Women",
+          "discipline": "Downhill",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=135711"
+        },
+        {
+          "date": "2027-03-11",
+          "place": "Peyragudes St Lary Soulan",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134593"
+        },
+        {
+          "date": "2027-03-11",
+          "place": "Peyragudes St Lary Soulan",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134594"
+        },
+        {
+          "date": "2027-03-12",
+          "place": "Megeve",
+          "gender": "Women",
+          "discipline": "Super G",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134588"
+        },
+        {
+          "date": "2027-03-12",
+          "place": "Megeve",
+          "gender": "Women",
+          "discipline": "Super G",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=135712"
+        },
+        {
+          "date": "2027-03-13",
+          "place": "Font-Romeu",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134595"
+        },
+        {
+          "date": "2027-03-14",
+          "place": "Font-Romeu",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134596"
+        },
+        {
+          "date": "2027-03-18",
+          "place": "Chamrousse",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "NJC",
+          "categoryName": "National Junior Championships",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134597"
+        },
+        {
+          "date": "2027-03-18",
+          "place": "Chamrousse",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "NJC",
+          "categoryName": "National Junior Championships",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134598"
+        },
+        {
+          "date": "2027-03-19",
+          "place": "Chamrousse",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "NJC",
+          "categoryName": "National Junior Championships",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134599"
+        },
+        {
+          "date": "2027-03-19",
+          "place": "Chamrousse",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "NJC",
+          "categoryName": "National Junior Championships",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134600"
+        },
+        {
+          "date": "2027-03-20",
+          "place": "Les Gets",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134602"
+        },
+        {
+          "date": "2027-03-20",
+          "place": "Les Gets",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134601"
+        },
+        {
+          "date": "2027-03-21",
+          "place": "Les Gets",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134603"
+        },
+        {
+          "date": "2027-03-21",
+          "place": "Les Gets",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134604"
+        },
+        {
+          "date": "2027-03-22",
+          "place": "La Clusaz-Gd Bornand",
+          "gender": "Women",
+          "discipline": "Super G",
+          "category": "NJC",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134606"
+        },
+        {
+          "date": "2027-03-23",
+          "place": "Grand Bornand",
+          "gender": "Women",
+          "discipline": "Super G",
+          "category": "NC",
+          "categoryName": "National Championships",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=135040"
+        },
+        {
+          "date": "2027-03-23",
+          "place": "La Clusaz-Gd Bornand",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134608"
+        },
+        {
+          "date": "2027-03-24",
+          "place": "Grand Bornand",
+          "gender": "Men",
+          "discipline": "Super G",
+          "category": "NC",
+          "categoryName": "National Championships",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=135041"
+        },
+        {
+          "date": "2027-03-24",
+          "place": "La Clusaz-Gd Bornand",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134609"
+        },
+        {
+          "date": "2027-03-25",
+          "place": "La Clusaz-Gd Bornand",
+          "gender": "Men",
+          "discipline": "Super G",
+          "category": "NJC",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134607"
+        },
+        {
+          "date": "2027-03-25",
+          "place": "Pra Loup Le Sauze",
+          "gender": "Men",
+          "discipline": "Super G",
+          "category": "CHI",
+          "categoryName": "Children",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134638"
+        },
+        {
+          "date": "2027-03-25",
+          "place": "Pra Loup Le Sauze",
+          "gender": "Men",
+          "discipline": "Super G",
+          "category": "CHI",
+          "categoryName": "Children",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134640"
+        },
+        {
+          "date": "2027-03-25",
+          "place": "Pra Loup Le Sauze",
+          "gender": "Women",
+          "discipline": "Super G",
+          "category": "CHI",
+          "categoryName": "Children",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134639"
+        },
+        {
+          "date": "2027-03-25",
+          "place": "Pra Loup Le Sauze",
+          "gender": "Women",
+          "discipline": "Super G",
+          "category": "CHI",
+          "categoryName": "Children",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134641"
+        },
+        {
+          "date": "2027-03-26",
+          "place": "Pra Loup Le Sauze",
+          "gender": "Men",
+          "discipline": "Alpine Combined",
+          "category": "CHI",
+          "categoryName": "Children",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134642"
+        },
+        {
+          "date": "2027-03-26",
+          "place": "Pra Loup Le Sauze",
+          "gender": "Men",
+          "discipline": "Alpine Combined",
+          "category": "CHI",
+          "categoryName": "Children",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134644"
+        },
+        {
+          "date": "2027-03-26",
+          "place": "Pra Loup Le Sauze",
+          "gender": "Women",
+          "discipline": "Alpine Combined",
+          "category": "CHI",
+          "categoryName": "Children",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134643"
+        },
+        {
+          "date": "2027-03-26",
+          "place": "Pra Loup Le Sauze",
+          "gender": "Women",
+          "discipline": "Alpine Combined",
+          "category": "CHI",
+          "categoryName": "Children",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134645"
+        },
+        {
+          "date": "2027-03-27",
+          "place": "Chamrousse",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134610"
+        },
+        {
+          "date": "2027-03-27",
+          "place": "Chamrousse",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134611"
+        },
+        {
+          "date": "2027-03-27",
+          "place": "Pra Loup Le Sauze",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "CHI",
+          "categoryName": "Children",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134646"
+        },
+        {
+          "date": "2027-03-27",
+          "place": "Pra Loup Le Sauze",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "CHI",
+          "categoryName": "Children",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134648"
+        },
+        {
+          "date": "2027-03-27",
+          "place": "Pra Loup Le Sauze",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "CHI",
+          "categoryName": "Children",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134647"
+        },
+        {
+          "date": "2027-03-27",
+          "place": "Pra Loup Le Sauze",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "CHI",
+          "categoryName": "Children",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134649"
+        },
+        {
+          "date": "2027-03-28",
+          "place": "Chamrousse",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134612"
+        },
+        {
+          "date": "2027-03-28",
+          "place": "Chamrousse",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134613"
+        },
+        {
+          "date": "2027-03-28",
+          "place": "Pra Loup Le Sauze",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "CHI",
+          "categoryName": "Children",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134650"
+        },
+        {
+          "date": "2027-03-28",
+          "place": "Pra Loup Le Sauze",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "CHI",
+          "categoryName": "Children",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134652"
+        },
+        {
+          "date": "2027-03-28",
+          "place": "Pra Loup Le Sauze",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "CHI",
+          "categoryName": "Children",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134651"
+        },
+        {
+          "date": "2027-03-28",
+          "place": "Pra Loup Le Sauze",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "CHI",
+          "categoryName": "Children",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134653"
+        },
+        {
+          "date": "2027-03-29",
+          "place": "Les Menuires",
+          "gender": "Men",
+          "discipline": "Downhill Training Training",
+          "category": "TRA",
+          "categoryName": "National Championships",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=135668"
+        },
+        {
+          "date": "2027-03-29",
+          "place": "Les Menuires",
+          "gender": "Men",
+          "discipline": "Downhill Training Training",
+          "category": "TRA",
+          "categoryName": "National Championships",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134615"
+        },
+        {
+          "date": "2027-03-29",
+          "place": "Les Menuires",
+          "gender": "Men",
+          "discipline": "Downhill Training Training",
+          "category": "TRA",
+          "categoryName": "National Championships",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134619"
+        },
+        {
+          "date": "2027-03-29",
+          "place": "Les Menuires",
+          "gender": "Women",
+          "discipline": "Downhill Training Training",
+          "category": "TRA",
+          "categoryName": "National Championships",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=135669"
+        },
+        {
+          "date": "2027-03-29",
+          "place": "Les Menuires",
+          "gender": "Women",
+          "discipline": "Downhill Training Training",
+          "category": "TRA",
+          "categoryName": "National Championships",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134614"
+        },
+        {
+          "date": "2027-03-29",
+          "place": "Les Menuires",
+          "gender": "Women",
+          "discipline": "Downhill Training Training",
+          "category": "TRA",
+          "categoryName": "National Championships",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134618"
+        },
+        {
+          "date": "2027-03-30",
+          "place": "Les Menuires",
+          "gender": "Men",
+          "discipline": "Downhill",
+          "category": "NC",
+          "categoryName": "National Championships",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=135051"
+        },
+        {
+          "date": "2027-03-30",
+          "place": "Les Menuires",
+          "gender": "Women",
+          "discipline": "Downhill",
+          "category": "NC",
+          "categoryName": "National Championships",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=135048"
+        },
+        {
+          "date": "2027-03-31",
+          "place": "Les Menuires",
+          "gender": "Men",
+          "discipline": "Downhill",
+          "category": "NC",
+          "categoryName": "National Championships",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134616"
+        },
+        {
+          "date": "2027-03-31",
+          "place": "Les Menuires",
+          "gender": "Women",
+          "discipline": "Downhill",
+          "category": "NC",
+          "categoryName": "National Championships",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134617"
+        },
+        {
+          "date": "2027-04-01",
+          "place": "Les Menuires",
+          "gender": "Men",
+          "discipline": "Super G",
+          "category": "NC",
+          "categoryName": "National Championships",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134620"
+        },
+        {
+          "date": "2027-04-01",
+          "place": "Val d'Isere",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "CHI",
+          "categoryName": "Children",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134656"
+        },
+        {
+          "date": "2027-04-01",
+          "place": "Val d'Isere",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "CHI",
+          "categoryName": "Children",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134658"
+        },
+        {
+          "date": "2027-04-01",
+          "place": "Val d'Isere",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "CHI",
+          "categoryName": "Children",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134657"
+        },
+        {
+          "date": "2027-04-01",
+          "place": "Val d'Isere",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "CHI",
+          "categoryName": "Children",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134660"
+        },
+        {
+          "date": "2027-04-02",
+          "place": "Les Menuires",
+          "gender": "Women",
+          "discipline": "Super G",
+          "category": "NC",
+          "categoryName": "National Championships",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134621"
+        },
+        {
+          "date": "2027-04-02",
+          "place": "Val d'Isere",
+          "gender": "Men",
+          "discipline": "Super G",
+          "category": "CHI",
+          "categoryName": "Children",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134669"
+        },
+        {
+          "date": "2027-04-02",
+          "place": "Val d'Isere",
+          "gender": "Men",
+          "discipline": "Super G",
+          "category": "CHI",
+          "categoryName": "Children",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134671"
+        },
+        {
+          "date": "2027-04-02",
+          "place": "Val d'Isere",
+          "gender": "Women",
+          "discipline": "Super G",
+          "category": "CHI",
+          "categoryName": "Children",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134667"
+        },
+        {
+          "date": "2027-04-02",
+          "place": "Val d'Isere",
+          "gender": "Women",
+          "discipline": "Super G",
+          "category": "CHI",
+          "categoryName": "Children",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134672"
+        },
+        {
+          "date": "2027-04-03",
+          "place": "Les Menuires",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "NC",
+          "categoryName": "National Championships",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134624"
+        },
+        {
+          "date": "2027-04-03",
+          "place": "Les Menuires",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "NC",
+          "categoryName": "National Championships",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134622"
+        },
+        {
+          "date": "2027-04-03",
+          "place": "Val Thorens",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134626"
+        },
+        {
+          "date": "2027-04-03",
+          "place": "Val Thorens",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134627"
+        },
+        {
+          "date": "2027-04-04",
+          "place": "Les Menuires",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "NC",
+          "categoryName": "National Championships",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134623"
+        },
+        {
+          "date": "2027-04-04",
+          "place": "Les Menuires",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "NC",
+          "categoryName": "National Championships",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134625"
+        },
+        {
+          "date": "2027-04-04",
+          "place": "Val Thorens",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134628"
+        },
+        {
+          "date": "2027-04-04",
+          "place": "Val Thorens",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134629"
+        },
+        {
+          "date": "2027-04-04",
+          "place": "Val d'Isere",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "NC",
+          "categoryName": "National Championships",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134219"
+        },
+        {
+          "date": "2027-04-04",
+          "place": "Val d'Isere",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "NC",
+          "categoryName": "National Championships",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134218"
+        },
+        {
+          "date": "2027-04-05",
+          "place": "Val d'Isere",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "NC",
+          "categoryName": "National Championships",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134909"
+        },
+        {
+          "date": "2027-04-05",
+          "place": "Val d'Isere",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "NC",
+          "categoryName": "National Championships",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134908"
+        },
+        {
+          "date": "2027-04-06",
+          "place": "Val d'Isere",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "NC",
+          "categoryName": "National Championships",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134221"
+        },
+        {
+          "date": "2027-04-06",
+          "place": "Val d'Isere",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "NC",
+          "categoryName": "National Championships",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134220"
+        },
+        {
+          "date": "2027-04-07",
+          "place": "Val d'Isere",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "NC",
+          "categoryName": "National Championships",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134911"
+        },
+        {
+          "date": "2027-04-07",
+          "place": "Val d'Isere",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "NC",
+          "categoryName": "National Championships",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134910"
+        },
+        {
+          "date": "2027-04-09",
+          "place": "Morzine-Avoriaz",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134630"
+        },
+        {
+          "date": "2027-04-09",
+          "place": "Val d'Isere",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "NJC",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134115"
+        },
+        {
+          "date": "2027-04-09",
+          "place": "Val d'Isere",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "NJC",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134114"
+        },
+        {
+          "date": "2027-04-10",
+          "place": "Flaine",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134632"
+        },
+        {
+          "date": "2027-04-10",
+          "place": "Flaine",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134633"
+        },
+        {
+          "date": "2027-04-10",
+          "place": "Morzine-Avoriaz",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134631"
+        },
+        {
+          "date": "2027-04-10",
+          "place": "Val d'Isere",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "NJC",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134117"
+        },
+        {
+          "date": "2027-04-10",
+          "place": "Val d'Isere",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "NJC",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134116"
+        },
+        {
+          "date": "2027-04-11",
+          "place": "Flaine",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134634"
+        },
+        {
+          "date": "2027-04-11",
+          "place": "Flaine",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "CIT",
+          "categoryName": "CIT",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134635"
+        },
+        {
+          "date": "2027-04-11",
+          "place": "La Plagne",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134636"
+        },
+        {
+          "date": "2027-04-11",
+          "place": "Val d'Isere",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134119"
+        },
+        {
+          "date": "2027-04-11",
+          "place": "Val d'Isere",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134118"
+        },
+        {
+          "date": "2027-04-12",
+          "place": "La Plagne",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "FIS",
+          "categoryName": "FIS",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134637"
+        }
+      ]
+    },
+    "ec": {
+      "source": "https://www.fis-ski.com/DB/services/public/icalendar-feed-fis-events.html?seasoncode=2027&sectorcode=AL&categorycode=EC",
+      "races": [
+        {
+          "date": "2026-11-21",
+          "place": "Levi",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131806"
+        },
+        {
+          "date": "2026-11-22",
+          "place": "Levi",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131807"
+        },
+        {
+          "date": "2026-11-25",
+          "place": "Suomu",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131750"
+        },
+        {
+          "date": "2026-11-26",
+          "place": "Suomu",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131751"
+        },
+        {
+          "date": "2026-11-30",
+          "place": "Zinal",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131804"
+        },
+        {
+          "date": "2026-12-01",
+          "place": "Zinal",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131805"
+        },
+        {
+          "date": "2026-12-03",
+          "place": "Zinal",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131752"
+        },
+        {
+          "date": "2026-12-04",
+          "place": "Zinal",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131753"
+        },
+        {
+          "date": "2026-12-05",
+          "place": "Mayrhofen / Hippach",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131808"
+        },
+        {
+          "date": "2026-12-06",
+          "place": "Mayrhofen / Hippach",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131809"
+        },
+        {
+          "date": "2026-12-07",
+          "place": "Zinal",
+          "gender": "Men",
+          "discipline": "Super G",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131754"
+        },
+        {
+          "date": "2026-12-09",
+          "place": "St. Moritz",
+          "gender": "Women",
+          "discipline": "Downhill",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131812"
+        },
+        {
+          "date": "2026-12-10",
+          "place": "St. Moritz",
+          "gender": "Women",
+          "discipline": "Downhill",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131813"
+        },
+        {
+          "date": "2026-12-11",
+          "place": "Santa Caterina | Valfurva",
+          "gender": "Men",
+          "discipline": "Downhill",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131757"
+        },
+        {
+          "date": "2026-12-11",
+          "place": "St. Moritz",
+          "gender": "Women",
+          "discipline": "Super G",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131814"
+        },
+        {
+          "date": "2026-12-12",
+          "place": "Santa Caterina | Valfurva",
+          "gender": "Men",
+          "discipline": "Downhill",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131758"
+        },
+        {
+          "date": "2026-12-14",
+          "place": "Valloire",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131759"
+        },
+        {
+          "date": "2026-12-15",
+          "place": "Valloire",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131760"
+        },
+        {
+          "date": "2026-12-18",
+          "place": "Obereggen | Nova Ponente/Deutschnofen",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131761"
+        },
+        {
+          "date": "2026-12-19",
+          "place": "Fassa | San Giovanni di Fassa-Sèn Jan",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131762"
+        },
+        {
+          "date": "2027-01-05",
+          "place": "Val Cenis",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131815"
+        },
+        {
+          "date": "2027-01-06",
+          "place": "Val Cenis",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131816"
+        },
+        {
+          "date": "2027-01-08",
+          "place": "Sestriere",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131817"
+        },
+        {
+          "date": "2027-01-08",
+          "place": "Wengen",
+          "gender": "Men",
+          "discipline": "Super G",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131763"
+        },
+        {
+          "date": "2027-01-09",
+          "place": "Sestriere",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131818"
+        },
+        {
+          "date": "2027-01-09",
+          "place": "Wengen",
+          "gender": "Men",
+          "discipline": "Super G",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131764"
+        },
+        {
+          "date": "2027-01-12",
+          "place": "Turnau",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131834"
+        },
+        {
+          "date": "2027-01-13",
+          "place": "Turnau",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131835"
+        },
+        {
+          "date": "2027-01-13",
+          "place": "Zauchensee",
+          "gender": "Women",
+          "discipline": "Downhill",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131821"
+        },
+        {
+          "date": "2027-01-14",
+          "place": "Zauchensee",
+          "gender": "Women",
+          "discipline": "Downhill",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131822"
+        },
+        {
+          "date": "2027-01-15",
+          "place": "Zauchensee",
+          "gender": "Women",
+          "discipline": "Super G",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131823"
+        },
+        {
+          "date": "2027-01-17",
+          "place": "Pass Thurn",
+          "gender": "Men",
+          "discipline": "Downhill",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131767"
+        },
+        {
+          "date": "2027-01-18",
+          "place": "Pass Thurn",
+          "gender": "Men",
+          "discipline": "Downhill",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131768"
+        },
+        {
+          "date": "2027-01-19",
+          "place": "Pass Thurn",
+          "gender": "Men",
+          "discipline": "Super G",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131769"
+        },
+        {
+          "date": "2027-01-21",
+          "place": "TBD",
+          "gender": "Women",
+          "discipline": "Downhill",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131863"
+        },
+        {
+          "date": "2027-01-22",
+          "place": "TBD",
+          "gender": "Women",
+          "discipline": "Downhill",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131864"
+        },
+        {
+          "date": "2027-01-22",
+          "place": "Verbier",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131770"
+        },
+        {
+          "date": "2027-01-23",
+          "place": "Verbier",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131771"
+        },
+        {
+          "date": "2027-01-26",
+          "place": "Sarentino/Sarntal",
+          "gender": "Women",
+          "discipline": "Super G",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131824"
+        },
+        {
+          "date": "2027-01-27",
+          "place": "Orcieres Merlette",
+          "gender": "Men",
+          "discipline": "Downhill",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131774"
+        },
+        {
+          "date": "2027-01-27",
+          "place": "Sarentino/Sarntal",
+          "gender": "Women",
+          "discipline": "Super G",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131825"
+        },
+        {
+          "date": "2027-01-28",
+          "place": "Orcieres Merlette",
+          "gender": "Men",
+          "discipline": "Downhill",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131775"
+        },
+        {
+          "date": "2027-01-29",
+          "place": "Orcieres Merlette",
+          "gender": "Men",
+          "discipline": "Super G",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131776"
+        },
+        {
+          "date": "2027-02-01",
+          "place": "Andalo",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=132020"
+        },
+        {
+          "date": "2027-02-01",
+          "place": "La Molina",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131777"
+        },
+        {
+          "date": "2027-02-02",
+          "place": "Andalo",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=132021"
+        },
+        {
+          "date": "2027-02-02",
+          "place": "La Molina",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131778"
+        },
+        {
+          "date": "2027-02-04",
+          "place": "Baqueira Beret",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131779"
+        },
+        {
+          "date": "2027-02-05",
+          "place": "Baqueira Beret",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131780"
+        },
+        {
+          "date": "2027-02-06",
+          "place": "Shahdag",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131826"
+        },
+        {
+          "date": "2027-02-07",
+          "place": "Shahdag",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131827"
+        },
+        {
+          "date": "2027-02-13",
+          "place": "Berchtesgaden",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131781"
+        },
+        {
+          "date": "2027-02-13",
+          "place": "Bjelasnica / Sarajevo",
+          "gender": "Women",
+          "discipline": "Super G",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131828"
+        },
+        {
+          "date": "2027-02-14",
+          "place": "Berchtesgaden",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131782"
+        },
+        {
+          "date": "2027-02-14",
+          "place": "Bjelasnica / Sarajevo",
+          "gender": "Women",
+          "discipline": "Super G",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131829"
+        },
+        {
+          "date": "2027-02-18",
+          "place": "Bjelasnica / Sarajevo",
+          "gender": "Men",
+          "discipline": "Super G",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131783"
+        },
+        {
+          "date": "2027-02-19",
+          "place": "Bjelasnica / Sarajevo",
+          "gender": "Men",
+          "discipline": "Super G",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131784"
+        },
+        {
+          "date": "2027-02-22",
+          "place": "Meiringen-Hasliberg",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131832"
+        },
+        {
+          "date": "2027-02-23",
+          "place": "Meiringen-Hasliberg",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131833"
+        },
+        {
+          "date": "2027-02-24",
+          "place": "Sella Nevea | Chiusaforte",
+          "gender": "Men",
+          "discipline": "Downhill",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131787"
+        },
+        {
+          "date": "2027-02-25",
+          "place": "Oberjoch",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131830"
+        },
+        {
+          "date": "2027-02-25",
+          "place": "Sella Nevea | Chiusaforte",
+          "gender": "Men",
+          "discipline": "Downhill",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131788"
+        },
+        {
+          "date": "2027-02-26",
+          "place": "Oberjoch",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131831"
+        },
+        {
+          "date": "2027-02-26",
+          "place": "Sella Nevea | Chiusaforte",
+          "gender": "Men",
+          "discipline": "Super G",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131789"
+        },
+        {
+          "date": "2027-03-14",
+          "place": "Pejo",
+          "gender": "Women",
+          "discipline": "Super G",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=132472"
+        },
+        {
+          "date": "2027-03-15",
+          "place": "Pejo",
+          "gender": "Women",
+          "discipline": "Super G",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=132473"
+        },
+        {
+          "date": "2027-03-19",
+          "place": "Saalbach",
+          "gender": "Men",
+          "discipline": "Downhill",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131792"
+        },
+        {
+          "date": "2027-03-19",
+          "place": "Saalbach",
+          "gender": "Women",
+          "discipline": "Downhill",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131798"
+        },
+        {
+          "date": "2027-03-20",
+          "place": "Saalbach",
+          "gender": "Women",
+          "discipline": "Super G",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131799"
+        },
+        {
+          "date": "2027-03-21",
+          "place": "Saalbach",
+          "gender": "Men",
+          "discipline": "Super G",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131793"
+        },
+        {
+          "date": "2027-03-23",
+          "place": "St. Anton",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131794"
+        },
+        {
+          "date": "2027-03-23",
+          "place": "St. Anton",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131800"
+        },
+        {
+          "date": "2027-03-24",
+          "place": "St. Anton",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131795"
+        },
+        {
+          "date": "2027-03-24",
+          "place": "St. Anton",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "EC",
+          "categoryName": "European Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131801"
+        }
+      ]
+    },
+    "wc": {
+      "source": "https://www.fis-ski.com/DB/services/public/icalendar-feed-fis-events.html?seasoncode=2027&sectorcode=AL&categorycode=WC",
+      "races": [
+        {
+          "date": "2026-10-24",
+          "place": "Soelden",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131577"
+        },
+        {
+          "date": "2026-10-25",
+          "place": "Soelden",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131578"
+        },
+        {
+          "date": "2026-11-14",
+          "place": "Levi",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131579"
+        },
+        {
+          "date": "2026-11-15",
+          "place": "Levi",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131580"
+        },
+        {
+          "date": "2026-11-21",
+          "place": "Gurgl",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131581"
+        },
+        {
+          "date": "2026-11-22",
+          "place": "Gurgl",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131582"
+        },
+        {
+          "date": "2026-11-28",
+          "place": "Copper Mountain, CO",
+          "gender": "Men",
+          "discipline": "Super G",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131697"
+        },
+        {
+          "date": "2026-11-28",
+          "place": "Killington",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131583"
+        },
+        {
+          "date": "2026-11-29",
+          "place": "Copper Mountain, CO",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131698"
+        },
+        {
+          "date": "2026-11-29",
+          "place": "Killington",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131584"
+        },
+        {
+          "date": "2026-12-03",
+          "place": "Beaver Creek",
+          "gender": "Men",
+          "discipline": "Downhill",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131702"
+        },
+        {
+          "date": "2026-12-04",
+          "place": "Beaver Creek",
+          "gender": "Men",
+          "discipline": "Downhill",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131703"
+        },
+        {
+          "date": "2026-12-05",
+          "place": "Beaver Creek",
+          "gender": "Men",
+          "discipline": "Super G",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131704"
+        },
+        {
+          "date": "2026-12-05",
+          "place": "Tremblant",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131597"
+        },
+        {
+          "date": "2026-12-06",
+          "place": "Beaver Creek",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131705"
+        },
+        {
+          "date": "2026-12-06",
+          "place": "Tremblant",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131598"
+        },
+        {
+          "date": "2026-12-11",
+          "place": "Beaver Creek",
+          "gender": "Women",
+          "discipline": "Downhill",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131601"
+        },
+        {
+          "date": "2026-12-12",
+          "place": "Beaver Creek",
+          "gender": "Women",
+          "discipline": "Downhill",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131602"
+        },
+        {
+          "date": "2026-12-12",
+          "place": "Val d'Isere",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131706"
+        },
+        {
+          "date": "2026-12-13",
+          "place": "Beaver Creek",
+          "gender": "Women",
+          "discipline": "Super G",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131603"
+        },
+        {
+          "date": "2026-12-13",
+          "place": "Val d'Isere",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131707"
+        },
+        {
+          "date": "2026-12-18",
+          "place": "St. Moritz",
+          "gender": "Women",
+          "discipline": "Super G",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131604"
+        },
+        {
+          "date": "2026-12-18",
+          "place": "Val Gardena-Groeden Südtirol",
+          "gender": "Men",
+          "discipline": "Super G",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131711"
+        },
+        {
+          "date": "2026-12-19",
+          "place": "St. Moritz",
+          "gender": "Women",
+          "discipline": "Super G",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131605"
+        },
+        {
+          "date": "2026-12-19",
+          "place": "Val Gardena-Groeden Südtirol",
+          "gender": "Men",
+          "discipline": "Downhill",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131712"
+        },
+        {
+          "date": "2026-12-20",
+          "place": "Alta Badia",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131713"
+        },
+        {
+          "date": "2026-12-20",
+          "place": "St. Moritz",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131606"
+        },
+        {
+          "date": "2026-12-21",
+          "place": "Alta Badia",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131714"
+        },
+        {
+          "date": "2026-12-22",
+          "place": "Courchevel",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131607"
+        },
+        {
+          "date": "2026-12-23",
+          "place": "Madonna di Campiglio",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131715"
+        },
+        {
+          "date": "2026-12-28",
+          "place": "Bormio",
+          "gender": "Men",
+          "discipline": "Downhill",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131838"
+        },
+        {
+          "date": "2026-12-28",
+          "place": "Dachstein West / Gosau",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131608"
+        },
+        {
+          "date": "2026-12-29",
+          "place": "Bormio",
+          "gender": "Men",
+          "discipline": "Super G",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131839"
+        },
+        {
+          "date": "2026-12-29",
+          "place": "Dachstein West / Gosau",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131609"
+        },
+        {
+          "date": "2027-01-02",
+          "place": "Kranjska Gora",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131716"
+        },
+        {
+          "date": "2027-01-03",
+          "place": "Kranjska Gora",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131717"
+        },
+        {
+          "date": "2027-01-04",
+          "place": "Flachau",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131654"
+        },
+        {
+          "date": "2027-01-05",
+          "place": "Flachau",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131655"
+        },
+        {
+          "date": "2027-01-09",
+          "place": "Adelboden",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131718"
+        },
+        {
+          "date": "2027-01-09",
+          "place": "Val di Fassa",
+          "gender": "Women",
+          "discipline": "Downhill",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131658"
+        },
+        {
+          "date": "2027-01-10",
+          "place": "Adelboden",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131719"
+        },
+        {
+          "date": "2027-01-10",
+          "place": "Val di Fassa",
+          "gender": "Women",
+          "discipline": "Super G",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131659"
+        },
+        {
+          "date": "2027-01-15",
+          "place": "Cortina d'Ampezzo",
+          "gender": "Women",
+          "discipline": "Downhill",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131664"
+        },
+        {
+          "date": "2027-01-15",
+          "place": "Wengen",
+          "gender": "Men",
+          "discipline": "Super G",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131723"
+        },
+        {
+          "date": "2027-01-16",
+          "place": "Cortina d'Ampezzo",
+          "gender": "Women",
+          "discipline": "Downhill",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131665"
+        },
+        {
+          "date": "2027-01-16",
+          "place": "Wengen",
+          "gender": "Men",
+          "discipline": "Downhill",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131724"
+        },
+        {
+          "date": "2027-01-17",
+          "place": "Cortina d'Ampezzo",
+          "gender": "Women",
+          "discipline": "Super G",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131666"
+        },
+        {
+          "date": "2027-01-17",
+          "place": "Wengen",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131725"
+        },
+        {
+          "date": "2027-01-19",
+          "place": "Kronplatz",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131667"
+        },
+        {
+          "date": "2027-01-22",
+          "place": "Kitzbuehel",
+          "gender": "Men",
+          "discipline": "Super G",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131729"
+        },
+        {
+          "date": "2027-01-23",
+          "place": "Jasna",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131668"
+        },
+        {
+          "date": "2027-01-23",
+          "place": "Kitzbuehel",
+          "gender": "Men",
+          "discipline": "Downhill",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131730"
+        },
+        {
+          "date": "2027-01-24",
+          "place": "Jasna",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131866"
+        },
+        {
+          "date": "2027-01-24",
+          "place": "Kitzbuehel",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131731"
+        },
+        {
+          "date": "2027-01-26",
+          "place": "Schladming",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131732"
+        },
+        {
+          "date": "2027-01-27",
+          "place": "Schladming",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131733"
+        },
+        {
+          "date": "2027-01-29",
+          "place": "Kranjska Gora",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131670"
+        },
+        {
+          "date": "2027-01-30",
+          "place": "Chamonix",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131734"
+        },
+        {
+          "date": "2027-01-30",
+          "place": "Kranjska Gora",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131671"
+        },
+        {
+          "date": "2027-02-20",
+          "place": "Garmisch-Partenkirchen",
+          "gender": "Men",
+          "discipline": "Downhill",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131737"
+        },
+        {
+          "date": "2027-02-20",
+          "place": "Lenzerheide",
+          "gender": "Women",
+          "discipline": "Super G",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131672"
+        },
+        {
+          "date": "2027-02-21",
+          "place": "Garmisch-Partenkirchen",
+          "gender": "Men",
+          "discipline": "Super G",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131738"
+        },
+        {
+          "date": "2027-02-21",
+          "place": "Lenzerheide",
+          "gender": "Women",
+          "discipline": "Super G",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131673"
+        },
+        {
+          "date": "2027-02-27",
+          "place": "Garmisch-Partenkirchen",
+          "gender": "Women",
+          "discipline": "Downhill",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131676"
+        },
+        {
+          "date": "2027-02-27",
+          "place": "Saalbach",
+          "gender": "Men",
+          "discipline": "Downhill",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131741"
+        },
+        {
+          "date": "2027-02-28",
+          "place": "Garmisch-Partenkirchen",
+          "gender": "Women",
+          "discipline": "Downhill",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131677"
+        },
+        {
+          "date": "2027-02-28",
+          "place": "Saalbach",
+          "gender": "Men",
+          "discipline": "Super G",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131742"
+        },
+        {
+          "date": "2027-03-06",
+          "place": "Kvitfjell",
+          "gender": "Men",
+          "discipline": "Downhill",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131746"
+        },
+        {
+          "date": "2027-03-06",
+          "place": "Soldeu",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131678"
+        },
+        {
+          "date": "2027-03-07",
+          "place": "Kvitfjell",
+          "gender": "Men",
+          "discipline": "Super G",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131747"
+        },
+        {
+          "date": "2027-03-07",
+          "place": "Soldeu",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131679"
+        },
+        {
+          "date": "2027-03-12",
+          "place": "Narvik (TBC)",
+          "gender": "Women",
+          "discipline": "Downhill",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131683"
+        },
+        {
+          "date": "2027-03-13",
+          "place": "Are",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131748"
+        },
+        {
+          "date": "2027-03-13",
+          "place": "Narvik (TBC)",
+          "gender": "Women",
+          "discipline": "Super G",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131684"
+        },
+        {
+          "date": "2027-03-14",
+          "place": "Are",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131749"
+        },
+        {
+          "date": "2027-03-20",
+          "place": "Sun Valley",
+          "gender": "Men",
+          "discipline": "Downhill",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131690"
+        },
+        {
+          "date": "2027-03-20",
+          "place": "Sun Valley",
+          "gender": "Women",
+          "discipline": "Downhill",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131689"
+        },
+        {
+          "date": "2027-03-21",
+          "place": "Sun Valley",
+          "gender": "Men",
+          "discipline": "Super G",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131692"
+        },
+        {
+          "date": "2027-03-21",
+          "place": "Sun Valley",
+          "gender": "Women",
+          "discipline": "Super G",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131691"
+        },
+        {
+          "date": "2027-03-23",
+          "place": "Sun Valley",
+          "gender": "Women",
+          "discipline": "Giant Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131693"
+        },
+        {
+          "date": "2027-03-24",
+          "place": "Sun Valley",
+          "gender": "Men",
+          "discipline": "Giant Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131694"
+        },
+        {
+          "date": "2027-03-25",
+          "place": "Sun Valley",
+          "gender": "Men",
+          "discipline": "Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131696"
+        },
+        {
+          "date": "2027-03-25",
+          "place": "Sun Valley",
+          "gender": "Women",
+          "discipline": "Slalom",
+          "category": "WC",
+          "categoryName": "World Cup",
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131695"
+        }
+      ]
+    }
+  }
+}
