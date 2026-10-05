@@ -200,8 +200,6 @@ footer{
   .section-title{margin:18px 0 12px;font-size:19px;text-align:center}
   .tables{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:18px}
   .sheet-card{min-height:0;padding:14px 12px;border-left-width:3px;border-radius:6px;box-shadow:none;background:#fff}
-  .sheet-card:nth-child(4n+1),.sheet-card:nth-child(4n){background:#edf6ee;border-color:#c5ddca;border-left-color:#2b7e4d}
-  .sheet-card:nth-child(4n+2),.sheet-card:nth-child(4n+3){background:#fff4df;border-color:#e7d2ad;border-left-color:#a67425}
   .sheet-card h2{margin:0;font-size:17px;font-weight:800;line-height:1.3;overflow-wrap:anywhere;color:var(--green-dark)}
   .sheet-card p{margin-top:7px;font-size:14px;line-height:1.35;color:#000}
   .open-sheet{display:none}
@@ -214,6 +212,20 @@ footer{
 }
 @media(max-width:700px){
   .hero{position:sticky;top:0;z-index:100}
+}
+.resource-group{padding:24px;border-radius:16px;margin-bottom:24px;border:1px solid}
+.google-group{background:#e4f3e9;border-color:#b9d8c4}
+.html-group{background:#e6f0fc;border-color:#bdd3ee}
+.resource-group .section-title{margin:0 0 18px}
+.resource-group .tables{margin:0}
+.resource-group .sheet-card{background:#fff}
+.html-group .section-title,.html-group .sheet-card h2,.html-group .open-sheet{color:var(--blue)}
+.html-group .sheet-card{border-color:#c9dcef;border-left-color:var(--blue)}
+.html-group .sheet-card:focus-visible{outline-color:var(--blue)}
+@media(max-width:760px){
+  .resource-group{padding:14px 10px;border-radius:10px;margin-bottom:16px}
+  .resource-group .section-title{margin:0 0 12px}
+  .resource-group .sheet-card{background:#fff}
 }
 </style>
 </head>
@@ -236,8 +248,9 @@ footer{
     <span class="schedule">Synchronisation quotidienne des tableaux à 16 h</span>
   </section>
 
-  <h2 class="section-title">Tableaux et analyses</h2>
-  <section class="tables" aria-label="Tableaux Google Sheets">
+  <section class="resource-group google-group" aria-labelledby="google-group-title">
+    <h2 class="section-title" id="google-group-title">Tableaux Google Sheets</h2>
+    <div class="tables">
     <a href="https://docs.google.com/spreadsheets/d/1-l9I_B30cIlggOOtJE4WSQu36W66BgKn5HX629ABz-g/edit?gid=403608582#gid=403608582" class="sheet-card" target="_blank" rel="noopener noreferrer">
       <span class="file-tag">Google Sheets</span>
       <h2><span class="desktop-label">Liste des courses — pénalités calculées et appliquées</span><span class="mobile-label">Courses et pénalités</span></h2>
@@ -268,6 +281,12 @@ footer{
       <p><span class="desktop-label">Consulter la liste FIS actuelle.</span><span class="mobile-label">Points FIS en vigueur.</span></p>
       <span class="open-sheet">Ouvrir dans Google Sheets ↗</span>
     </a>
+    </div>
+  </section>
+
+  <section class="resource-group html-group" aria-labelledby="html-group-title">
+    <h2 class="section-title" id="html-group-title">Pages HTML et analyses</h2>
+    <div class="tables">
     <a href="https://infos-fis.fr/-reservoir-u21/" class="sheet-card">
       <span class="file-tag html">Page HTML</span>
       <h2>Réservoir U21</h2>
@@ -292,6 +311,7 @@ footer{
       <p><span class="desktop-label">Comparaison mondiale des courses FIS à pénalité minimum de 23 points — saison 2026.</span><span class="mobile-label">FIS à 23 points — saison 2026.</span></p>
       <span class="open-sheet">Consulter l’analyse →</span>
     </a>
+    </div>
   </section>
 
   <nav class="return-menu" aria-label="Navigation">
