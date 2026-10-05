@@ -40,7 +40,7 @@
     for (const event of grouped[circuit] || []) {
       const link = document.createElement('a');
       link.className = 'race-item';
-      const url = new URL(event.url);
+      const url = new URL(event.eventUrl || event.url);
       if (url.origin !== 'https://www.fis-ski.com') continue;
       link.href = url.href;
       link.target = '_blank';

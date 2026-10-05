@@ -1,9 +1,11 @@
 """Build a public race feed from the official FIS France alpine calendar."""
+import html
 import json
 import re
-from datetime import datetime
+from datetime import datetime, date
 from pathlib import Path
 from urllib.request import urlopen
+from urllib.parse import urljoin, urlparse
 from zoneinfo import ZoneInfo
 
 BASE = 'https://www.fis-ski.com/DB/services/public/icalendar-feed-fis-events.html'
@@ -40,6 +42,32 @@ def parse_calendar(text):
                       'url': link[0]})
     return sorted(races, key=lambda r: (r['date'], r['place'], r['gender']))
 
+def link_upcoming_events(races, today):
+    groups = []
+    for race in races:
+        if race['date'] < today:
+            continue
+        group = next((g for g in groups if g['place'] == race['place']
+                      and g['discipline'] == race['discipline']
+                      and (date.fromisoformat(race['date']) - date.fromisoformat(g['end'])).days <= 1), None)
+        if group is None:
+            group = {'place': race['place'], 'discipline': race['discipline'],
+                     'end': race['date'], 'races': []}
+            groups.append(group)
+        group['end'] = race['date']
+        group['races'].append(race)
+    for group in groups[:2]:
+        result_url = group['races'][0]['url']
+        with urlopen(result_url, timeout=45) as response:
+            page = response.read().decode('utf-8-sig')
+        links = re.findall(r"href=[\"']([^\"']*event-details\.html[^\"']*)", page)
+        event_url = next((urljoin(result_url, html.unescape(link)) for link in links
+                          if urlparse(urljoin(result_url, html.unescape(link))).hostname == 'www.fis-ski.com'), None)
+        if not event_url:
+            raise ValueError(f'Event link missing for {result_url}')
+        for race in group['races']:
+            race['eventUrl'] = event_url
+
 def main():
     now = datetime.now(ZoneInfo('Europe/Paris'))
     season = now.year + (now.month >= 7)
@@ -48,6 +76,7 @@ def main():
         source = f'{BASE}?seasoncode={season}&sectorcode=AL&{query}'
         with urlopen(source, timeout=45) as response:
             races = parse_calendar(response.read().decode('utf-8-sig'))
+        link_upcoming_events(races, now.date().isoformat())
         calendars[key] = {'source': source, 'races': races}
         print(f'{key}: {len(races)} races fetched from FIS')
     target = Path(__file__).resolve().parents[1] / 'assets/fis-france.json'

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-05T09:52:07.705121+02:00",
+  "updatedAt": "2026-10-05T18:53:20.019728+02:00",
   "calendars": {
     "france": {
       "source": "https://www.fis-ski.com/DB/services/public/icalendar-feed-fis-events.html?seasoncode=2027&sectorcode=AL&nationcode=FRA",
@@ -11,7 +11,8 @@
           "discipline": "Slalom",
           "category": "ENL",
           "categoryName": "Entry League FIS",
-          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134437"
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134437",
+          "eventUrl": "https://www.fis-ski.com/DB/general/event-details.html?sectorcode=AL&eventid=64037&seasoncode=2027&racecodex=0473"
         },
         {
           "date": "2026-11-23",
@@ -20,7 +21,8 @@
           "discipline": "Slalom",
           "category": "ENL",
           "categoryName": "Entry League FIS",
-          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134436"
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134436",
+          "eventUrl": "https://www.fis-ski.com/DB/general/event-details.html?sectorcode=AL&eventid=64037&seasoncode=2027&racecodex=0473"
         },
         {
           "date": "2026-11-24",
@@ -29,7 +31,8 @@
           "discipline": "Slalom",
           "category": "ENL",
           "categoryName": "Entry League FIS",
-          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134438"
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134438",
+          "eventUrl": "https://www.fis-ski.com/DB/general/event-details.html?sectorcode=AL&eventid=64037&seasoncode=2027&racecodex=0473"
         },
         {
           "date": "2026-11-24",
@@ -38,7 +41,8 @@
           "discipline": "Slalom",
           "category": "ENL",
           "categoryName": "Entry League FIS",
-          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134439"
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134439",
+          "eventUrl": "https://www.fis-ski.com/DB/general/event-details.html?sectorcode=AL&eventid=64037&seasoncode=2027&racecodex=0473"
         },
         {
           "date": "2026-11-28",
@@ -47,7 +51,8 @@
           "discipline": "Slalom",
           "category": "FIS",
           "categoryName": "FIS",
-          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134441"
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134441",
+          "eventUrl": "https://www.fis-ski.com/DB/general/event-details.html?sectorcode=AL&eventid=64038&seasoncode=2027&racecodex=0491"
         },
         {
           "date": "2026-11-28",
@@ -56,7 +61,8 @@
           "discipline": "Slalom",
           "category": "NJR",
           "categoryName": "FIS",
-          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134442"
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134442",
+          "eventUrl": "https://www.fis-ski.com/DB/general/event-details.html?sectorcode=AL&eventid=64038&seasoncode=2027&racecodex=0491"
         },
         {
           "date": "2026-11-28",
@@ -65,7 +71,8 @@
           "discipline": "Slalom",
           "category": "FIS",
           "categoryName": "FIS",
-          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134440"
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134440",
+          "eventUrl": "https://www.fis-ski.com/DB/general/event-details.html?sectorcode=AL&eventid=64038&seasoncode=2027&racecodex=0491"
         },
         {
           "date": "2026-11-29",
@@ -74,7 +81,8 @@
           "discipline": "Slalom",
           "category": "FIS",
           "categoryName": "FIS",
-          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134444"
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134444",
+          "eventUrl": "https://www.fis-ski.com/DB/general/event-details.html?sectorcode=AL&eventid=64038&seasoncode=2027&racecodex=0491"
         },
         {
           "date": "2026-11-29",
@@ -83,7 +91,8 @@
           "discipline": "Slalom",
           "category": "NJR",
           "categoryName": "FIS",
-          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134445"
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134445",
+          "eventUrl": "https://www.fis-ski.com/DB/general/event-details.html?sectorcode=AL&eventid=64038&seasoncode=2027&racecodex=0491"
         },
         {
           "date": "2026-11-29",
@@ -92,7 +101,8 @@
           "discipline": "Slalom",
           "category": "FIS",
           "categoryName": "FIS",
-          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134443"
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=134443",
+          "eventUrl": "https://www.fis-ski.com/DB/general/event-details.html?sectorcode=AL&eventid=64038&seasoncode=2027&racecodex=0491"
         },
         {
           "date": "2026-12-05",
@@ -1879,7 +1889,8 @@
           "discipline": "Slalom",
           "category": "EC",
           "categoryName": "European Cup",
-          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131806"
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131806",
+          "eventUrl": "https://www.fis-ski.com/DB/general/event-details.html?sectorcode=AL&eventid=62979&seasoncode=2027&racecodex=5340"
         },
         {
           "date": "2026-11-22",
@@ -1888,7 +1899,8 @@
           "discipline": "Slalom",
           "category": "EC",
           "categoryName": "European Cup",
-          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131807"
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131807",
+          "eventUrl": "https://www.fis-ski.com/DB/general/event-details.html?sectorcode=AL&eventid=62979&seasoncode=2027&racecodex=5340"
         },
         {
           "date": "2026-11-25",
@@ -1897,7 +1909,8 @@
           "discipline": "Slalom",
           "category": "EC",
           "categoryName": "European Cup",
-          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131750"
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131750",
+          "eventUrl": "https://www.fis-ski.com/DB/general/event-details.html?sectorcode=AL&eventid=62960&seasoncode=2027&racecodex=0340"
         },
         {
           "date": "2026-11-26",
@@ -1906,7 +1919,8 @@
           "discipline": "Slalom",
           "category": "EC",
           "categoryName": "European Cup",
-          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131751"
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131751",
+          "eventUrl": "https://www.fis-ski.com/DB/general/event-details.html?sectorcode=AL&eventid=62960&seasoncode=2027&racecodex=0340"
         },
         {
           "date": "2026-11-30",
@@ -2550,7 +2564,8 @@
           "discipline": "Giant Slalom",
           "category": "WC",
           "categoryName": "World Cup",
-          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131577"
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131577",
+          "eventUrl": "https://www.fis-ski.com/DB/general/event-details.html?sectorcode=AL&eventid=62771&seasoncode=2027&racecodex=5001"
         },
         {
           "date": "2026-10-25",
@@ -2559,7 +2574,8 @@
           "discipline": "Giant Slalom",
           "category": "WC",
           "categoryName": "World Cup",
-          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131578"
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131578",
+          "eventUrl": "https://www.fis-ski.com/DB/general/event-details.html?sectorcode=AL&eventid=62771&seasoncode=2027&racecodex=5001"
         },
         {
           "date": "2026-11-14",
@@ -2568,7 +2584,8 @@
           "discipline": "Slalom",
           "category": "WC",
           "categoryName": "World Cup",
-          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131579"
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131579",
+          "eventUrl": "https://www.fis-ski.com/DB/general/event-details.html?sectorcode=AL&eventid=62772&seasoncode=2027&racecodex=5002"
         },
         {
           "date": "2026-11-15",
@@ -2577,7 +2594,8 @@
           "discipline": "Slalom",
           "category": "WC",
           "categoryName": "World Cup",
-          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131580"
+          "url": "https://www.fis-ski.com/DB/general/results.html?seasoncode=2027&sectorcode=AL&raceid=131580",
+          "eventUrl": "https://www.fis-ski.com/DB/general/event-details.html?sectorcode=AL&eventid=62772&seasoncode=2027&racecodex=5002"
         },
         {
           "date": "2026-11-21",
