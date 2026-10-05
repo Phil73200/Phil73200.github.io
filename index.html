@@ -24,32 +24,32 @@ body{
   color:var(--ink);
   background:linear-gradient(180deg,#edf3f8 0%,#f8fafc 100%);
 }
-.site-header{background:var(--blue);color:#fff;position:relative;z-index:100}
-.site-header-inner{max-width:1100px;margin:auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.site-heading{min-width:0;flex:1}
-.site-title-row{display:flex;align-items:center;justify-content:space-evenly;gap:20px;flex-wrap:nowrap}
-.site-heading p{margin:6px 0 0;font-size:15px;line-height:1.4;color:#e0ecf7;text-align:center}
-.site-brand{color:#fff;text-decoration:none;display:block}
-.site-brand h1{margin:0;font-size:38px;line-height:1.15;font-weight:800;letter-spacing:-.025em}
-.site-brand h1{white-space:nowrap}
-.menu-button{width:44px;height:44px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;background:rgba(0,0,0,.14);border:1px solid rgba(255,255,255,.25);border-radius:10px;cursor:pointer;color:#fff;flex:none}
-.menu-button span{display:block;width:20px;height:2px;background:currentColor;border-radius:2px}
-.menu-button:focus-visible,.site-nav a:focus-visible{outline:3px solid #fff;outline-offset:3px}
-.site-nav[hidden]{display:none}
-.site-nav{position:absolute;right:max(24px,calc((100% - 1052px)/2));top:calc(100% - 4px);width:min(320px,calc(100% - 24px));padding:8px;background:#fff;border:1px solid #dce3eb;border-radius:12px;box-shadow:0 12px 30px #003f7833;z-index:110}
-.site-nav a{display:block;padding:12px;color:var(--blue-dark);text-decoration:none;border-radius:6px;font-size:15px;font-weight:600}
-.site-nav a:hover,.site-nav a:focus-visible{background:#eef4fa;outline-color:var(--blue)}
-.header-partners{display:flex;align-items:center;gap:12px;height:40px;flex:none}
-.header-partners svg{display:block;flex:none;height:32px;width:auto}
-.header-partners .partner-ffs{height:40px}
+.site-header{background:var(--blue);color:#fff;position:relative}
+.site-header-inner{max-width:1100px;margin:auto;padding:18px 24px}
+.site-heading{min-width:0}
+.site-title-row{display:flex;align-items:center;justify-content:center;gap:clamp(18px,3vw,40px);flex-wrap:nowrap}
+.site-brand{color:#fff;text-decoration:none;display:block;flex:none}
+.site-brand h1{margin:0;font-size:44px;line-height:1.15;font-weight:800;letter-spacing:-.025em;white-space:nowrap}
+.header-partners{display:flex;align-items:center;justify-content:center;gap:18px;flex:none}
+.header-partners svg{display:block;flex:none;height:38px;width:auto}
+.header-partners .partner-ffs{height:48px}
 @media(max-width:700px){
- .site-header-inner{padding:14px 12px;gap:10px}
- .site-title-row{gap:8px;justify-content:space-between}
- .site-brand h1{font-size:24px}
- .site-heading p{font-size:13px;margin-top:5px}
- .menu-button{width:36px;height:36px}
- .site-nav{right:12px}
- .tricolor{height:3px}
+ .site-header-inner{padding:16px 12px}
+ .site-title-row{gap:clamp(8px,2.5vw,18px)}
+ .site-brand h1{font-size:clamp(22px,6.67vw,34px)}
+ .header-partners{gap:clamp(3px,1.3vw,8px)}
+ .header-partners svg{height:clamp(16px,4.8vw,24px)}
+ .header-partners .partner-ffs{height:clamp(22px,6.67vw,32px)}
+}
+@media(max-width:360px){
+ .site-header-inner{padding:14px 10px}
+ .site-title-row{gap:8px}
+ .site-brand h1{font-size:22px}
+ .header-partners{gap:3px}
+ .header-partners svg{height:16px}
+ .header-partners .partner-ffs{height:22px}
+}
+.tricolor{height:3px}
  .header-partners{gap:3px;height:24px}
  .header-partners svg{height:16px}
  .header-partners .partner-ffs{height:24px}
@@ -262,20 +262,8 @@ footer{text-align:center;padding:16px 20px 26px;font-size:13px;color:var(--muted
       <svg class="partner-caisse" xmlns="http://www.w3.org/2000/svg" viewBox="1321 123 170 58" width="70" height="24" role="img" aria-label="Caisse d’Épargne Rhône Alpes"><title>Caisse d’Épargne Rhône Alpes</title><image href="images/bandeau infosFIS.png?v=6" width="1536" height="242"/></svg>
     </div>
       </div>
-      <p>Circuits, calendriers &amp; outils</p>
     </div>
-    <button class="menu-button" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
   </div>
-  <nav class="site-nav" id="site-nav" aria-label="Rubriques du site" hidden>
-    <a href="https://fis-cal.fr/" target="_blank" rel="noopener noreferrer">Calendrier France 2027 ↗</a>
-    <a href="/inscriptions/">Inscriptions FIS</a>
-    <a href="/classements/ski-chrono/">Classements Ski Chrono</a>
-    <a href="/reglements/">Règlements</a>
-    <a href="/analyses/continental-cups.html">Coupes continentales</a>
-    <a href="/data-statistiques/">Data et statistiques</a>
-    <a href="/commissions/geneve-oct-2026/">Réunions techniques FIS</a>
-    <a href="/divers/">Divers</a>
-  </nav>
   <div class="tricolor" aria-hidden="true"></div>
 </header>
 
@@ -361,28 +349,5 @@ footer{text-align:center;padding:16px 20px 26px;font-size:13px;color:var(--muted
 <footer>
 Info Circuits FIS • Fédération Française de Ski<br><span style="font-size:10px;opacity:.6">Photo Règlements : Nenad Stojković / Wikimedia Commons / CC BY 2.0</span></footer>
 <script src="assets/fis-banner.js" defer></script>
-<script>
-(() => {
-  const button = document.querySelector('.menu-button');
-  const menu = document.querySelector('#site-nav');
-  const close = () => {
-    menu.hidden = true;
-    button.setAttribute('aria-expanded', 'false');
-    button.setAttribute('aria-label', 'Ouvrir le menu');
-  };
-  button.addEventListener('click', () => {
-    const open = button.getAttribute('aria-expanded') !== 'true';
-    menu.hidden = !open;
-    button.setAttribute('aria-expanded', String(open));
-    button.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
-  });
-  document.addEventListener('click', event => {
-    if (!menu.contains(event.target) && !button.contains(event.target)) close();
-  });
-  document.addEventListener('keydown', event => {
-    if (event.key === 'Escape' && !menu.hidden) {close();button.focus();}
-  });
-})();
-</script>
 </body>
 </html>
