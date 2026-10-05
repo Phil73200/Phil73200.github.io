@@ -175,12 +175,27 @@ footer{
   font-size:13px;
   color:var(--muted);
 }
+.mobile-label{display:none}
 @media(max-width:760px){
+  body{background:#f1f3f5}
   .hero-title{font-size:clamp(25px,7vw,38px)}
-  main{margin-top:20px;padding:0 14px 36px}
-  .intro{padding:20px}
-  .tables{grid-template-columns:1fr}
-  .sheet-card{min-height:140px}
+  main{margin-top:14px;padding:0 12px 24px}
+  .return-menu{margin-bottom:14px}
+  .intro{padding:14px 16px;border-radius:8px;box-shadow:none;margin-bottom:16px}
+  .intro h1{font-size:24px;margin-bottom:6px}
+  .intro p{font-size:14px;line-height:1.4;color:#000}
+  .schedule{margin-top:9px;padding:5px 8px;font-size:12px}
+  .section-title{margin:18px 0 12px;font-size:19px;text-align:center}
+  .tables{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:18px}
+  .sheet-card{min-height:0;padding:14px 12px;border-left-width:3px;border-radius:6px;box-shadow:none;background:#fff}
+  .sheet-card:nth-child(4n+1),.sheet-card:nth-child(4n){background:#edf6ee;border-color:#c5ddca;border-left-color:#2b7e4d}
+  .sheet-card:nth-child(4n+2),.sheet-card:nth-child(4n+3){background:#fff4df;border-color:#e7d2ad;border-left-color:#a67425}
+  .sheet-card h2{margin:0;font-size:17px;font-weight:800;line-height:1.3;overflow-wrap:anywhere;color:var(--green-dark)}
+  .sheet-card p{margin-top:7px;font-size:14px;line-height:1.35;color:#000}
+  .open-sheet{display:none}
+  .desktop-label{display:none}
+  .mobile-label{display:inline}
+  .sheet-card:hover{transform:none;box-shadow:none}
 }
 @media print{
   .return-menu{display:none}
@@ -209,39 +224,49 @@ footer{
   <h2 class="section-title">Tableaux et analyses</h2>
   <section class="tables" aria-label="Tableaux Google Sheets">
     <a href="https://docs.google.com/spreadsheets/d/1-l9I_B30cIlggOOtJE4WSQu36W66BgKn5HX629ABz-g/edit?gid=403608582#gid=403608582" class="sheet-card" target="_blank" rel="noopener noreferrer">
-      <h2>Liste des courses — pénalités calculées et appliquées</h2>
-      <p>Liste des courses avec les pénalités calculées et appliquées.</p>
+      <h2><span class="desktop-label">Liste des courses — pénalités calculées et appliquées</span><span class="mobile-label">Courses et pénalités</span></h2>
+      <p><span class="desktop-label">Liste des courses avec les pénalités calculées et appliquées.</span><span class="mobile-label">Pénalités calculées et appliquées.</span></p>
       <span class="open-sheet">Ouvrir dans Google Sheets ↗</span>
     </a>
     <a href="https://docs.google.com/spreadsheets/d/1g7DH_d_SPcGRh2Z5VvayEfsMSm74orXi2hXwqiRtXYA/edit?gid=849367372#gid=849367372" class="sheet-card" target="_blank" rel="noopener noreferrer">
-      <h2>Résultats chronologiques des coureurs FRA — Saison 2027</h2>
-      <p>Résultats des coureurs français, présentés dans l’ordre chronologique.</p>
+      <h2><span class="desktop-label">Résultats chronologiques des coureurs FRA — Saison 2027</span><span class="mobile-label">Résultats FRA 2027</span></h2>
+      <p><span class="desktop-label">Résultats des coureurs français, présentés dans l’ordre chronologique.</span><span class="mobile-label">Résultats par date.</span></p>
       <span class="open-sheet">Ouvrir dans Google Sheets ↗</span>
     </a>
     <a href="https://docs.google.com/spreadsheets/d/1LS2R264dE46_l2mcZ4PG1lnRjz0NQm10FqlmpDXY4ao/edit?gid=1864139887#gid=1864139887" class="sheet-card" target="_blank" rel="noopener noreferrer">
-      <h2>3 perfs pour 2028 — GS et SL</h2>
-      <p>Suivi des trois performances pour 2028 en GS et SL</p>
+      <h2><span class="desktop-label">3 perfs pour 2028 — GS et SL</span><span class="mobile-label">3 perfs 2028 — GS / SL</span></h2>
+      <p><span class="desktop-label">Suivi des trois performances pour 2028 en GS et SL</span><span class="mobile-label">Trois meilleures performances.</span></p>
       <span class="open-sheet">Ouvrir dans Google Sheets ↗</span>
     </a>
     <a href="https://docs.google.com/spreadsheets/d/1lmCyKtlGyGIKm3haO9x1KFuqTYA9wygFR8voirxFXhA/edit?gid=616310534#gid=616310534" class="sheet-card" target="_blank" rel="noopener noreferrer">
-      <h2>Listing des courses par athlète 🇫🇷 — Saison en cours</h2>
-      <p>Liste des courses par athlète français pour la saison en cours.</p>
+      <h2><span class="desktop-label">Listing des courses par athlète 🇫🇷 — Saison en cours</span><span class="mobile-label">Courses par athlète 🇫🇷</span></h2>
+      <p><span class="desktop-label">Liste des courses par athlète français pour la saison en cours.</span><span class="mobile-label">Saison en cours.</span></p>
       <span class="open-sheet">Ouvrir dans Google Sheets ↗</span>
     </a>
     <a href="https://docs.google.com/spreadsheets/d/1-GAtRnmStxEb2T809dq_q1LHKX7aD_Km3c-bwNbQ1UA/edit?gid=0#gid=0" class="sheet-card" target="_blank" rel="noopener noreferrer">
       <h2>Liste FIS actuelle</h2>
-      <p>Consulter la liste FIS actuelle.</p>
+      <p><span class="desktop-label">Consulter la liste FIS actuelle.</span><span class="mobile-label">Points FIS en vigueur.</span></p>
       <span class="open-sheet">Ouvrir dans Google Sheets ↗</span>
     </a>
     <a href="https://infos-fis.fr/-reservoir-u21/" class="sheet-card">
       <h2>Réservoir U21</h2>
-      <p>Consulter les données et statistiques du réservoir U21.</p>
+      <p><span class="desktop-label">Consulter les données et statistiques du réservoir U21.</span><span class="mobile-label">Suivi des moins de 21 ans.</span></p>
       <span class="open-sheet">Consulter la page →</span>
     </a>
     <a href="/fis-normal-list-top100/" class="sheet-card">
-      <h2>Normal List FIS — Top 100</h2>
-      <p>Répartition par nation dans les Top 30, Top 60 et Top 100 mondiaux.</p>
+      <h2><span class="desktop-label">Normal List FIS — Top 100</span><span class="mobile-label">Top 100 FIS</span></h2>
+      <p><span class="desktop-label">Répartition par nation dans les Top 30, Top 60 et Top 100 mondiaux.</span><span class="mobile-label">Top 30, 60 et 100 par nation.</span></p>
       <span class="open-sheet">Consulter la page →</span>
+    </a>
+    <a href="https://phil73200.github.io/fis-career-analytics/" class="sheet-card" target="_blank" rel="noopener noreferrer">
+      <h2>Road to Top 15</h2>
+      <p><span class="desktop-label">Analyse des parcours et de la progression des athlètes vers le Top 15 mondial.</span><span class="mobile-label">Parcours vers le Top 15 mondial.</span></p>
+      <span class="open-sheet">Consulter l’analyse →</span>
+    </a>
+    <a href="https://phil73200.github.io/comparatif_pena_2026/" class="sheet-card" target="_blank" rel="noopener noreferrer">
+      <h2>Comparatif des pénalités</h2>
+      <p><span class="desktop-label">Comparaison des pénalités FIS des courses de la saison 2026.</span><span class="mobile-label">Pénalités FIS — saison 2026.</span></p>
+      <span class="open-sheet">Consulter l’analyse →</span>
     </a>
   </section>
 
