@@ -149,6 +149,7 @@ main{max-width:1100px;margin:30px auto;padding:0 24px 52px}
 .card.continental{--accent:#1b8190;--wash:#eefafb}
 .card.meetings{--accent:#6651ad;--wash:#f4f1fb}
 .card.data{--accent:#2b7e4d;--wash:#f0f9f4}
+.card.misc{--accent:#465b70;--wash:#f1f4f7}
 .card.continental .card-media img{object-position:left center;object-fit:cover}
 .rules-photo img{object-position:center 48%;object-fit:cover}
 footer{text-align:center;padding:16px 20px 26px;font-size:13px;color:var(--muted)}
@@ -232,6 +233,9 @@ footer{text-align:center;padding:16px 20px 26px;font-size:13px;color:var(--muted
  .race-date{flex-basis:92px;font-size:14px}
  .race-item strong{font-size:16px}
  .race-details{font-size:13px}
+}
+@media(max-width:700px){
+  .hero{position:sticky;top:0;z-index:100}
 }
 </style>
 </head>
@@ -321,6 +325,11 @@ footer{text-align:center;padding:16px 20px 26px;font-size:13px;color:var(--muted
       <strong>Réunions techniques FIS</strong>
       <span class="description-desktop">Genève • Octobre 2026 — synthèse et comptes rendus.</span>
       <span class="description-mobile">Genève 2026 — comptes rendus.</span>
+    </a>
+    <a class="card misc" href="/divers/">
+      <strong>Divers</strong>
+      <span class="description-desktop">Liens utiles, dont fispoints.com.</span>
+      <span class="description-mobile">Liens utiles.</span>
     </a>
   </div>
 </main>
