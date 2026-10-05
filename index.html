@@ -24,63 +24,31 @@ body{
   color:var(--ink);
   background:linear-gradient(180deg,#edf3f8 0%,#f8fafc 100%);
 }
-.hero{
-  position:relative;
-  width:100%;
-  background:#00549f;
-  overflow:hidden;
-  line-height:0;
+.site-header{background:var(--blue);color:#fff;position:relative;z-index:100}
+.site-header-inner{max-width:1100px;margin:auto;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.site-brand{color:#fff;text-decoration:none;display:block}
+.site-brand h1{margin:0;font-size:30px;line-height:1.15;font-weight:800;letter-spacing:-.025em}
+.site-brand p{margin:6px 0 0;font-size:14px;line-height:1.4;color:#e0ecf7}
+.menu-button{width:44px;height:44px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;background:rgba(0,0,0,.14);border:1px solid rgba(255,255,255,.25);border-radius:10px;cursor:pointer;color:#fff;flex:none}
+.menu-button span{display:block;width:20px;height:2px;background:currentColor;border-radius:2px}
+.menu-button:focus-visible,.site-nav a:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.site-nav[hidden]{display:none}
+.site-nav{position:absolute;right:max(24px,calc((100% - 1052px)/2));top:calc(100% - 4px);width:min(320px,calc(100% - 24px));padding:8px;background:#fff;border:1px solid #dce3eb;border-radius:12px;box-shadow:0 12px 30px #003f7833;z-index:110}
+.site-nav a{display:block;padding:12px;color:var(--blue-dark);text-decoration:none;border-radius:6px;font-size:15px;font-weight:600}
+.site-nav a:hover,.site-nav a:focus-visible{background:#eef4fa;outline-color:var(--blue)}
+.footer-partners{display:flex;align-items:center;justify-content:center;gap:24px;margin:0 auto 20px}
+.footer-ffs{width:58px;height:58px;object-fit:contain}
+.footer-sponsors{width:190px;overflow:hidden;border-radius:6px;line-height:0;background:var(--blue)}
+.footer-sponsors img{display:block;width:454.545%;max-width:none;height:auto;margin-left:-354.545%}
+@media(max-width:700px){
+ .site-header-inner{padding:16px}
+ .site-brand h1{font-size:25px}
+ .site-brand p{font-size:12px;margin-top:4px}
+ .site-nav{right:12px}
+ .tricolor{height:3px}
+ .footer-partners{gap:16px}
 }
-.hero-banner{
-  display:block;
-  width:100%;
-  height:auto;
-}
-.hero-overlay{
-  line-height:normal;
-  position:absolute;
-  inset:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  pointer-events:none;
-}
-.hero-title{
-  color:#fff;
-  font-size:clamp(34px,4.8vw,66px);
-  line-height:1;
-  font-weight:850;
-  letter-spacing:-.035em;
-  text-shadow:0 3px 14px rgba(0,0,0,.28);
-  transform:translateX(3%);
-  white-space:nowrap;
-}
-.hero-title .flag{font-size:.68em;vertical-align:.08em;margin-left:10px}
-.hero-qr{
-  line-height:normal;
-  position:absolute;
-  right:3.4%;
-  top:50%;
-  transform:translateY(-50%);
-  background:rgba(255,255,255,.96);
-  padding:7px 8px 6px;
-  border-radius:12px;
-  box-shadow:0 8px 22px rgba(0,0,0,.2);
-  text-align:center;
-  width:126px;
-  z-index:3;
-}
-.hero-qr img{display:block;width:110px;height:110px;margin:auto}
-.hero-qr p{font-size:10px;line-height:1.2;color:var(--blue);font-weight:800;margin:4px 0 0}
-.partner-mask{
-  position:absolute;
-  top:0;
-  right:0;
-  width:30%;
-  height:100%;
-  background:linear-gradient(90deg,rgba(0,84,159,.15),rgba(0,84,159,.97) 28%,rgba(0,84,159,.99));
-  z-index:1;
-}
+
 .tricolor{
   height:5px;
   background:linear-gradient(90deg,#0055a4 0 33.333%,#fff 33.333% 66.666%,#ef4135 66.666% 100%);
@@ -156,17 +124,8 @@ footer{text-align:center;padding:16px 20px 26px;font-size:13px;color:var(--muted
 
 @media(max-width:980px){
   .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .hero-title{font-size:clamp(30px,6vw,48px);transform:translateX(0)}
-  .hero-qr{right:2%;width:102px}
-  .hero-qr img{width:88px;height:88px}
 }
 @media(max-width:700px){
-  .hero-title{font-size:clamp(24px,7vw,36px);max-width:62%;white-space:normal;text-align:center}
-  .hero-title .flag{display:inline-block;margin-left:6px}
-  .hero-qr{width:82px;padding:5px}
-  .hero-qr img{width:70px;height:70px}
-  .hero-qr p{font-size:8px}
-  .partner-mask{width:36%}
   main{margin:16px auto 0;padding:0 12px 20px}
   .section-title{font-size:19px;margin-bottom:12px}
   .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
@@ -196,12 +155,6 @@ footer{text-align:center;padding:16px 20px 26px;font-size:13px;color:var(--muted
   .card:hover{transform:none;box-shadow:none}
   footer{padding:14px 12px 18px;font-size:12px}
 }
-@media(max-width:430px){
-  .hero-qr{display:none}
-  .partner-mask{width:0}
-  .hero-title{max-width:82%;font-size:27px}
-}
-
 @media (max-width: 768px) {
   .section-title { width: 100%; text-align: center; }
 }
@@ -234,9 +187,6 @@ footer{text-align:center;padding:16px 20px 26px;font-size:13px;color:var(--muted
  .race-item strong{font-size:16px}
  .race-details{font-size:13px}
 }
-@media(max-width:700px){
-  .hero{position:sticky;top:0;z-index:100}
-}
 
 .card.meetings .meeting-title{display:flex;align-items:center;gap:10px}
 .card.meetings .meeting-label{flex:1;min-width:0;font:inherit;color:inherit;line-height:inherit}
@@ -246,19 +196,27 @@ footer{text-align:center;padding:16px 20px 26px;font-size:13px;color:var(--muted
 </head>
 <body>
 
-<header class="hero">
-  <img class="hero-banner" src="images/bandeau infosFIS.png?v=6" alt="Bandeau Info Circuits FIS">
-  <div class="partner-mask" aria-hidden="true"></div>
-  <div class="hero-overlay">
-    <div class="hero-title">Info Circuits FIS <span class="flag">🇫🇷</span></div>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="site-brand" href="/" aria-label="Infos FIS — accueil">
+      <h1>Infos FIS 🇫🇷</h1>
+      <p>Circuits, calendriers &amp; outils</p>
+    </a>
+    <button class="menu-button" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
   </div>
-  <aside class="hero-qr" aria-label="Accéder au site sur téléphone">
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASgAAAEoCAIAAABkZftOAAAFaUlEQVR4nO3dUW7jIBRA0XrU/W/ZswJ/WIJeMOd8R0na5opUT8B13/cP8Lf+/fHrAcKDhhUPAsKDgPAgIDwICA8CwoOA8CAgPAgIDwLCg4DwICA8CAgPAsKDgPAgIDwICA8CwoOA8CAgPAgIDwLCg4DwICA8CAgPAsKDgPAgIDwICA8Cv7Nf4Lqunx083RP49v27b/Dbn4dRrHgQEB4EhAcB4UFAeBAQHgSEB1+c46027xo1l3v7PE+Pn/17GPW6s+eZ9yafh1GseBAQHgSEBwHhQUB4EBAeBIQHJ83xZs9VZs+F3s73Rs3NZs8Vvzpnu6P3/8SKBwHhQUB4EBAeBIQHAeFBQHgQWG6Ot5pq/96o5xn1/NV+wq+y4kFAeBAQHgSEBwHhQUB4EBAeBMzxPn6O5Vf3s+3OigcB4UFAeBAQHgSEBwHhQUB4EFhujrfLvGi1/WxfPYfz3uTz8JYVDwLCg4DwICA8CAgPAsKDgPDgpDneqH1iuxh1n94uj3/rOuzzYMWDgPAgIDwICA8CwoOA8CAgPPjiHO+r+6lm72cbZdS8bvb7OY0VDwLCg4DwICA8CAgPAsKDgPAgcM2eq+x+nuRsu7zPXd7/PegewtldWPEgIDwICA8CwoOA8CAgPAgID06a4z2p5nujnqeaC632dxn1/Ncm88C3rHgQEB4EhAcB4UFAeBAQHgSEB1+c4+2+v261e+TeWm1uWc11n9iPBwfxVRMCwoOA8CAgPAgIDwLCg8By+/He2v18ztXmhLvMdZ/sMj+04kFAeBAQHgSEBwHhQUB4EBAeBH5/ItW86O08Z/d76mb/XLP3s92TPyfV59CKBwHhQUB4EBAeBIQHAeFBQHgQ2P5czVHPU52vWO3rG/X8u88/n9iPBx/kqyYEhAcB4UFAeBAQHgSEB1/cjzd7nlOdP/nVcyyred09+XVXu7fQigcB4UFAeBAQHgSEBwHhQUB4cNL9eLvPi1a7l2+1/XLVXO6J+/EAXzWh4H88CAgPAsKDgPAgIDw46VzN1c5dXG2uWP1+Rr2f1fYZXtG5qU+seBAQHgSEBwHhQUB4EBAeBIQHJ+3He1Ltc1vt+Wdbbf/baXNIKx4EhAcB4UFAeBAQHgSEBwHhwRfvx1vt3M7VHl/t91ttH2B1Dqr78eAgvmpCQHgQEB4EhAcB4UFAeHDSuZq73Nv21uw53mrzqF32y1324wG+akJAeBAQHgSEBwHhQUB4EFjuXM0nq+2vq8w+F/Tt6+7++7mi81GteBAQHgSEBwHhQUB4EBAeBIQHgeX2461ml3nXanO2Xe4hvMzx4By+akJAeBAQHgSEBwHhQUB48MX78Vbbr/Xk7Vxo1OOrOVI196vuD7wXm1db8SAgPAgIDwLCg4DwICA8CAgPvjjHW22usto9bLPnYLPvo6vmafdif5e3rHgQEB4EhAcB4YHw4AxWPAgID06a41X36VX7x2bPnWbP5Wa/n7eqfYyjWPEgIDwICA8CwoOA8CAgPAgIDwLLzfFWM+o8zGoe+KS6r281d/Q+rXgQEB4EhAcB4UFAeBAQHgSEBwFzvD8ye743+7zN1eZy16A5ZPXzWvEgIDwICA8CwoOA8CAgPAgIDwLLzfFWmxeNMupcytXme7Pdg/Yruh8P8FUTCv7Hg4DwICA8CAgPAsKDk+Z4q81Vnow6P/Ot3ffLrXY/4RPnasJBfNWEgPAgIDwICA8CwoOA8CBwrTb/gRNY8SAgPAgIDwLCg4DwICA8CAgPAsKDgPAgIDwICA8CwoOA8CAgPAgIDwLCg4DwICA8CAgPAsKDgPAgIDwICA8CwoOA8CAgPAgIDwLCg4DwICA8EB78HOE/BlknUIExtisAAAAASUVORK5CYII=" alt="QR code vers https://phil73200.github.io/">
-    <p>Le site sur votre téléphone</p>
-  </aside>
+  <nav class="site-nav" id="site-nav" aria-label="Rubriques du site" hidden>
+    <a href="https://fis-cal.fr/" target="_blank" rel="noopener noreferrer">Calendrier France 2027 ↗</a>
+    <a href="/inscriptions/">Inscriptions FIS</a>
+    <a href="/classements/ski-chrono/">Classements Ski Chrono</a>
+    <a href="/reglements/">Règlements</a>
+    <a href="/analyses/continental-cups.html">Coupes continentales</a>
+    <a href="/data-statistiques/">Data et statistiques</a>
+    <a href="/commissions/geneve-oct-2026/">Réunions techniques FIS</a>
+    <a href="/divers/">Divers</a>
+  </nav>
+  <div class="tricolor" aria-hidden="true"></div>
 </header>
 
-<div class="tricolor" aria-hidden="true"></div>
 
 <section id="upcoming-races" class="upcoming-races" aria-labelledby="race-heading" hidden>
   <div class="race-heading"><h2 id="race-heading">Prochaine course à suivre</h2><span>Calendrier officiel FIS</span></div>
@@ -338,7 +296,35 @@ footer{text-align:center;padding:16px 20px 26px;font-size:13px;color:var(--muted
   </div>
 </main>
 
-<footer>Info Circuits FIS • Fédération Française de Ski<br><span style="font-size:10px;opacity:.6">Photo Règlements : Nenad Stojković / Wikimedia Commons / CC BY 2.0</span></footer>
+<footer>
+  <div class="footer-partners" aria-label="Fédération et partenaires">
+    <img class="footer-ffs" src="images/logo_ffs.gif" alt="Fédération Française de Ski" loading="lazy">
+    <div class="footer-sponsors"><img src="images/bandeau infosFIS.png?v=6" alt="Ski Chrono, SAMSE et Caisse d’Épargne Rhône Alpes" loading="lazy"></div>
+  </div>
+Info Circuits FIS • Fédération Française de Ski<br><span style="font-size:10px;opacity:.6">Photo Règlements : Nenad Stojković / Wikimedia Commons / CC BY 2.0</span></footer>
 <script src="assets/fis-banner.js" defer></script>
+<script>
+(() => {
+  const button = document.querySelector('.menu-button');
+  const menu = document.querySelector('#site-nav');
+  const close = () => {
+    menu.hidden = true;
+    button.setAttribute('aria-expanded', 'false');
+    button.setAttribute('aria-label', 'Ouvrir le menu');
+  };
+  button.addEventListener('click', () => {
+    const open = button.getAttribute('aria-expanded') !== 'true';
+    menu.hidden = !open;
+    button.setAttribute('aria-expanded', String(open));
+    button.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+  });
+  document.addEventListener('click', event => {
+    if (!menu.contains(event.target) && !button.contains(event.target)) close();
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && !menu.hidden) {close();button.focus();}
+  });
+})();
+</script>
 </body>
 </html>
