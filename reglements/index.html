@@ -204,6 +204,16 @@ footer{
 .rules-fis .card strong{font-size:16px;margin-bottom:5px}
 .rules-fis .card span{font-size:13px;line-height:1.4}
 .rules-fis>.section-title{margin-bottom:12px}
+
+
+
+.tools-block{margin:24px 0;padding:16px 20px 18px;background:#fff3e8;border:1px solid #efc7a7;border-radius:14px}
+.tools-block>.section-title{margin:0 0 12px;color:#a94f12}
+.tools-block .card{min-height:0;padding:14px 16px;border-left-color:#d66a1f;background:linear-gradient(145deg,#fff 55%,#fff4ea)}
+.tools-block .card strong{color:#b95410;font-size:16px;margin-bottom:5px}
+.tools-block .card span{font-size:13px;line-height:1.4}
+@media(max-width:760px){.tools-block{padding:16px 14px}}
+
 </style>
 </head>
 <body>
@@ -269,7 +279,16 @@ footer{
 
   </section>
 
-  
+  <section class="tools-block" aria-labelledby="outils-title">
+    <h2 class="section-title" id="outils-title">Outils</h2>
+    <div class="grid">
+      <a class="card" href="https://pg-chrono.fr/" target="_blank" rel="noopener noreferrer" style="grid-column:1 / -1">
+        <strong>Calculette manuelle pour temps manquants</strong>
+        <span>Calcul manuel des temps manquants.</span>
+      </a>
+    </div>
+  </section>
+
   <nav class="return-menu" aria-label="Navigation">
     <a href="/">← Retour à l’accueil</a>
   </nav>
