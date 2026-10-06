@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="fr">
 <head>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Règlements 2027 — Infos FIS</title>
@@ -187,6 +188,22 @@ footer{
 @media print{
   .return-menu{display:none}
 }
+
+.rules-france,.rules-fis{padding:20px 22px 22px;border-radius:14px;margin-bottom:24px}
+.rules-france{background:#e4f0fc;border:1px solid #c2d9ee}
+.rules-fis{background:#fff4cf;border:1px solid #ebcd78}
+.rules-france>.section-title,.rules-fis>.section-title{margin:0 0 16px}
+.rules-france .champ-block{margin-bottom:0}
+.rules-fis .card{border-left-color:#d6a311;background:linear-gradient(145deg,#fff 55%,#fffbed)}
+.rules-fis .card strong{color:#003f78}
+@media(max-width:760px){.rules-france,.rules-fis{padding:16px 14px}}
+
+.rules-fis{padding:16px 20px 18px}
+.rules-fis .grid{gap:10px 14px}
+.rules-fis .card{min-height:0;padding:14px 16px;border-radius:9px}
+.rules-fis .card strong{font-size:16px;margin-bottom:5px}
+.rules-fis .card span{font-size:13px;line-height:1.4}
+.rules-fis>.section-title{margin-bottom:12px}
 </style>
 </head>
 <body>
@@ -203,7 +220,8 @@ footer{
   </nav>
 
 
-  <h2 class="section-title">Documents généraux</h2>
+  <section class="rules-france" aria-labelledby="circuit-france-title">
+  <h2 class="section-title" id="circuit-france-title">Circuit France</h2>
   <div class="grid">
     <a class="card" href="/reglements/recap-quota-fis-2027.html">
       <strong>Récapitulatif des quotas FIS 2027</strong>
@@ -223,6 +241,34 @@ footer{
     </a>
   </section>
 
+  </section>
+
+  <section class="rules-fis" aria-labelledby="reglements-fis-title">
+    <h2 class="section-title" id="reglements-fis-title">Règlements FIS</h2>
+    <div class="grid">
+      <a class="card" href="https://assets.fis-ski.com/f/252177/x/57a5e17fad/icr-04-09-2026.pdf" target="_blank" rel="noopener noreferrer">
+        <strong>RIS FIS 🇬🇧</strong>
+        <span>Version officielle ICR · ski alpin · PDF.</span>
+      </a>
+      <a class="card" href="/reglements/ris-fis-fr.html">
+        <strong>RIS FIS 🇫🇷</strong>
+        <span>Traduction française non officielle · édition juillet 2026.</span>
+      </a>
+      <a class="card" href="https://assets.fis-ski.com/f/252177/x/ddef5ebef2/fis_points_rules_01-07-2026.pdf" target="_blank" rel="noopener noreferrer">
+        <strong>RIS Points FIS 🇬🇧</strong>
+        <span>Règlement officiel · édition 2026/2027 · PDF.</span>
+      </a>
+      <a class="card" href="/reglements/ris-points-fis-fr.html">
+        <strong>RIS Points FIS 🇫🇷</strong>
+        <span>Traduction française non officielle · édition 2026/2027.</span>
+      </a>
+      <a class="card" href="/reglements/tableau-deniveles-portes.html" style="grid-column:1 / -1">
+        <strong>Tableau des dénivelés et nombre de portes officielles</strong>
+        <span>DH, SL, GS, SG et parallèle · tableau en français.</span>
+      </a>
+    </div>
+  </section>
+
   <nav class="return-menu" aria-label="Navigation">
     <a href="/">← Retour à l’accueil</a>
   </nav>
@@ -231,3 +277,4 @@ footer{
 <footer>Info Circuits FIS • Fédération Française de Ski</footer>
 </body>
 </html>
+
