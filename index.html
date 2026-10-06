@@ -194,6 +194,14 @@ footer{text-align:center;padding:16px 20px 26px;font-size:13px;color:var(--muted
 .card.meetings .meeting-label{flex:1;min-width:0;font:inherit;color:inherit;line-height:inherit}
 .card.meetings .meeting-logo{display:block;flex:none;width:36px;height:40px;object-fit:contain}
 @media(max-width:700px){.card.meetings .meeting-title{gap:7px}.card.meetings .meeting-logo{width:32px;height:36px}}
+.rules-logos{display:none}
+.rules-logos .mini-fis,.rules-logos .mini-ffs{display:inline-flex;align-items:center;justify-content:center;width:28px;height:24px;border-radius:4px}
+.rules-logos .mini-fis{position:relative;background:#fff;color:#1b1421;font:italic 800 13px Georgia,serif;letter-spacing:-.08em;border:1px solid #d8dee8}
+.rules-logos .mini-fis:before,.rules-logos .mini-fis:after{content:"";position:absolute;width:3px;height:20px;transform:skew(-22deg);top:1px;left:9px;background:#f7b81b}
+.rules-logos .mini-fis:after{left:15px;background:#244d98}
+.rules-logos .mini-ffs{background:#07549d;color:#fff;font:800 10px Arial,sans-serif;letter-spacing:-.05em;border:1px solid #d8dee8}
+.rules-logos .logo-plus{margin:0 5px;color:#00549f;font-size:17px;font-weight:800}
+@media(max-width:700px){.rules-logos{display:flex;align-items:center;justify-content:flex-end;margin-top:7px;height:26px}}
 
 /* Reflet diagonal sur le titre et pulsation successive des partenaires. */
 .title-shimmer{
@@ -296,6 +304,7 @@ footer{text-align:center;padding:16px 20px 26px;font-size:13px;color:var(--muted
 
     <a class="card rules has-media" href="/reglements/">
       <div class="card-media rules-photo"><img src="/images/bandeau-reglements-fis-v2.png" alt="Extrait de la couverture du règlement international FIS" style="object-fit:contain;background:#fff"></div>
+      <span class="rules-logos" aria-label="FIS plus Fédération Française de Ski"><span class="mini-fis" aria-hidden="true">FIS</span><span class="logo-plus" aria-hidden="true">+</span><span class="mini-ffs" aria-hidden="true">FFS</span></span>
       <strong>Règlements</strong>
       <span class="description-desktop">Consulter les quotas FIS, les règlements des Championnats de France et les modalités de sélection.</span>
       <span class="description-mobile">Quotas, championnats et sélections.</span>
@@ -333,4 +342,3 @@ Info Circuits FIS • Fédération Française de Ski</footer>
 <script src="assets/fis-banner.js" defer></script>
 </body>
 </html>
-
