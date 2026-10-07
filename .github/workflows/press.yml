@@ -1,7 +1,7 @@
 name: Update alpine press
 on:
   schedule:
-    - cron: '35 5 * * *'
+    - cron: '0 5,6,10,11,15,16 * * *'
   workflow_dispatch:
   push:
     paths:
@@ -17,12 +17,29 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
+      - name: Check Paris collection time
+        id: slot
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          python3 - <<'PY'
+          import datetime, os
+          from zoneinfo import ZoneInfo
+          hour = datetime.datetime.now(ZoneInfo("Europe/Paris")).hour
+          due = os.environ["EVENT_NAME"] != "schedule" or hour in (7, 12, 17)
+          with open(os.environ["GITHUB_OUTPUT"], "a") as output:
+              output.write("due=" + str(due).lower() + "\n")
+          PY
       - uses: actions/checkout@v4
+        if: steps.slot.outputs.due == 'true'
       - uses: actions/setup-python@v5
+        if: steps.slot.outputs.due == 'true'
         with:
           python-version: '3.12'
       - run: python scripts/update_press.py
+        if: steps.slot.outputs.due == 'true'
       - name: Save and publish new articles
+        if: steps.slot.outputs.due == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
