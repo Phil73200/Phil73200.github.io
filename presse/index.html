@@ -79,10 +79,19 @@ main{max-width:1100px;margin:30px auto;padding:0 24px 52px}
   text-decoration:none;
   color:var(--ink);
   box-shadow:0 7px 18px rgba(22,51,80,.06);
-  transition:transform .18s ease,box-shadow .18s ease;
+  transition:transform .18s ease,box-shadow .18s ease,outline-color .18s ease;
 }
-.card,.upcoming-races{outline:1px solid #fff;outline-offset:1px}
-.card:hover{transform:translateY(-3px);box-shadow:0 12px 24px rgba(22,51,80,.12)}
+.card{outline:2px solid transparent;outline-offset:1px}
+.upcoming-races{outline:1px solid #fff;outline-offset:1px}
+@media(hover:hover) and (pointer:fine){
+  .card:hover{outline-color:#fff;transform:translateY(-3px);box-shadow:0 12px 24px rgba(22,51,80,.12)}
+}
+.card:focus-visible,.card:active{outline-color:#fff}
+.card:active{transform:translateY(-1px)}
+@media(prefers-reduced-motion:reduce){
+  .card,.card.has-media .card-media img{transition:none}
+  .card:hover,.card:active,.card.has-media:hover .card-media img{transform:none}
+}
 .card strong{display:block;color:var(--accent);font-size:18px;line-height:1.25;margin-bottom:9px}
 .card span{font-size:14.5px;line-height:1.45;color:#000}
 .card .description-mobile{display:none}
