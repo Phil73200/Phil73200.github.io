@@ -57,6 +57,9 @@ body{
 }
 main{max-width:1100px;margin:30px auto;padding:0 24px 52px}
 .press-review{margin-top:30px}
+.press-intro{margin:0 0 18px;color:var(--blue-dark);font-size:14px;line-height:1.45}
+.press-article .press-circuit{display:block;margin-bottom:10px;padding-right:12px;font-size:12px;color:var(--muted)}
+.press-article .press-meta{display:block;margin-top:12px;font-size:12px;color:var(--muted)}
 .section-title{margin:0 0 17px;font-size:23px;color:#004681}
 .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
 .card{
@@ -367,11 +370,27 @@ footer{text-align:center;padding:16px 20px 26px;font-size:13px;color:var(--muted
 
   <section class="press-review" aria-labelledby="press-review-heading">
     <h2 id="press-review-heading" class="section-title">Presse ski alpin</h2>
+    <p class="press-intro">Résultats des circuits FIS France, du Samse Tour, des championnats de France et de la Coupe d’Europe.</p>
     <div class="grid">
-      <a class="card misc external" href="https://www.ledauphine.com/skichrono/ski-alpin" target="_blank" rel="noopener noreferrer">
-        <strong>Ski Chrono</strong>
-        <span class="description-desktop">Les articles et actualités du ski alpin.</span>
-        <span class="description-mobile">Actualités du ski alpin.</span>
+      <a class="card misc external press-article" href="https://www.ledauphine.com/skichrono/2026/04/10/ski-chrono-samse-tour-decouvrez-les-laureats-des-classements-2026" target="_blank" rel="noopener noreferrer">
+        <span class="press-circuit">FIS France · Samse Tour</span>
+        <strong>Samse Tour : le palmarès final 2026</strong>
+        <span class="press-meta">Ski Chrono · <time datetime="2026-04-10">10 avril 2026</time></span>
+      </a>
+      <a class="card misc external press-article" href="https://www.ledauphine.com/skichrono/2026/04/09/zoe-douat-et-sacha-dimier-chambet-s-adjugent-la-premiere-course-des-finales" target="_blank" rel="noopener noreferrer">
+        <span class="press-circuit">FIS France · Samse Tour</span>
+        <strong>Finales : victoires de Zoé Douat et Sacha Dimier-Chambet</strong>
+        <span class="press-meta">Ski Chrono · <time datetime="2026-04-09">9 avril 2026</time></span>
+      </a>
+      <a class="card misc external press-article" href="https://www.ledauphine.com/skichrono/2026/04/01/sam-alphand-nouveau-champion-de-france-de-descente" target="_blank" rel="noopener noreferrer">
+        <span class="press-circuit">Championnats de France</span>
+        <strong>Descente : Sam Alphand décroche le titre national</strong>
+        <span class="press-meta">Ski Chrono · <time datetime="2026-04-01">1er avril 2026</time></span>
+      </a>
+      <a class="card misc external press-article" href="https://www.ledauphine.com/skichrono/2026/03/25/hugo-desgrippes-remporte-le-general-du-slalom-devant-auguste-aulnette" target="_blank" rel="noopener noreferrer">
+        <span class="press-circuit">Coupe d’Europe</span>
+        <strong>Slalom : Hugo Desgrippes et Auguste Aulnette en tête du classement final</strong>
+        <span class="press-meta">Ski Chrono · <time datetime="2026-03-25">25 mars 2026</time></span>
       </a>
     </div>
   </section>
