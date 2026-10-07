@@ -1,0 +1,60 @@
+{
+  "articles": [
+    {
+      "url": "https://www.ledauphine.com/skichrono/2026/10/01/coupe-d-europe-decouvrez-le-calendrier-complet-de-la-saison-2026-2027",
+      "title": "Ski alpin. Coupe d'Europe : découvrez le calendrier complet de la saison 2026-2027",
+      "date": "2026-10-01",
+      "source": "ski-chrono",
+      "circuit": "Coupe d’Europe"
+    },
+    {
+      "url": "https://www.ski-nordique.net/ski-alpin-le-calendrier-et-le-programme-de-la-coupe-deurope-hommes-20262027.6753918-87570.html",
+      "title": "Coupe d'Europe de ski alpin hommes 2026-2027 : le calendrier complet",
+      "date": "2026-09-28",
+      "source": "sports-infos",
+      "circuit": "Coupe d’Europe"
+    },
+    {
+      "url": "https://www.ski-nordique.net/ski-alpin-le-calendrier-et-le-programme-de-la-coupe-deurope-dames-20262027.6753919-87570.html",
+      "title": "Coupe d'Europe de ski alpin dames 2026-2027 : le calendrier complet",
+      "date": "2026-09-28",
+      "source": "sports-infos",
+      "circuit": "Coupe d’Europe"
+    },
+    {
+      "url": "https://www.ski-nordique.net/coupe-deurope-de-ski-alpin-2026-tous-les-laureats.6743747-87570.html",
+      "title": "Coupe d’Europe 2026 : le palmarès par discipline",
+      "date": "2026-04-16",
+      "source": "sports-infos",
+      "circuit": "Coupe d’Europe"
+    },
+    {
+      "url": "https://www.ledauphine.com/skichrono/2026/04/10/ski-chrono-samse-tour-decouvrez-les-laureats-des-classements-2026",
+      "title": "Samse Tour : le palmarès final 2026",
+      "date": "2026-04-10",
+      "source": "ski-chrono",
+      "circuit": "FIS France · Samse Tour"
+    },
+    {
+      "url": "https://www.ledauphine.com/skichrono/2026/04/09/zoe-douat-et-sacha-dimier-chambet-s-adjugent-la-premiere-course-des-finales",
+      "title": "Finales : victoires de Zoé Douat et Sacha Dimier-Chambet",
+      "date": "2026-04-09",
+      "source": "ski-chrono",
+      "circuit": "FIS France · Samse Tour"
+    },
+    {
+      "url": "https://www.ledauphine.com/skichrono/2026/04/01/sam-alphand-nouveau-champion-de-france-de-descente",
+      "title": "Descente : Sam Alphand décroche le titre national",
+      "date": "2026-04-01",
+      "source": "ski-chrono",
+      "circuit": "Championnats de France"
+    },
+    {
+      "url": "https://www.ledauphine.com/skichrono/2026/03/25/hugo-desgrippes-remporte-le-general-du-slalom-devant-auguste-aulnette",
+      "title": "Slalom : Hugo Desgrippes et Auguste Aulnette en tête du classement final",
+      "date": "2026-03-25",
+      "source": "ski-chrono",
+      "circuit": "Coupe d’Europe"
+    }
+  ]
+}
