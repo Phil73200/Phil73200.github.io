@@ -77,16 +77,16 @@ main{max-width:1100px;margin:30px auto;padding:0 24px 52px}
   box-shadow:0 7px 18px rgba(22,51,80,.06);
   transition:transform .18s ease,box-shadow .18s ease,outline-color .18s ease;
 }
-.card{outline:2px solid transparent;outline-offset:1px}
+.card{outline:1px solid #c5cbd2;outline-offset:0}
 .upcoming-races{outline:1px solid #fff;outline-offset:1px}
 @media(hover:hover) and (pointer:fine){
-  .card:hover{outline-color:#fff;transform:translateY(-3px);box-shadow:0 12px 24px rgba(22,51,80,.12)}
+  .card:hover{outline-color:var(--blue);box-shadow:0 12px 24px rgba(22,51,80,.12)}
 }
-.card:focus-visible,.card:active{outline-color:#fff}
-.card:active{transform:translateY(-1px)}
+.card:focus-visible,.card:active{outline-color:var(--blue)}
+.card:active{box-shadow:0 12px 24px rgba(22,51,80,.12)}
 @media(prefers-reduced-motion:reduce){
   .card,.card.has-media .card-media img{transition:none}
-  .card:hover,.card:active,.card.has-media:hover .card-media img{transform:none}
+  .card:hover,.card:active,.card.has-media:hover .card-media img,.card.has-media:focus-visible .card-media img,.card.has-media:active .card-media img{transform:none}
 }
 .card strong{display:block;color:var(--accent);font-size:18px;line-height:1.25;margin-bottom:9px}
 .card span{font-size:14.5px;line-height:1.45;color:#000}
@@ -119,7 +119,10 @@ main{max-width:1100px;margin:30px auto;padding:0 24px 52px}
   object-fit:cover;
   transition:transform .25s ease;
 }
-.card.has-media:hover .card-media img{transform:scale(1.025)}
+@media(hover:hover) and (pointer:fine){
+  .card.has-media:hover .card-media img{transform:scale(1.06)}
+}
+.card.has-media:focus-visible .card-media img,.card.has-media:active .card-media img{transform:scale(1.06)}
 .card.has-media strong{margin-bottom:7px}
 
 
