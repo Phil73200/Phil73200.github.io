@@ -227,6 +227,40 @@ footer{
   .resource-group .section-title{margin:0 0 12px}
   .resource-group .sheet-card{background:#fff}
 }
+
+/* Présentation compacte et informations repliables par défaut. */
+.hero-title{margin:0}
+main{margin-top:12px;padding-bottom:12px}
+.return-menu{gap:6px;margin-bottom:8px}
+.return-menu a{padding:7px 12px;min-height:36px}
+.intro{padding:8px 12px;margin-bottom:10px}
+.intro summary{color:var(--green-dark);font-size:16px;font-weight:700;cursor:pointer;line-height:1.3}
+.intro summary:focus-visible{outline:3px solid var(--green);outline-offset:3px}
+.intro-content{margin-top:8px}
+.intro p{line-height:1.35}
+.schedule{margin-top:6px;padding:4px 8px}
+.resource-group{padding:12px;margin-bottom:10px}
+.resource-group .section-title{margin-bottom:8px}
+.tables{gap:8px}
+.sheet-card{min-height:0;padding:12px}
+.sheet-card h2{margin-bottom:4px;line-height:1.2}
+.sheet-card p{line-height:1.3}
+.file-tag{margin-bottom:4px;padding:2px 6px}
+.open-sheet{margin-top:6px}
+footer{padding:6px 12px 10px}
+@media(max-width:760px){
+ main{margin-top:6px;padding-bottom:4px}
+ .return-menu{margin-bottom:6px}
+ .intro{padding:7px 10px;margin-bottom:6px}
+ .resource-group{padding:7px 6px;margin-bottom:6px}
+ .resource-group .section-title{margin-bottom:5px}
+ .tables{gap:5px}
+ .sheet-card{padding:7px 8px}
+ .sheet-card h2{margin-bottom:0;line-height:1.2}
+ .sheet-card p{margin-top:4px;line-height:1.25}
+ .file-tag{margin-bottom:3px}
+ footer{padding:4px 10px 6px}
+}
 </style>
 
 <link rel="stylesheet" href="/assets/tile-borders.css">
@@ -235,7 +269,7 @@ footer{
 
 <header class="hero" aria-label="Data et statistiques">
   <img src="../images/bandeau infosFIS.png?v=2" alt="Bandeau Info Circuits FIS">
-  <div class="hero-title">Data et statistiques</div>
+  <h1 class="hero-title">Data et statistiques</h1>
 </header>
 <div class="tricolor" aria-hidden="true"></div>
 
@@ -244,11 +278,13 @@ footer{
     <a href="/">← Retour à l’accueil</a>
   </nav>
 
-  <section class="intro">
-    <h1>Data et statistiques</h1>
+  <details class="intro">
+    <summary>Informations sur les tableaux</summary>
+    <div class="intro-content">
     <p>Consultez les tableaux Google Sheets connectés à la base de données de la FIS (plus lisibles sur un écran d’ordinateur).<br>Les pages HTML peuvent être consultées sans problème sur un téléphone.</p>
     <span class="schedule">Mise à jour quotidienne à 16h</span>
-  </section>
+    </div>
+  </details>
 
   <section class="resource-group google-group" aria-labelledby="google-group-title">
     <h2 class="section-title" id="google-group-title">Tableaux Google Sheets</h2>
