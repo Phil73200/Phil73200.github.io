@@ -1,10 +1,10 @@
 /* Contours communs des tuiles */
-.card,.sheet-card{--tile-color:var(--accent,#00549f);border:4px solid #fff!important;box-shadow:none!important;outline:none;border-radius:22px!important;transition:border-color .18s ease,transform .2s ease!important}
+.card,.sheet-card{--tile-color:var(--accent,#00549f);border:2px solid #003f78!important;box-shadow:none!important;outline:none;border-radius:22px!important;transition:border-color .18s ease,transform .2s ease!important}
 .intro{border:4px solid #fff!important;box-shadow:none!important}
 .card.webffs{--tile-color:#00549f}
 .champ-card{--tile-color:#c91120}
 .rules-fis .card{--tile-color:#003f78}
-.rules-fis .card.fr-html{--tile-color:#00549f;border-color:#00549f!important}
+.rules-fis .card.fr-html{--tile-color:#00549f;border-color:#003f78!important}
 .tools-block .card{--tile-color:#b95410}
 .sheet-card{--tile-color:#2b7e4d}
 .html-group .sheet-card{--tile-color:#00549f}
