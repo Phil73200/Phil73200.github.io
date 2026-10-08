@@ -349,6 +349,31 @@ footer{text-align:center;padding:16px 20px 26px;font-size:13px;color:var(--muted
  .divers-zone{padding:6px 8px;margin-top:10px}
  .divers-zone .card{padding:6px 8px}
 }
+
+/* Réduire les espaces vides sur téléphone sans masquer de contenu. */
+@media(max-width:700px){
+ .site-header-inner{padding:6px 10px}
+ main{margin-top:5px;padding-bottom:4px}
+ .upcoming-races{margin-top:4px;padding:4px 8px}
+ .race-heading{margin-bottom:3px}
+ .race-tabs{margin-bottom:3px;gap:4px}
+ .race-tabs button,.race-tabs a{padding:3px 8px}
+ .race-list{gap:4px}
+ .race-item{padding:3px 7px}
+ .tools-zone{padding:6px}
+ .tools-zone .tools-heading{margin-bottom:5px}
+ .tools-zone .grid{gap:5px}
+ .tools-zone .card,.tools-zone .card.has-media{padding-top:5px;padding-bottom:5px}
+ .tools-zone .card strong,.tools-zone .card.has-media strong{margin-bottom:4px}
+ .card.meetings .meeting-title{padding-bottom:3px;margin-bottom:4px}
+ .card.meetings .meeting-logo{height:26px;width:23px}
+ .divers-zone{margin-top:6px;padding:4px 8px}
+ #divers-heading{margin-bottom:3px}
+ .divers-zone .card{padding:4px 8px}
+ .divers-zone .card:only-child{grid-column:1 / -1}
+ .divers-zone .card strong{margin-bottom:2px}
+ footer{padding:4px 12px 5px}
+}
 </style>
 <link rel="stylesheet" href="/assets/press-visibility.css">
 </head>
