@@ -1,0 +1,5 @@
+/* Revue de presse provisoirement masquée sur ordinateur et mobile.
+   Pour la réactiver, supprimer les deux règles ci-dessous.
+   Conserver ce fichier et ses liens : le code, les articles et leur collecte restent en place. */
+[data-press-feature] { display: none !important; }
+[data-press-paused-notice] { display: block !important; }
