@@ -74,11 +74,11 @@ main{max-width:1100px;margin:30px auto;padding:0 24px 52px}
   text-decoration:none;
   color:var(--ink);
   box-shadow:none;
-  transition:border-color .18s ease;
+  transition:border-color .18s ease,transform .2s ease;
 }
 .upcoming-races{outline:1px solid #fff;outline-offset:1px}
 @media(hover:hover) and (pointer:fine){
-  .card:hover{border-color:var(--accent)}
+  .card:hover{border-color:var(--accent);transform:scale(1.04);z-index:1}
 }
 .card:focus-visible,.card:active{border-color:var(--accent)}
 @media(prefers-reduced-motion:reduce){
@@ -117,7 +117,7 @@ main{max-width:1100px;margin:30px auto;padding:0 24px 52px}
   transition:transform .25s ease;
 }
 @media(hover:hover) and (pointer:fine){
-  .card.has-media:hover .card-media img{transform:scale(1.06)}
+  .card.has-media:hover .card-media img{transform:scale(1.12)}
 }
 .card.has-media:focus-visible .card-media img,.card.has-media:active .card-media img{transform:scale(1.06)}
 .card.has-media strong{margin-bottom:7px}
@@ -314,6 +314,7 @@ footer{text-align:center;padding:16px 20px 26px;font-size:13px;color:var(--muted
 
 @media(min-width:981px) and (max-width:1100px){.card.chrono .chrono-tour{font-size:14px}}
 @media(max-width:360px){.card.chrono{padding-left:4px;padding-right:4px}.card.chrono .chrono-title-line{font-size:13px;gap:4px}.card.chrono .chrono-logo{width:22px;height:12px}.card.chrono .chrono-tour{font-size:clamp(9px,2.8vw,10px)}}
+@media(prefers-reduced-motion:reduce){.card:hover,.card.has-media:hover .card-media img,.card.has-media:focus-visible .card-media img,.card.has-media:active .card-media img{transform:none!important}}
 </style>
 <link rel="stylesheet" href="/assets/press-visibility.css">
 </head>

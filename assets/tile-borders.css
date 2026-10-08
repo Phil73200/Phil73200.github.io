@@ -1,5 +1,5 @@
 /* Contours communs des tuiles */
-.card,.sheet-card{--tile-color:var(--accent,#00549f);border:4px solid #fff!important;box-shadow:none!important;outline:none;transition:border-color .18s ease!important}
+.card,.sheet-card{--tile-color:var(--accent,#00549f);border:4px solid #fff!important;box-shadow:none!important;outline:none;transition:border-color .18s ease,transform .2s ease!important}
 .intro{border:4px solid #fff!important;box-shadow:none!important}
 .card.webffs{--tile-color:#00549f}
 .champ-card{--tile-color:#c91120}
@@ -9,8 +9,8 @@
 .sheet-card{--tile-color:#2b7e4d}
 .html-group .sheet-card{--tile-color:#00549f}
 @media(hover:hover) and (pointer:fine){
-.card:hover,.sheet-card:hover{border-color:var(--tile-color)!important;box-shadow:none!important;transform:none!important}
+.card:hover,.sheet-card:hover{border-color:var(--tile-color)!important;box-shadow:none!important;transform:scale(1.04)!important;position:relative;z-index:1}
 }
 .card:active,.sheet-card:active,.card:focus-visible,.sheet-card:focus-visible{border-color:var(--tile-color)!important}
 .card:focus-visible,.sheet-card:focus-visible{outline:2px solid var(--tile-color);outline-offset:3px}
-@media(prefers-reduced-motion:reduce){.card,.sheet-card{transition:none!important}}
+@media(prefers-reduced-motion:reduce){.card,.sheet-card{transition:none!important}.card:hover,.sheet-card:hover{transform:none!important}}
