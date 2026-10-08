@@ -175,7 +175,7 @@ mark.search-highlight{background:#ffeb00!important;color:#111!important;padding:
     more.hidden = true;
     if (!raw) { terms = []; clearHighlights(); status.textContent = 'Saisissez un mot-clé ou un numéro d’article.'; return; }
     const number = raw.replace(/^(?:art(?:icle)?\.?\s*)/, '').replace(/\.$/, '');
-    terms = raw.split(' ');
+    terms = raw.split(' ').filter(Boolean);
     if (/^\d{1,4}(?:\.\d+)*$/.test(number)) {
       matches = entries.filter(entry => entry.number === number || entry.number.startsWith(number + '.'));
       terms = [];
@@ -200,8 +200,9 @@ mark.search-highlight{background:#ffeb00!important;color:#111!important;padding:
     }
     target.scrollIntoView({block: 'start'});
   }
-  // Surlignage des termes recherchés dans le texte du règlement.
+  // Surlignage du texte, sans modifier le contenu du règlement.
   const highlighted = [];
+  const fold = value => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
   function clearHighlights() {
     for (const mark of highlighted.splice(0)) {
       if (!mark.isConnected) continue;
@@ -212,45 +213,46 @@ mark.search-highlight{background:#ffeb00!important;color:#111!important;padding:
   }
   function highlightTerms() {
     clearHighlights();
-    if (!terms.length) return;
-    const needles = [...new Set(terms.filter(Boolean))].sort((a,b)=>b.length-a.length);
-    const textWalker = document.createTreeWalker(article, NodeFilter.SHOW_TEXT, {
-      acceptNode(node) {
-        return node.parentElement && !node.parentElement.closest('script,style,mark') && node.nodeValue.trim()
-          ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
-      }
-    });
+    const needles = [...new Set(terms.filter(Boolean))].sort((a,b) => b.length-a.length);
+    if (!needles.length) return;
+    const walker = document.createTreeWalker(article, NodeFilter.SHOW_TEXT);
     const nodes = [];
-    while (textWalker.nextNode()) nodes.push(textWalker.currentNode);
+    while (walker.nextNode()) {
+      const node = walker.currentNode;
+      if (node.nodeValue.trim() && !node.parentElement.closest('script,style,mark')) nodes.push(node);
+    }
     for (const node of nodes) {
-      const original = node.nodeValue;
-      // Normalisation caractère par caractère pour retrouver aussi les accents.
-      let normalized = '', positions = [];
-      for (let i=0;i<original.length;i++) {
-        const normalizedChar = normalize(original[i]);
-        for (const c of normalizedChar) { normalized += c; positions.push(i); }
+      const source = node.nodeValue;
+      let folded = '', positions = [];
+      for (let i=0; i<source.length; i++) {
+        const piece = fold(source[i]);
+        for (let j=0; j<piece.length; j++) {
+          folded += piece[j];
+          positions.push(i);
+        }
       }
       const ranges = [];
-      for (let i=0;i<normalized.length;) {
-        const needle = needles.find(t => normalized.startsWith(t,i));
-        if (needle) {
-          const start = positions[i], end = positions[i+needle.length-1]+1;
-          ranges.push([start,end]); i+=needle.length;
+      for (let i=0; i<folded.length;) {
+        const found = needles.find(term => folded.startsWith(term,i));
+        if (found) {
+          const a=positions[i], b=positions[i+found.length-1]+1;
+          ranges.push([a,b]);
+          i+=found.length;
         } else i++;
       }
       if (!ranges.length) continue;
-      const fragment = document.createDocumentFragment();
-      let offset=0;
-      for (const [start,end] of ranges) {
-        if(start>offset) fragment.append(document.createTextNode(original.slice(offset,start)));
+      const fragment=document.createDocumentFragment();
+      let last=0;
+      for (const [a,b] of ranges) {
+        if (a>last) fragment.append(document.createTextNode(source.slice(last,a)));
         const mark=document.createElement('mark');
         mark.className='search-highlight';
-        mark.textContent=original.slice(start,end);
-        highlighted.push(mark);
+        mark.textContent=source.slice(a,b);
         fragment.append(mark);
-        offset=end;
+        highlighted.push(mark);
+        last=b;
       }
-      if(offset<original.length) fragment.append(document.createTextNode(original.slice(offset)));
+      if (last<source.length) fragment.append(document.createTextNode(source.slice(last)));
       node.replaceWith(fragment);
     }
   }
