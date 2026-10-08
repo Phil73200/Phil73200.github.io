@@ -319,6 +319,36 @@ footer{text-align:center;padding:16px 20px 26px;font-size:13px;color:var(--muted
 .tools-heading{color:#000;text-align:center}
 .divers-zone{padding:16px 18px;background:#fff4df;border:1px solid #e7c891;border-radius:8px;outline:1px solid #fff;outline-offset:1px}
 @media(max-width:700px){.divers-zone{padding:10px}}
+
+/* Trois zones aux mêmes coins, avec des espacements plus compacts. */
+.upcoming-races,.tools-zone,.divers-zone{border-radius:22px}
+.tools-zone{padding:12px 14px;background:#d9edfa;border:1px solid #82b4d7}
+.tools-zone .grid{gap:12px}
+.tools-zone .tools-heading{margin-bottom:10px}
+.upcoming-races{padding:8px 12px}
+.race-heading{margin-bottom:4px}
+.race-heading h2{line-height:1.15}
+.race-tabs{gap:5px;margin-bottom:5px}
+.race-tabs button,.race-tabs a{padding:4px 9px;line-height:1.15}
+.race-list{gap:6px}
+.race-item{padding:6px 10px;gap:10px;line-height:1.15}
+.race-item strong{line-height:1.15}
+.race-details{margin-top:2px;line-height:1.15}
+.divers-zone{margin-top:14px;padding:8px 12px}
+#divers-heading{color:#000;text-align:center;margin-bottom:6px}
+.divers-zone .grid{gap:8px}
+.divers-zone .card{min-height:0;padding:8px 12px}
+.divers-zone .card strong{margin-bottom:4px;line-height:1.2}
+.divers-zone .card span{line-height:1.2}
+@media(max-width:700px){
+ .upcoming-races,.tools-zone,.divers-zone{border-radius:16px}
+ .tools-zone{padding:10px 6px}
+ .tools-zone .grid{gap:8px}
+ .upcoming-races{padding:6px 8px}
+ .race-item{padding:5px 7px;gap:8px}
+ .divers-zone{padding:6px 8px;margin-top:10px}
+ .divers-zone .card{padding:6px 8px}
+}
 </style>
 <link rel="stylesheet" href="/assets/press-visibility.css">
 </head>
@@ -355,7 +385,8 @@ footer{text-align:center;padding:16px 20px 26px;font-size:13px;color:var(--muted
 </section>
 
 <main>
-  <h2 class="section-title tools-heading">Informations &amp; outils</h2>
+  <section class="tools-zone" aria-labelledby="tools-heading">
+  <h2 id="tools-heading" class="section-title tools-heading">Informations &amp; outils</h2>
 
   <div class="grid">
     <a class="card calendar external has-media" href="https://www.fis-ski.com/DB/general/calendar-results.html?eventselection=&amp;place=&amp;sectorcode=AL&amp;seasoncode=2027&amp;categorycode=&amp;disciplinecode=&amp;gendercode=&amp;racedate=&amp;racecodex=&amp;nationcode=fra,mon,mar,&amp;seasonmonth=X-2027&amp;saveselection=-1&amp;seasonselection=" target="_blank" rel="noopener noreferrer">
@@ -416,6 +447,8 @@ footer{text-align:center;padding:16px 20px 26px;font-size:13px;color:var(--muted
       <span class="description-mobile">Genève 2026 — comptes rendus.</span>
     </a>
   </div>
+
+  </section>
 
   <section class="press-review divers-zone" aria-labelledby="divers-heading">
     <h2 id="divers-heading" class="section-title">Divers</h2>
