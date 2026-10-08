@@ -301,6 +301,19 @@ footer{text-align:center;padding:16px 20px 26px;font-size:13px;color:var(--muted
   .rules-logos .logo-plus{margin:0 1px;font-size:9px}
 }
 
+
+/* Titre Ski Chrono sur deux lignes, avec le logo devant Classements. */
+.card.chrono .chrono-title-line{display:flex;align-items:center;gap:6px;font:inherit;color:inherit;line-height:inherit;white-space:nowrap}
+.card.chrono .chrono-logo{display:block;flex:none;width:32px;height:17px}
+.card.chrono .chrono-tour{display:block;font:inherit;font-size:17px;color:inherit;line-height:inherit;white-space:nowrap}
+@media(max-width:700px){
+ .card.chrono .chrono-title-line{font-size:16px;gap:5px}
+ .card.chrono .chrono-logo{width:26px;height:14px}
+ .card.chrono .chrono-tour{font-size:clamp(10px,3.3vw,17px)}
+}
+
+@media(min-width:981px) and (max-width:1100px){.card.chrono .chrono-tour{font-size:14px}}
+@media(max-width:360px){.card.chrono{padding-left:4px;padding-right:4px}.card.chrono .chrono-title-line{font-size:13px;gap:4px}.card.chrono .chrono-logo{width:22px;height:12px}.card.chrono .chrono-tour{font-size:clamp(10px,3vw,11px)}}
 </style>
 <link rel="stylesheet" href="/assets/press-visibility.css">
 </head>
@@ -363,7 +376,7 @@ footer{text-align:center;padding:16px 20px 26px;font-size:13px;color:var(--muted
 
     <a class="card chrono has-media" href="/classements/ski-chrono/">
       <div class="card-media"><img src="images/tuile-ski-chrono-hd.png?v=2" alt=""></div>
-      <strong>Classements Ski Chrono Samse Tour</strong>
+      <strong><span class="chrono-title-line"><svg class="chrono-logo" xmlns="http://www.w3.org/2000/svg" viewBox="1195 37 124 63" width="32" height="17" aria-hidden="true"><image href="/images/bandeau infosFIS.png?v=6" width="1536" height="242"/></svg>Classements</span><span class="chrono-tour">Ski Chrono Samse Tour</span></strong>
       <span class="description-desktop">Saisons 2026 et 2027 — classements en PDF.</span>
       <span class="description-mobile">France et étrangers</span>
     </a>
