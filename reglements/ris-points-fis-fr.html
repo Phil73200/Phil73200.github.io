@@ -18,7 +18,7 @@ article{overflow-wrap:anywhere}.table-scroll{max-width:100%}article th{overflow-
 article [id^="art-"]:target{background:#fff1b1;outline:3px solid #e9bf43;outline-offset:4px}
 @media(max-width:650px){.document-search{padding:16px}.search-controls button{width:100%}.back-search{bottom:12px;right:12px}article{padding-bottom:70px}table{max-width:100%}}
 @media print{.document-search,.back-search{display:none}}
-mark.search-highlight{background:#ffeb66;color:#182c42;padding:0 1px;border-radius:2px;box-decoration-break:clone}@media print{mark.search-highlight{background:transparent}}</style></head>
+mark.search-highlight{background:#ffeb00!important;color:#111!important;padding:1px 2px;border-radius:2px;box-decoration-break:clone;font-weight:700}@media print{mark.search-highlight{background:transparent}}</style></head>
 <body><header><div><h1>Règlement des points FIS — ski alpin</h1><p>Édition 2026/2027 — juin 2026 · Traduction française non officielle</p></div></header><main>
 <nav><a href="/reglements/index.html">← Règlements FIS</a><a href="https://assets.fis-ski.com/f/252177/x/ddef5ebef2/fis_points_rules_01-07-2026.pdf" target="_blank" rel="noopener">Original anglais 🇬🇧</a></nav>
 <div class="notice"><strong>Traduction non officielle.</strong> Traduction de travail du PDF fourni « fis_points_rules_01-07-2026.pdf ». La numérotation, les valeurs et les références sont conservées. Les notes de traduction sont distinguées du texte réglementaire. La version anglaise FIS reste la référence.</div>
@@ -169,6 +169,7 @@ mark.search-highlight{background:#ffeb66;color:#182c42;padding:0 1px;border-radi
   }
   function search() {
     const raw = normalize(query.value);
+    clearHighlights();
     list.replaceChildren();
     displayed = 0;
     more.hidden = true;
@@ -188,7 +189,9 @@ mark.search-highlight{background:#ffeb66;color:#182c42;padding:0 1px;border-radi
   document.getElementById('search-form').addEventListener('submit', event => { event.preventDefault(); search(); });
   query.addEventListener('input', () => { if (!query.value) search(); });
   more.addEventListener('click', render);
+  list.addEventListener('click', event => { if(event.target.closest('a')) highlightTerms(); });
   function revealTarget() {
+    highlightTerms();
     const id = location.hash.slice(1);
     const target = document.getElementById(id);
     if (!target || !id.startsWith('art-')) return;
