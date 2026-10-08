@@ -978,6 +978,38 @@ mark.search-highlight{background:#ffeb00!important;color:#111!important;padding:
   const status = document.getElementById('search-status');
   const more = document.getElementById('search-more');
   let matches = [], displayed = 0, terms = [];
+  // Met en évidence les correspondances dans les résultats, accents ignorés.
+  function highlightResult(element, value) {
+    const needles = [...new Set(terms.filter(Boolean))].sort((a,b) => b.length-a.length);
+    if (!needles.length) { element.textContent = value; return; }
+    const folded = value.normalize('NFD');
+    let plain = '', offsets = [];
+    for (let i = 0; i < folded.length; i++) {
+      if (/[\u0300-\u036f]/.test(folded[i])) continue;
+      plain += folded[i].toLowerCase();
+      offsets.push(i);
+    }
+    // Les indices NFD sont convertis en indices du texte original via Array.from.
+    const chars = Array.from(value), normalized = chars.map(c => fold(c));
+    let flat = '', indices = [];
+    normalized.forEach((part,i) => { for (const letter of part) { flat += letter; indices.push(i); } });
+    let cursor = 0, last = 0;
+    const fragment = document.createDocumentFragment();
+    while (cursor < flat.length) {
+      const match = needles.find(term => flat.startsWith(term, cursor));
+      if (!match) { cursor++; continue; }
+      const a = indices[cursor], b = indices[cursor + match.length - 1] + 1;
+      if (a > last) fragment.append(document.createTextNode(chars.slice(last,a).join('')));
+      const mark = document.createElement('mark');
+      mark.className = 'search-highlight';
+      mark.textContent = chars.slice(a,b).join('');
+      fragment.append(mark);
+      last = b;
+      cursor += match.length;
+    }
+    fragment.append(document.createTextNode(chars.slice(last).join('')));
+    element.replaceChildren(fragment);
+  }
   function render() {
     const end = Math.min(displayed + 30, matches.length);
     for (; displayed < end; displayed++) {
@@ -985,11 +1017,11 @@ mark.search-highlight{background:#ffeb00!important;color:#111!important;padding:
       const item = document.createElement('li');
       const link = document.createElement('a');
       link.href = '#' + entry.id;
-      link.textContent = entry.title.length > 150 ? entry.title.slice(0, 150) + '…' : entry.title;
+      highlightResult(link, entry.title.length > 150 ? entry.title.slice(0, 150) + '…' : entry.title);
       const excerpt = document.createElement('p');
       const position = terms.length ? entry.normalized.indexOf(terms[0]) : 0;
       const start = Math.max(0, position - 65);
-      excerpt.textContent = (start ? '… ' : '') + entry.text.slice(start, start + 240) + (entry.text.length > start + 240 ? '…' : '');
+      highlightResult(excerpt, (start ? '… ' : '') + entry.text.slice(start, start + 240) + (entry.text.length > start + 240 ? '…' : ''));
       item.append(link, excerpt);
       list.append(item);
     }
