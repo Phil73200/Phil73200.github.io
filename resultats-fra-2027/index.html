@@ -102,7 +102,7 @@ body.has-place .tablewrap tbody tr:nth-child(even)>*:first-child{background:#dce
 <div class="controls">
 <div><label>Discipline</label><div class="discipline" id="discs"><button class="active" type="button" data-value="ALL">Toutes</button><button type="button" data-value="SL">SL</button><button type="button" data-value="GS">GS</button><button type="button" data-value="SG">SG</button><button type="button" data-value="DH">DH</button></div></div>
 <div><label for="athlete">Rechercher un coureur</label><input id="athlete" type="search" placeholder="Nom / prénom"></div>
-<div><label for="sex">Catégorie</label><select id="sex"><option value="">Toutes</option><option value="M">Hommes</option><option value="W">Dames</option></select></div>
+<div><label for="sex">Sexe / Niveau</label><select id="sex"><option value="">Tous les résultats</option><optgroup label="Sexe"><option value="sex:M">Hommes</option><option value="sex:W">Dames</option></optgroup><optgroup id="levels" label="Niveau de course"></optgroup></select></div>
 <div class="full"><label for="other">Recherche complémentaire (station, codex…)</label><input id="other" type="search" placeholder="Rechercher dans les résultats"></div>
 </div><div class="status" role="status" aria-live="polite" id="status">Chargement de la feuille des résultats…</div></section>
 <section class="panel"><h2 id="headline">Résultats <span id="count"></span></h2><div class="tablewrap"><table><thead id="headers"></thead><tbody id="rows"></tbody></table></div><button id="more" type="button" class="more" hidden>Afficher 100 résultats supplémentaires</button></section>
@@ -120,18 +120,20 @@ function identify(){
  return {name:firstCol([/competitorname/,/athlet/,/coureur/,/nom.*prenom/,/^nom$/, /name/]),
  discipline:firstCol([/discipline/,/disziplin/,/^disc/,/^event$/]),
  gender:firstCol([/^sexe$/, /gender/, /^sex$/, /categorie/]),
+ level:firstCol([/^level$/, /^niveau$/, /race.*level/, /niveau.*course/, /^category$/]),
  date:firstCol([/^race\s*_?\s*date$/, /^date$/, /racedate/, /date.*course/, /jour/]),
  location:firstCol([/^place$/, /^race\s*_?\s*place$/, /^lieu$/, /station/, /race.*place/, /place.*course/, /localit/, /location/, /resort/, /^site$/, /^ville$/])};
 }
 function safeDate(x){const z=String(x||"");let m=z.match(/^(\d{4})-(\d{2})-(\d{2})/);if(m)return +m[1]*10000+(+m[2])*100+(+m[3]);m=z.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})/);return m?+m[3]*10000+(+m[2])*100+(+m[1]):null}
 const valueCell=c=>{if(!c)return"";const v=c.f??c.v??"";if(typeof v==="string"){const dt=v.match(/^Date\((\d+),(\d+),(\d+)/);if(dt)return dt[3].padStart(2,"0")+"/"+String(+dt[2]+1).padStart(2,"0")+"/"+dt[1]}return String(v)};
 function render(){
- const index=identify(),query=normalize($("athlete").value),other=normalize($("other").value),sex=$("sex").value;
+ const index=identify(),query=normalize($("athlete").value),other=normalize($("other").value),selection=$("sex").value;
  filtered=records.filter(r=>{
  const d=get(r,index.discipline).toUpperCase().trim();
  if(discipline!=="ALL"&&index.discipline>=0&&!new RegExp("(^|[^A-Z])"+discipline+"([^A-Z]|$)").test(d))return false;
  const g=normalize(get(r,index.gender));
- if(sex&&index.gender>=0&&!(sex==="M"?["m","men","hommes","homme","male","h"].includes(g):["w","f","women","dames","dame","female","d"].includes(g)))return false;
+ if(selection.startsWith("sex:")&&index.gender>=0&&!(selection==="sex:M"?["m","men","hommes","homme","male","h"].includes(g):["w","f","women","dames","dame","female","d"].includes(g)))return false;
+ if(selection.startsWith("level:")&&index.level>=0&&get(r,index.level)!==selection.slice(6))return false;
  if(query&&!normalize(get(r,index.name>=0?index.name:-1)||r.join(" ")).includes(query))return false;
  if(other&&!normalize(r.join(" ")).includes(other))return false;
  return true;
@@ -147,6 +149,9 @@ function load(resp){
  const t=resp.table;cols=(t.cols||[]).map((c,i)=>c.label||c.id||("Colonne "+(i+1)));records=(t.rows||[]).map(row=>(row.c||[]).map(valueCell)).filter(r=>r.some(v=>v.trim()));
  if(!records.length){$("status").className="status error";$("status").textContent="La feuille est accessible mais ne renvoie aucune ligne. Vérifier l'onglet source.";return}
  const idx=identify();
+ const levels=$("levels");levels.replaceChildren();
+ if(idx.level>=0){const distinct=[...new Set(records.map(row=>get(row,idx.level).trim()).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"fr"));for(const level of distinct){const opt=document.createElement("option");opt.value="level:"+level;opt.textContent=level;levels.append(opt)}}
+ levels.hidden=!levels.children.length;
  // La colonne nommée "Place" est le lieu de course, PAS un classement.
  const placeIndex=cols.findIndex(c=>normalize(c).replace(/[^a-z]/g,"")==="place");
  const locationIndex=placeIndex>=0?placeIndex:idx.location;
