@@ -83,6 +83,18 @@ body.has-place .tablewrap tbody tr:nth-child(even)>*:first-child{background:#dce
 /* Dernière règle : la première colonne Place reste collée à gauche. */
 .tablewrap tbody tr > td:first-child{position:sticky!important;left:0!important;color:#00549f!important;font-weight:800!important;background:#e8f3ff!important;z-index:7!important}
 .tablewrap thead tr > th:first-child{position:sticky!important;top:0!important;left:0!important;background:#cde4fa!important;color:#00549f!important;z-index:20!important}
+
+/* Un seul figement horizontal : Place. Neutralise les anciennes règles de colonnes 2 et 3. */
+.tablewrap tbody tr > td:not(:first-child),
+.tablewrap thead tr > th:not(:first-child){
+  position:static!important;left:auto!important;right:auto!important;
+  box-shadow:none!important;z-index:auto!important;
+}
+.tablewrap thead tr > th:not(:first-child){
+  position:sticky!important;top:0!important;z-index:8!important;
+}
+.tablewrap tbody tr > td:first-child{position:sticky!important;left:0!important;z-index:9!important}
+.tablewrap thead tr > th:first-child{position:sticky!important;top:0!important;left:0!important;z-index:20!important}
 </style></head><body>
 <header><a href="/data-statistiques/">← Data et statistiques</a><h1>Résultats FRA — saison 2027</h1><p>Historique chronologique des résultats des coureurs français</p></header>
 <main>
