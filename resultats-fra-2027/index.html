@@ -68,7 +68,7 @@ function firstCol(patterns){return cols.findIndex(c=>patterns.some(p=>p.test(nor
 function identify(){
  return {name:firstCol([/competitorname/,/athlet/,/coureur/,/nom.*prenom/,/^nom$/, /name/, /^athl\s*fra/, /^athlete\s*fra/]),
  discipline:firstCol([/discipline/,/disziplin/,/^disc/,/^event$/]),
- gender:firstCol([/^sexe$/, /gender/, /^sex$/, /categorie/]),
+ gender:firstCol([/^sexe$/, /gender/, /^sex$/, /^g$/, /^genre$/, /categorie/]),
  level:firstCol([/^level$/, /^niveau$/, /race.*level/, /niveau.*course/, /^category$/]),
  date:firstCol([/^dates?$/, /^race\s*_?\s*date$/, /racedate/, /date.*course/, /jour/]),
  location:firstCol([/^place$/, /^race\s*_?\s*place$/, /^lieu$/, /station/, /race.*place/, /place.*course/, /localit/, /location/, /resort/, /^site$/, /^ville$/]),
@@ -88,6 +88,7 @@ function render(){
  const d=get(r,index.discipline).toUpperCase().trim();
  if(discipline!=="ALL"&&index.discipline>=0&&!new RegExp("(^|[^A-Z])"+discipline+"([^A-Z]|$)").test(d))return false;
  const g=normalize(get(r,index.gender));
+ if(selection.startsWith("sex:")&&index.gender<0)return false;
  if(selection.startsWith("sex:")&&index.gender>=0&&!(selection==="sex:M"?["m","men","hommes","homme","male","h"].includes(g):["w","f","women","dames","dame","female","d"].includes(g)))return false;
  if(selection.startsWith("level:")&&index.level>=0&&get(r,index.level)!==selection.slice(6))return false;
  if(query&&!normalize(index.name>=0?get(r,index.name):r.join(" ")).includes(query))return false;
@@ -114,6 +115,8 @@ function render(){
 function load(resp){
  if(!resp||resp.status!=="ok"||!resp.table){$("status").className="status error";$("status").textContent="Google n'autorise pas encore la lecture de ce tableau depuis le site. Le fichier Google Sheets reste disponible.";return}
  const t=resp.table;cols=(t.cols||[]).map((c,i)=>c.label||c.id||("Colonne "+(i+1)));records=(t.rows||[]).map(row=>Array.from({length:cols.length},(_,i)=>valueCell((row.c||[])[i]))).filter(r=>r.some(v=>v.trim()));
+ // Écarter les répétitions strictement identiques sans supprimer les résultats distincts.
+ const seen=new Set();records=records.filter(r=>{const key=JSON.stringify(r);if(seen.has(key))return false;seen.add(key);return true;});
  if(!records.length){$("status").className="status error";$("status").textContent="La feuille est accessible mais ne renvoie aucune ligne. Vérifier l'onglet source.";return}
  const idx=identify();
  const levels=$("levels");levels.replaceChildren();
@@ -125,7 +128,7 @@ function load(resp){
  const keyColumns=[locationIndex].filter(v=>v>=0);
  displayOrder=[...keyColumns,...cols.map((_,i)=>i).filter(i=>!keyColumns.includes(i))];
  const head=document.createElement("tr");
- displayOrder.forEach(i=>{const el=document.createElement("th");el.textContent=i===idx.date?"Dates":cols[i];head.append(el)});$("headers").replaceChildren(head);
+ displayOrder.forEach(i=>{const el=document.createElement("th");el.textContent=i===idx.date?"Date":i===idx.nation?"Nat":i===idx.gender?"Sexe":i===idx.discipline?"Disc":i===idx.level?"Niveau":i===locationIndex?"Place":cols[i];head.append(el)});$("headers").replaceChildren(head);
  document.body.classList.toggle("has-place",locationIndex>=0);
  window.render=render;
  let caveats=[];
