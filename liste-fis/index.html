@@ -161,6 +161,7 @@ function render(){
 $("discs").addEventListener("click",e=>{const b=e.target.closest("button[data-d]");if(!b)return;disc=b.dataset.d;document.querySelectorAll("#discs button").forEach(x=>x.classList.toggle("active",x===b));pageSize=100;render()});
 ["gender","search"].forEach(id=>$(id).addEventListener("input",()=>{pageSize=100;render()}));
 $("years-options").addEventListener("change",e=>{if(e.target.type!=="checkbox")return;const inputs=[...document.querySelectorAll('#years-options input')],allBox=inputs[0];if(e.target===allBox){inputs.slice(1).forEach(x=>x.checked=false);allBox.checked=true}else{allBox.checked=false;if(!inputs.slice(1).some(x=>x.checked))allBox.checked=true}const ys=selectedYears();$("years-summary").textContent=ys.length?ys.slice().sort((a,b)=>b-a).join(", "):"Toutes les années";pageSize=100;render()});
+document.addEventListener("click",e=>{const picker=$("years-picker");if(picker.open&&!picker.contains(e.target))picker.open=false});
 $("more").addEventListener("click",()=>{pageSize+=100;render()});
 $("top-x").addEventListener("change",updateNationTable);
 function chooseTab(nations){
