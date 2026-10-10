@@ -41,7 +41,7 @@ header{padding:5px 10px}header h1{font-size:19px}
 main{padding:5px}.panel{padding:7px;margin-bottom:5px}.controls{gap:5px}
 .discipline button{padding:7px 3px}.tablewrap{height:calc(100dvh - 190px);min-height:280px}
 .tablewrap th,.tablewrap td{padding:7px 6px;font-size:13px}
-body.has-place .tablewrap tr>*:first-child{min-width:110px;width:110px;max-width:110px}
+body.has-place .tablewrap tr>*:first-child{min-width:96px;width:96px;max-width:96px}
 .note{font-size:11px}
 }
 </style></head><body>
@@ -90,7 +90,7 @@ function render(){
  const g=normalize(get(r,index.gender));
  if(selection.startsWith("sex:")&&index.gender>=0&&!(selection==="sex:M"?["m","men","hommes","homme","male","h"].includes(g):["w","f","women","dames","dame","female","d"].includes(g)))return false;
  if(selection.startsWith("level:")&&index.level>=0&&get(r,index.level)!==selection.slice(6))return false;
- if(query&&!normalize(get(r,index.name>=0?index.name:-1)||r.join(" ")).includes(query))return false;
+ if(query&&!normalize(index.name>=0?get(r,index.name):r.join(" ")).includes(query))return false;
  if(other&&!normalize(r.join(" ")).includes(other))return false;
  return true;
  });
@@ -101,7 +101,7 @@ function render(){
  const tr=document.createElement("tr");
  displayOrder.forEach(i=>{
   const td=document.createElement("td");
-  if(i===index.location&&index.nation>=0){
+  if(i===displayOrder[0]&&index.nation>=0){
    const flag=flagOf(get(r,index.nation));
    if(flag){const span=document.createElement("span");span.className="flag";span.textContent=flag;span.setAttribute("aria-hidden","true");td.append(span)}
    td.append(document.createTextNode(r[i]??""));
@@ -131,7 +131,7 @@ function load(resp){
  let caveats=[];
  if(idx.discipline<0)caveats.push("discipline");
  if(idx.gender<0){$("sex").querySelectorAll('option[value^="sex:"]').forEach(o=>o.disabled=true);caveats.push("sexe (filtre indisponible)");}
- if(idx.name<0)caveats.push("nom");
+ if(idx.name<0)caveats.push("nom (recherche sur toutes les colonnes)");
  $("status").textContent=records.length.toLocaleString("fr-FR")+" lignes chargées"+(caveats.length?" · Colonnes non identifiées : "+caveats.join(", ")+". Certains filtres sont à vérifier.":" · Filtres disponibles.");
  if(idx.discipline<0)$("discs").title="La colonne discipline n'a pas été reconnue";
  window.render();
