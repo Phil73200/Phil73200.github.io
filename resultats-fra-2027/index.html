@@ -1,0 +1,89 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Résultats FRA 2027 — Infos FIS</title>
+<style>
+:root{--blue:#00549f;--ink:#183047;--line:#cadbe9}*{box-sizing:border-box}body{margin:0;background:#edf4fa;color:var(--ink);font:16px -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+header{background:var(--blue);color:#fff;padding:17px max(14px,calc((100vw - 1100px)/2));border-bottom:5px solid #fff}header a{color:#fff;font-weight:700;text-decoration:none}h1{font-size:clamp(23px,4vw,32px);margin:12px 0 5px}header p{margin:0;color:#dceeff}
+main{max-width:1120px;margin:auto;padding:14px}.panel{background:#fff;border:1px solid var(--line);border-radius:12px;padding:15px;margin-bottom:12px}
+.controls{display:grid;grid-template-columns:1.4fr 1.2fr .9fr;gap:12px;align-items:end}
+label{font-size:13px;font-weight:750;display:block;margin-bottom:6px}select,input{width:100%;font:inherit;padding:10px;border:1px solid #9ab4ce;border-radius:8px;height:44px;background:white;color:var(--ink)}
+.discipline{display:flex;gap:5px}.discipline button{border:1px solid #aaa;flex:1;min-width:0;padding:10px 5px;border-radius:7px;font-weight:800;cursor:pointer}
+.discipline button[data-value="SL"]{background:#deedff;border-color:#7eace2;color:#004b92}
+.discipline button[data-value="GS"]{background:#ffe2ec;border-color:#e8a3bd;color:#9b2158}
+.discipline button[data-value="SG"]{background:#dff3e3;border-color:#90c79b;color:#176f38}
+.discipline button[data-value="DH"]{background:#fff1b8;border-color:#d5b850;color:#695200}
+.discipline button.active{box-shadow:inset 0 0 0 2px currentColor}
+.discipline button[data-value="ALL"]{background:#edf2f7;color:#264862;border-color:#a7b8c7}
+.status{font-size:14px;margin-top:12px;color:#425972}.status.error{color:#ac2828}
+.tablewrap{overflow:auto;border:1px solid var(--line);border-radius:9px}table{border-collapse:collapse;width:100%;font-size:14px}th{position:sticky;top:0;text-align:left;background:#dbeaf7;padding:10px 9px;white-space:nowrap}td{padding:10px 9px;border-top:1px solid #e0e8ef}tr:nth-child(even){background:#f5f9fd}tr{vertical-align:top}
+thead th:first-child,tbody td:first-child{font-weight:800;color:#00549f}#headline{font-size:19px;margin:0 0 10px}#count{font-weight:500;color:#66778b;font-size:14px}
+.more{display:block;margin:14px auto 0;border:0;background:var(--blue);color:#fff;border-radius:8px;padding:10px 15px;font:inherit;font-weight:700;cursor:pointer}
+.note{font-size:13px;color:#526578;line-height:1.5}
+[hidden]{display:none!important}@media(max-width:750px){main{padding:8px}.panel{padding:10px}.controls{grid-template-columns:1fr 1fr}.controls>div:first-child{grid-column:1/-1}.controls .full{grid-column:1/-1}th,td{padding:9px 7px;font-size:13px}#headline{font-size:17px}}
+</style></head><body>
+<header><a href="/data-statistiques/">← Data et statistiques</a><h1>Résultats FRA — saison 2027</h1><p>Historique chronologique des résultats des coureurs français</p></header>
+<main>
+<section class="panel">
+<div class="controls">
+<div><label>Discipline</label><div class="discipline" id="discs"><button class="active" type="button" data-value="ALL">Toutes</button><button type="button" data-value="SL">SL</button><button type="button" data-value="GS">GS</button><button type="button" data-value="SG">SG</button><button type="button" data-value="DH">DH</button></div></div>
+<div><label for="athlete">Rechercher un coureur</label><input id="athlete" type="search" placeholder="Nom / prénom"></div>
+<div><label for="sex">Catégorie</label><select id="sex"><option value="">Toutes</option><option value="M">Hommes</option><option value="W">Dames</option></select></div>
+<div class="full"><label for="other">Recherche complémentaire (station, codex…)</label><input id="other" type="search" placeholder="Rechercher dans les résultats"></div>
+</div><div class="status" role="status" aria-live="polite" id="status">Chargement de la feuille des résultats…</div></section>
+<section class="panel"><h2 id="headline">Résultats <span id="count"></span></h2><div class="tablewrap"><table><thead id="headers"></thead><tbody id="rows"></tbody></table></div><button id="more" type="button" class="more" hidden>Afficher 100 résultats supplémentaires</button></section>
+<p class="note">Cette version de consultation lit les données du Google Sheets existant. Les champs réellement disponibles déterminent les colonnes et les filtres. Le fichier Google Sheets original reste accessible dans « Data et statistiques ».</p>
+</main><script>
+"use strict";
+const DOC="1g7DH_d_SPcGRh2Z5VvayEfsMSm74orXi2hXwqiRtXYA",GID="849367372";
+let cols=[],records=[],filtered=[],discipline="ALL",limit=100;
+const $=s=>document.getElementById(s);
+const normalize=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().trim();
+const get=(r,i)=>i>=0?String(r[i]??""):"";
+function firstCol(patterns){return cols.findIndex(c=>patterns.some(p=>p.test(normalize(c))))}
+function identify(){
+ return {name:firstCol([/competitorname/,/athlet/,/coureur/,/nom.*prenom/,/^nom$/, /name/]),
+ discipline:firstCol([/discipline/,/disziplin/,/^disc/,/^event$/]),
+ gender:firstCol([/^sexe$/, /gender/, /^sex$/, /categorie/]),
+ date:firstCol([/^date$/, /racedate/, /date.*course/, /jour/])};
+}
+function safeDate(x){const z=String(x||"");let m=z.match(/^(\d{4})-(\d{2})-(\d{2})/);if(m)return +m[1]*10000+(+m[2])*100+(+m[3]);m=z.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})/);return m?+m[3]*10000+(+m[2])*100+(+m[1]):null}
+const valueCell=c=>{if(!c)return"";const v=c.f??c.v??"";if(typeof v==="string"){const dt=v.match(/^Date\((\d+),(\d+),(\d+)/);if(dt)return dt[3].padStart(2,"0")+"/"+String(+dt[2]+1).padStart(2,"0")+"/"+dt[1]}return String(v)};
+function render(){
+ const index=identify(),query=normalize($("athlete").value),other=normalize($("other").value),sex=$("sex").value;
+ filtered=records.filter(r=>{
+ const d=get(r,index.discipline).toUpperCase().trim();
+ if(discipline!=="ALL"&&index.discipline>=0&&!new RegExp("(^|[^A-Z])"+discipline+"([^A-Z]|$)").test(d))return false;
+ const g=normalize(get(r,index.gender));
+ if(sex&&index.gender>=0&&!(sex==="M"?["m","men","hommes","homme","male","h"].includes(g):["w","f","women","dames","dame","female","d"].includes(g)))return false;
+ if(query&&!normalize(get(r,index.name>=0?index.name:-1)||r.join(" ")).includes(query))return false;
+ if(other&&!normalize(r.join(" ")).includes(other))return false;
+ return true;
+ });
+ if(index.date>=0)filtered.sort((a,b)=>{const da=safeDate(get(a,index.date)),db=safeDate(get(b,index.date));return (db||0)-(da||0)});
+ $("count").textContent="— "+filtered.length.toLocaleString("fr-FR")+" lignes";
+ const visible=filtered.slice(0,limit),frag=document.createDocumentFragment();
+ for(const r of visible){const tr=document.createElement("tr");r.forEach(v=>{const td=document.createElement("td");td.textContent=v;tr.append(td)});frag.append(tr)}
+ $("rows").replaceChildren(frag);$("more").hidden=filtered.length<=limit;
+}
+function load(resp){
+ if(!resp||resp.status!=="ok"||!resp.table){$("status").className="status error";$("status").textContent="Google n'autorise pas encore la lecture de ce tableau depuis le site. Le fichier Google Sheets reste disponible.";return}
+ const t=resp.table;cols=(t.cols||[]).map((c,i)=>c.label||c.id||("Colonne "+(i+1)));records=(t.rows||[]).map(row=>(row.c||[]).map(valueCell)).filter(r=>r.some(v=>v.trim()));
+ if(!records.length){$("status").className="status error";$("status").textContent="La feuille est accessible mais ne renvoie aucune ligne. Vérifier l'onglet source.";return}
+ const head=document.createElement("tr");const th=document.createElement("th");th.textContent="N°";head.append(th);
+ cols.forEach(c=>{const el=document.createElement("th");el.textContent=c;head.append(el)});$("headers").replaceChildren(head);
+ // Ajouter la numérotation de ligne sans altérer le contenu original.
+ const originalRender=render;
+ window.render=function(){originalRender();Array.from($("rows").children).forEach((tr,i)=>{const td=document.createElement("td");td.textContent=String(i+1);tr.prepend(td)})};
+ const idx=identify();let caveats=[];
+ if(idx.discipline<0)caveats.push("discipline");
+ if(idx.gender<0)caveats.push("sexe");
+ if(idx.name<0)caveats.push("nom");
+ $("status").textContent=records.length.toLocaleString("fr-FR")+" lignes chargées"+(caveats.length?" · Colonnes non identifiées : "+caveats.join(", ")+". Certains filtres sont à vérifier.":" · Filtres disponibles.");
+ if(idx.discipline<0)$("discs").title="La colonne discipline n'a pas été reconnue";
+ window.render();
+}
+$("discs").addEventListener("click",e=>{const b=e.target.closest("button[data-value]");if(!b)return;discipline=b.dataset.value;document.querySelectorAll("#discs button").forEach(x=>x.classList.toggle("active",x===b));limit=100;window.render()});
+["athlete","other","sex"].forEach(id=>$(id).addEventListener("input",()=>{limit=100;window.render&&window.render()}));
+$("more").addEventListener("click",()=>{limit+=100;window.render()});
+window.fisResultsReceive=load;
+const script=document.createElement("script");script.src="https://docs.google.com/spreadsheets/d/"+DOC+"/gviz/tq?gid="+GID+"&headers=1&tqx="+encodeURIComponent("out:json;responseHandler:fisResultsReceive")+"&cache="+Date.now();
+script.onerror=()=>{$("status").className="status error";$("status").textContent="Impossible de contacter Google Sheets. La version Google Sheets reste accessible sur la page précédente."};document.head.append(script);
+</script></body></html>
