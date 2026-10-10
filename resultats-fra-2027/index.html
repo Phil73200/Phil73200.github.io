@@ -19,82 +19,31 @@ thead th:first-child,tbody td:first-child{font-weight:800;color:#00549f}#headlin
 .note{font-size:13px;color:#526578;line-height:1.5}
 [hidden]{display:none!important}@media(max-width:750px){main{padding:8px}.panel{padding:10px}.controls{grid-template-columns:1fr 1fr}.controls>div:first-child{grid-column:1/-1}.controls .full{grid-column:1/-1}th,td{padding:9px 7px;font-size:13px}#headline{font-size:17px}}
 
-/* Lecture compacte : bandeau réduit et tableau à défilement interne. */
-header{padding:7px max(12px,calc((100vw - 1100px)/2));border-bottom-width:3px}
-header a{font-size:13px}
-header h1{font-size:clamp(18px,3vw,24px);margin:3px 0 0}
-header p{display:none}
-main{padding-top:7px}
-.panel{padding:10px 12px;margin-bottom:7px}
-.controls{gap:7px}
-label{margin-bottom:3px;font-size:12px}
-select,input{height:37px;padding:6px 8px;font-size:14px}
-.discipline button{padding:8px 5px}
-.status{margin-top:5px;font-size:12px}
+/* Interface compacte et figement propre : uniquement la première colonne Place. */
+header{padding:6px max(12px,calc((100vw - 1100px)/2));border-bottom-width:3px}
+header a{font-size:13px}header h1{font-size:clamp(18px,3vw,24px);margin:3px 0 0}header p{display:none}
+main{padding-top:7px}.panel{padding:10px 12px;margin-bottom:7px}.controls{gap:7px}
+label{margin-bottom:3px;font-size:12px}select,input{height:37px;padding:6px 8px;font-size:14px}
+.discipline button{padding:8px 5px}.status{margin-top:5px;font-size:12px}
 #headline{margin-bottom:5px;font-size:17px}
-.tablewrap{max-height:calc(100dvh - 215px);min-height:240px;overflow:auto;overscroll-behavior:contain;position:relative}
-table{border-collapse:separate;border-spacing:0}
-thead th{position:sticky;top:0;z-index:4;box-shadow:0 1px 0 #b6ccdf}
-thead th:first-child,tbody td:first-child{position:sticky;left:0;z-index:3;min-width:46px;background:#e7f0f9;box-shadow:1px 0 0 #c7d7e6}
-thead th:first-child{z-index:6;background:#dbeaf7}
-tbody tr:nth-child(even) td:first-child{background:#e0ebf6}
-@media(max-width:750px){
- header{padding:5px 10px}header h1{font-size:19px}
- main{padding:5px}.panel{padding:7px;margin-bottom:5px}
- .controls{gap:5px}
- .discipline button{padding:7px 3px}
- .tablewrap{max-height:calc(100dvh - 205px);min-height:240px}
- th,td{padding:7px 6px;font-size:13px}
- .note{font-size:11px}
-}
-
-/* En-têtes et colonnes d'identification fixes dans le tableau défilant. */
-.tablewrap{height:calc(100dvh - 205px);max-height:none;min-height:260px;overflow:auto;-webkit-overflow-scrolling:touch;isolation:isolate}
+.tablewrap{height:calc(100dvh - 205px);max-height:none;min-height:260px;overflow:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;position:relative}
 .tablewrap table{width:max-content;min-width:100%;border-collapse:separate;border-spacing:0}
-.tablewrap thead th{position:sticky!important;top:0!important;background:#d2e6f8;z-index:8}
+.tablewrap th,.tablewrap td{position:static;left:auto;right:auto;box-shadow:none}
+.tablewrap thead th{position:sticky;top:0;z-index:4;background:#d2e6f8;box-shadow:0 1px 0 #b6ccdf}
 .tablewrap tbody td{background:#fff}
 .tablewrap tbody tr:nth-child(even) td{background:#f5f9fd}
-.tablewrap tr>*:first-child{position:sticky!important;left:0!important;width:43px;min-width:43px;max-width:43px;z-index:5;box-shadow:1px 0 0 #b0c4d5}
-.tablewrap thead tr>*:first-child{z-index:12}
-body.has-name .tablewrap tr>*:nth-child(2){position:sticky!important;left:43px!important;min-width:118px;width:118px;max-width:118px;white-space:normal;overflow-wrap:anywhere;z-index:5;box-shadow:1px 0 0 #b0c4d5;font-weight:700}
-body.has-name .tablewrap thead tr>*:nth-child(2){z-index:12}
-body.has-place .tablewrap tr>*:nth-child(3){position:sticky!important;left:161px!important;min-width:108px;width:108px;max-width:108px;white-space:normal;overflow-wrap:anywhere;z-index:5;box-shadow:2px 0 0 #7f9fbb}
-body.has-place .tablewrap thead tr>*:nth-child(3){z-index:12}
-.tablewrap tbody tr:nth-child(even)>*:is(:first-child,:nth-child(2),:nth-child(3)){background:#e9f2fa}
-.tablewrap tbody tr:nth-child(odd)>*:is(:first-child,:nth-child(2),:nth-child(3)){background:#fff}
-@media(max-width:750px){.tablewrap{height:calc(100dvh - 190px);max-height:none;min-height:280px}body.has-name .tablewrap tr>*:nth-child(2){min-width:105px;width:105px;max-width:105px}body.has-place .tablewrap tr>*:nth-child(3){left:148px!important;min-width:92px;width:92px;max-width:92px}}
-
-/* Place est le seul repère horizontal figé. Race Date est juste après. */
-.tablewrap tr>*{position:static!important;left:auto!important;box-shadow:none}
-.tablewrap thead th{position:sticky!important;top:0!important;z-index:8; background:#d2e6f8}
-body.has-place .tablewrap tr>*:first-child{
- position:sticky!important;left:0!important;
- width:128px!important;min-width:128px!important;max-width:128px!important;
- white-space:normal;overflow-wrap:anywhere;font-weight:800;
- color:#00549f!important;background:#e6f2ff!important;z-index:6;
- box-shadow:2px 0 0 #7f9fbb
-}
-body.has-place .tablewrap thead tr>*:first-child{z-index:12;background:#c9e1fa!important}
-body.has-place .tablewrap tbody tr:nth-child(even)>*:first-child{background:#dcecff!important}
+body.has-place .tablewrap tr>*:first-child{position:sticky;left:0;z-index:5;min-width:128px;width:128px;max-width:128px;white-space:normal;overflow-wrap:anywhere;color:#00549f;font-weight:800;background:#e6f2ff;box-shadow:2px 0 0 #7f9fbb}
+body.has-place .tablewrap tbody tr:nth-child(even)>*:first-child{background:#dcecff}
+body.has-place .tablewrap thead tr>*:first-child{top:0;z-index:8;background:#c9e1fa}
+.flag{margin-right:5px;font-size:17px;white-space:nowrap}
 @media(max-width:750px){
- body.has-place .tablewrap tr>*:first-child{width:110px!important;min-width:110px!important;max-width:110px!important}
+header{padding:5px 10px}header h1{font-size:19px}
+main{padding:5px}.panel{padding:7px;margin-bottom:5px}.controls{gap:5px}
+.discipline button{padding:7px 3px}.tablewrap{height:calc(100dvh - 190px);min-height:280px}
+.tablewrap th,.tablewrap td{padding:7px 6px;font-size:13px}
+body.has-place .tablewrap tr>*:first-child{min-width:110px;width:110px;max-width:110px}
+.note{font-size:11px}
 }
-
-/* Dernière règle : la première colonne Place reste collée à gauche. */
-.tablewrap tbody tr > td:first-child{position:sticky!important;left:0!important;color:#00549f!important;font-weight:800!important;background:#e8f3ff!important;z-index:7!important}
-.tablewrap thead tr > th:first-child{position:sticky!important;top:0!important;left:0!important;background:#cde4fa!important;color:#00549f!important;z-index:20!important}
-
-/* Un seul figement horizontal : Place. Neutralise les anciennes règles de colonnes 2 et 3. */
-.tablewrap tbody tr > td:not(:first-child),
-.tablewrap thead tr > th:not(:first-child){
-  position:static!important;left:auto!important;right:auto!important;
-  box-shadow:none!important;z-index:auto!important;
-}
-.tablewrap thead tr > th:not(:first-child){
-  position:sticky!important;top:0!important;z-index:8!important;
-}
-.tablewrap tbody tr > td:first-child{position:sticky!important;left:0!important;z-index:9!important}
-.tablewrap thead tr > th:first-child{position:sticky!important;top:0!important;left:0!important;z-index:20!important}
 </style></head><body>
 <header><a href="/data-statistiques/">← Data et statistiques</a><h1>Résultats FRA — saison 2027</h1><p>Historique chronologique des résultats des coureurs français</p></header>
 <main>
@@ -122,10 +71,17 @@ function identify(){
  gender:firstCol([/^sexe$/, /gender/, /^sex$/, /categorie/]),
  level:firstCol([/^level$/, /^niveau$/, /race.*level/, /niveau.*course/, /^category$/]),
  date:firstCol([/^race\s*_?\s*date$/, /^date$/, /racedate/, /date.*course/, /jour/]),
- location:firstCol([/^place$/, /^race\s*_?\s*place$/, /^lieu$/, /station/, /race.*place/, /place.*course/, /localit/, /location/, /resort/, /^site$/, /^ville$/])};
+ location:firstCol([/^place$/, /^race\s*_?\s*place$/, /^lieu$/, /station/, /race.*place/, /place.*course/, /localit/, /location/, /resort/, /^site$/, /^ville$/]),
+ nation:firstCol([/^nation$/, /^nationcode$/, /^country$/, /^countrycode$/, /^pays$/, /^nat$/])};
 }
 function safeDate(x){const z=String(x||"");let m=z.match(/^(\d{4})-(\d{2})-(\d{2})/);if(m)return +m[1]*10000+(+m[2])*100+(+m[3]);m=z.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})/);return m?+m[3]*10000+(+m[2])*100+(+m[1]):null}
 const valueCell=c=>{if(!c)return"";const v=c.f??c.v??"";if(typeof v==="string"){const dt=v.match(/^Date\((\d+),(\d+),(\d+)/);if(dt)return dt[3].padStart(2,"0")+"/"+String(+dt[2]+1).padStart(2,"0")+"/"+dt[1]}return String(v)};
+function flagOf(raw){
+ const aliases={ARG:"AR",ARGENTINA:"AR",ARGENTINE:"AR",FRA:"FR",FRANCE:"FR",SUI:"CH",SWITZERLAND:"CH",SUISSE:"CH",AUT:"AT",AUSTRIA:"AT",ITA:"IT",ITALY:"IT",GER:"DE",GERMANY:"DE",DEUTSCHLAND:"DE",USA:"US",CAN:"CA",NOR:"NO",SWE:"SE",FIN:"FI",DEN:"DK",BEL:"BE",NED:"NL",LUX:"LU",MON:"MC",MAR:"MA",GBR:"GB",CZE:"CZ",SVK:"SK",SLO:"SI",CRO:"HR",POL:"PL",ESP:"ES",AND:"AD",POR:"PT",JPN:"JP",KOR:"KR",CHN:"CN",AUS:"AU",NZL:"NZ",CHI:"CL",BRA:"BR",UKR:"UA",RUS:"RU",ISR:"IL",TUR:"TR",ROU:"RO",BUL:"BG",HUN:"HU",LAT:"LV",LTU:"LT",EST:"EE",ISL:"IS",IRL:"IE",GRE:"GR",GEO:"GE",KAZ:"KZ",UZB:"UZ",BIH:"BA",SRB:"RS",MNE:"ME",MKD:"MK",LIE:"LI",ALB:"AL",IND:"IN",NEP:"NP"};
+ const key=String(raw||"").trim().toUpperCase();
+ const iso=aliases[key]||(/^[A-Z]{2}$/.test(key)?key:"");
+ return iso?[...iso].map(c=>String.fromCodePoint(127397+c.charCodeAt(0))).join(""):"";
+}
 function render(){
  const index=identify(),query=normalize($("athlete").value),other=normalize($("other").value),selection=$("sex").value;
  filtered=records.filter(r=>{
@@ -141,7 +97,18 @@ function render(){
  if(index.date>=0)filtered.sort((a,b)=>{const da=safeDate(get(a,index.date)),db=safeDate(get(b,index.date));return (db||0)-(da||0)});
  $("count").textContent="— "+filtered.length.toLocaleString("fr-FR")+" lignes";
  const visible=filtered.slice(0,limit),frag=document.createDocumentFragment();
- for(const r of visible){const tr=document.createElement("tr");displayOrder.forEach(i=>{const td=document.createElement("td");td.textContent=r[i]??"";tr.append(td)});frag.append(tr)}
+ for(const r of visible){
+ const tr=document.createElement("tr");
+ displayOrder.forEach(i=>{
+  const td=document.createElement("td");
+  if(i===index.location&&index.nation>=0){
+   const flag=flagOf(get(r,index.nation));
+   if(flag){const span=document.createElement("span");span.className="flag";span.textContent=flag;span.setAttribute("aria-hidden","true");td.append(span)}
+   td.append(document.createTextNode(r[i]??""));
+  }else td.textContent=r[i]??"";
+  tr.append(td);
+ });frag.append(tr);
+}
  $("rows").replaceChildren(frag);$("more").hidden=filtered.length<=limit;
 }
 function load(resp){
