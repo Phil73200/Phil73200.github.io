@@ -18,6 +18,35 @@ thead th:first-child,tbody td:first-child{font-weight:800;color:#00549f}#headlin
 .more{display:block;margin:14px auto 0;border:0;background:var(--blue);color:#fff;border-radius:8px;padding:10px 15px;font:inherit;font-weight:700;cursor:pointer}
 .note{font-size:13px;color:#526578;line-height:1.5}
 [hidden]{display:none!important}@media(max-width:750px){main{padding:8px}.panel{padding:10px}.controls{grid-template-columns:1fr 1fr}.controls>div:first-child{grid-column:1/-1}.controls .full{grid-column:1/-1}th,td{padding:9px 7px;font-size:13px}#headline{font-size:17px}}
+
+/* Lecture compacte : bandeau réduit et tableau à défilement interne. */
+header{padding:7px max(12px,calc((100vw - 1100px)/2));border-bottom-width:3px}
+header a{font-size:13px}
+header h1{font-size:clamp(18px,3vw,24px);margin:3px 0 0}
+header p{display:none}
+main{padding-top:7px}
+.panel{padding:10px 12px;margin-bottom:7px}
+.controls{gap:7px}
+label{margin-bottom:3px;font-size:12px}
+select,input{height:37px;padding:6px 8px;font-size:14px}
+.discipline button{padding:8px 5px}
+.status{margin-top:5px;font-size:12px}
+#headline{margin-bottom:5px;font-size:17px}
+.tablewrap{max-height:calc(100dvh - 215px);min-height:240px;overflow:auto;overscroll-behavior:contain;position:relative}
+table{border-collapse:separate;border-spacing:0}
+thead th{position:sticky;top:0;z-index:4;box-shadow:0 1px 0 #b6ccdf}
+thead th:first-child,tbody td:first-child{position:sticky;left:0;z-index:3;min-width:46px;background:#e7f0f9;box-shadow:1px 0 0 #c7d7e6}
+thead th:first-child{z-index:6;background:#dbeaf7}
+tbody tr:nth-child(even) td:first-child{background:#e0ebf6}
+@media(max-width:750px){
+ header{padding:5px 10px}header h1{font-size:19px}
+ main{padding:5px}.panel{padding:7px;margin-bottom:5px}
+ .controls{gap:5px}
+ .discipline button{padding:7px 3px}
+ .tablewrap{max-height:calc(100dvh - 205px);min-height:240px}
+ th,td{padding:7px 6px;font-size:13px}
+ .note{font-size:11px}
+}
 </style></head><body>
 <header><a href="/data-statistiques/">← Data et statistiques</a><h1>Résultats FRA — saison 2027</h1><p>Historique chronologique des résultats des coureurs français</p></header>
 <main>
