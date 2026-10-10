@@ -66,7 +66,7 @@ const get=(r,i)=>i>=0?String(r[i]??""):"";
 let displayOrder=[];
 function firstCol(patterns){return cols.findIndex(c=>patterns.some(p=>p.test(normalize(c))))}
 function identify(){
- return {name:firstCol([/competitorname/,/athlet/,/coureur/,/nom.*prenom/,/^nom$/, /name/]),
+ return {name:firstCol([/competitorname/,/athlet/,/coureur/,/nom.*prenom/,/^nom$/, /name/, /^athl\s*fra/, /^athlete\s*fra/]),
  discipline:firstCol([/discipline/,/disziplin/,/^disc/,/^event$/]),
  gender:firstCol([/^sexe$/, /gender/, /^sex$/, /categorie/]),
  level:firstCol([/^level$/, /^niveau$/, /race.*level/, /niveau.*course/, /^category$/]),
@@ -113,7 +113,7 @@ function render(){
 }
 function load(resp){
  if(!resp||resp.status!=="ok"||!resp.table){$("status").className="status error";$("status").textContent="Google n'autorise pas encore la lecture de ce tableau depuis le site. Le fichier Google Sheets reste disponible.";return}
- const t=resp.table;cols=(t.cols||[]).map((c,i)=>c.label||c.id||("Colonne "+(i+1)));records=(t.rows||[]).map(row=>(row.c||[]).map(valueCell)).filter(r=>r.some(v=>v.trim()));
+ const t=resp.table;cols=(t.cols||[]).map((c,i)=>c.label||c.id||("Colonne "+(i+1)));records=(t.rows||[]).map(row=>Array.from({length:cols.length},(_,i)=>valueCell((row.c||[])[i]))).filter(r=>r.some(v=>v.trim()));
  if(!records.length){$("status").className="status error";$("status").textContent="La feuille est accessible mais ne renvoie aucune ligne. Vérifier l'onglet source.";return}
  const idx=identify();
  const levels=$("levels");levels.replaceChildren();
@@ -122,7 +122,7 @@ function load(resp){
  // La colonne nommée "Place" est le lieu de course, PAS un classement.
  const placeIndex=cols.findIndex(c=>normalize(c).replace(/[^a-z]/g,"")==="place");
  const locationIndex=placeIndex>=0?placeIndex:idx.location;
- const keyColumns=[locationIndex,idx.date].filter((v,i,a)=>v>=0&&a.indexOf(v)===i);
+ const keyColumns=[locationIndex].filter(v=>v>=0);
  displayOrder=[...keyColumns,...cols.map((_,i)=>i).filter(i=>!keyColumns.includes(i))];
  const head=document.createElement("tr");
  displayOrder.forEach(i=>{const el=document.createElement("th");el.textContent=cols[i];head.append(el)});$("headers").replaceChildren(head);
@@ -130,7 +130,7 @@ function load(resp){
  window.render=render;
  let caveats=[];
  if(idx.discipline<0)caveats.push("discipline");
- if(idx.gender<0)caveats.push("sexe");
+ if(idx.gender<0){$("sex").querySelectorAll('option[value^="sex:"]').forEach(o=>o.disabled=true);caveats.push("sexe (filtre indisponible)");}
  if(idx.name<0)caveats.push("nom");
  $("status").textContent=records.length.toLocaleString("fr-FR")+" lignes chargées"+(caveats.length?" · Colonnes non identifiées : "+caveats.join(", ")+". Certains filtres sont à vérifier.":" · Filtres disponibles.");
  if(idx.discipline<0)$("discs").title="La colonne discipline n'a pas été reconnue";
