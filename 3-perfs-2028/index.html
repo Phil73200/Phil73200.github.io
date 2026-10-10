@@ -1,0 +1,86 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>3 perfs pour 2028 — Infos FIS</title><style>
+:root{--blue:#00549f;--ink:#183047;--line:#cadbe9}*{box-sizing:border-box}body{margin:0;background:#edf4fa;color:var(--ink);font:16px -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+header{background:var(--blue);color:#fff;padding:17px max(14px,calc((100vw - 1100px)/2));border-bottom:5px solid #fff}header a{color:#fff;font-weight:700;text-decoration:none}h1{font-size:clamp(23px,4vw,32px);margin:12px 0 5px}header p{margin:0;color:#dceeff}
+main{max-width:1120px;margin:auto;padding:14px}.panel{background:#fff;border:1px solid var(--line);border-radius:12px;padding:15px;margin-bottom:12px}
+.controls{display:grid;grid-template-columns:1.4fr 1.2fr .9fr;gap:12px;align-items:end}
+label{font-size:13px;font-weight:750;display:block;margin-bottom:6px}select,input{width:100%;font:inherit;padding:10px;border:1px solid #9ab4ce;border-radius:8px;height:44px;background:white;color:var(--ink)}
+.discipline{display:flex;gap:5px}.discipline button{border:1px solid #aaa;flex:1;min-width:0;padding:10px 5px;border-radius:7px;font-weight:800;cursor:pointer}
+.discipline button[data-value="SL"]{background:#deedff;border-color:#7eace2;color:#004b92}
+.discipline button[data-value="GS"]{background:#ffe2ec;border-color:#e8a3bd;color:#9b2158}
+.discipline button[data-value="SG"]{background:#dff3e3;border-color:#90c79b;color:#176f38}
+.discipline button[data-value="DH"]{background:#fff1b8;border-color:#d5b850;color:#695200}
+.discipline button.active{box-shadow:inset 0 0 0 2px currentColor}
+.discipline button[data-value="ALL"]{background:#edf2f7;color:#264862;border-color:#a7b8c7}
+.status{font-size:14px;margin-top:12px;color:#425972}.status.error{color:#ac2828}
+.tablewrap{overflow:auto;border:1px solid var(--line);border-radius:9px}table{border-collapse:collapse;width:100%;font-size:14px}th{position:sticky;top:0;text-align:left;background:#dbeaf7;padding:10px 9px;white-space:nowrap}td{padding:10px 9px;border-top:1px solid #e0e8ef}tr:nth-child(even){background:#f5f9fd}tr{vertical-align:middle}
+thead th:first-child,tbody td:first-child{font-weight:800;color:#00549f}#headline{font-size:19px;margin:0 0 10px}#count{font-weight:500;color:#66778b;font-size:14px}
+.more{display:block;margin:14px auto 0;border:0;background:var(--blue);color:#fff;border-radius:8px;padding:10px 15px;font:inherit;font-weight:700;cursor:pointer}
+.note{font-size:13px;color:#526578;line-height:1.5}
+[hidden]{display:none!important}@media(max-width:750px){main{padding:8px}.panel{padding:10px}.controls{grid-template-columns:1fr 1fr}.controls>div:first-child{grid-column:1/-1}.controls .full{grid-column:1/-1}th,td{padding:9px 7px;font-size:13px}#headline{font-size:17px}}
+
+/* Interface compacte et figement propre : uniquement la première colonne Place. */
+header{padding:6px max(12px,calc((100vw - 1100px)/2));border-bottom-width:3px}
+header a{font-size:13px}header h1{font-size:clamp(18px,3vw,24px);margin:3px 0 0}header p{display:none}
+main{padding-top:7px}.panel{padding:10px 12px;margin-bottom:7px}.controls{gap:7px}
+label{margin-bottom:3px;font-size:12px}select,input{height:37px;padding:6px 8px;font-size:14px}
+.discipline button{padding:8px 5px}.status{margin-top:5px;font-size:12px}
+#headline{margin-bottom:5px;font-size:17px}
+.tablewrap{height:calc(100dvh - 205px);max-height:none;min-height:260px;overflow:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;position:relative}
+.tablewrap table{width:max-content;min-width:100%;border-collapse:separate;border-spacing:0}
+.tablewrap th,.tablewrap td{position:static;left:auto;right:auto;box-shadow:none}
+.tablewrap thead th{position:sticky;top:0;z-index:4;background:#d2e6f8;box-shadow:0 1px 0 #b6ccdf}
+.tablewrap tbody td{background:#fff}
+.tablewrap tbody tr:nth-child(even) td{background:#f5f9fd}
+body.has-place .tablewrap tr>*:first-child{position:sticky;left:0;z-index:5;min-width:128px;width:128px;max-width:128px;white-space:normal;overflow-wrap:anywhere;color:#00549f;font-weight:800;background:#e6f2ff;box-shadow:2px 0 0 #7f9fbb}
+body.has-place .tablewrap tbody tr:nth-child(even)>*:first-child{background:#dcecff}
+body.has-place .tablewrap thead tr>*:first-child{top:0;z-index:8;background:#c9e1fa}
+.tablewrap tbody tr td.sex-m,.tablewrap tbody tr td.disc-sl{background:#deedff;color:#004b92;font-weight:700}
+.tablewrap tbody tr td.sex-w,.tablewrap tbody tr td.disc-gs{background:#ffe2ec;color:#9b2158;font-weight:700}
+.tablewrap tbody tr td.disc-sg{background:#dff3e3;color:#176f38;font-weight:700}
+.tablewrap tbody tr td.disc-dh{background:#fff1b8;color:#695200;font-weight:700}
+.tablewrap tbody td.points-red{color:#b42318;font-weight:700}
+.flag{margin-right:5px;font-size:17px;white-space:nowrap}
+@media(max-width:750px){
+header{padding:5px 10px}header h1{font-size:19px}
+main{padding:5px}.panel{padding:7px;margin-bottom:5px}.controls{gap:5px}
+.discipline button{padding:7px 3px}.tablewrap{height:calc(100dvh - 190px);min-height:280px}
+.tablewrap th,.tablewrap td{padding:7px 6px;font-size:13px}
+body.has-place .tablewrap tr>*:first-child{min-width:96px;width:96px;max-width:96px}
+.note{font-size:11px}
+}
+
+.tablewrap td{vertical-align:middle}.tablewrap td.course{white-space:pre-line;min-width:260px;max-width:340px}.controls{grid-template-columns:repeat(3,1fr)}.tablewrap td.points-red{color:#b42318;font-weight:700}.tablewrap td a{color:#00549f}body.has-place .tablewrap tr>*:first-child{min-width:180px;width:180px;max-width:180px}.tablewrap{height:calc(100dvh - 250px)}
+</style></head><body class="has-place"><header><a href="/data-statistiques/">← Data et statistiques</a><h1>3 perfs pour 2028</h1></header><main><section class="panel"><div class="controls"><div><label for="search">Athlète / recherche</label><input id="search" type="search" placeholder="Nom, code FIS, course…"></div><div><label for="disc">Discipline</label><select id="disc"><option value="">Toutes</option></select></div><div><label for="sex">Sexe</label><select id="sex"><option value="">Tous</option><option value="M">Hommes</option><option value="W">Dames</option></select></div><div><label for="nation">Nation</label><select id="nation"><option value="">Toutes</option></select></div><div><label for="year">Année de naissance</label><select id="year"><option value="">Toutes</option></select></div></div><p id="status" class="status" role="status" aria-live="polite">Chargement…</p></section><section class="panel"><div class="tablewrap"><table><thead id="head"></thead><tbody id="rows"></tbody></table></div><button id="more" class="more" hidden>Afficher 100 lignes supplémentaires</button></section></main><script>
+"use strict";
+const $=id=>document.getElementById(id);const norm=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().trim();
+let cols=[],data=[],order=[],shown=100;
+const index=name=>cols.indexOf(name);
+function flagOf(raw){
+ const aliases={ARG:"AR",ARGENTINA:"AR",ARGENTINE:"AR",FRA:"FR",FRANCE:"FR",SUI:"CH",SWITZERLAND:"CH",SUISSE:"CH",AUT:"AT",AUSTRIA:"AT",ITA:"IT",ITALY:"IT",GER:"DE",GERMANY:"DE",DEUTSCHLAND:"DE",USA:"US",CAN:"CA",NOR:"NO",SWE:"SE",FIN:"FI",DEN:"DK",BEL:"BE",NED:"NL",LUX:"LU",MON:"MC",MAR:"MA",GBR:"GB",CZE:"CZ",SVK:"SK",SLO:"SI",CRO:"HR",POL:"PL",ESP:"ES",AND:"AD",POR:"PT",JPN:"JP",KOR:"KR",CHN:"CN",AUS:"AU",NZL:"NZ",CHI:"CL",BRA:"BR",UKR:"UA",RUS:"RU",ISR:"IL",TUR:"TR",ROU:"RO",BUL:"BG",HUN:"HU",LAT:"LV",LTU:"LT",EST:"EE",ISL:"IS",IRL:"IE",GRE:"GR",GEO:"GE",KAZ:"KZ",UZB:"UZ",BIH:"BA",SRB:"RS",MNE:"ME",MKD:"MK",LIE:"LI",ALB:"AL",IND:"IN",NEP:"NP"};
+ const key=String(raw||"").trim().toUpperCase();
+ const iso=aliases[key]||(/^[A-Z]{2}$/.test(key)?key:"");
+ return iso?[...iso].map(c=>String.fromCodePoint(127397+c.charCodeAt(0))).join(""):"";
+}
+
+function render(){
+const query=norm($("search").value);const filtered=data.filter(r=>[ ["disc","Disciplinecode"],["sex","Gender"],["nation","Nationcode"],["year","BirthYear"] ].every(([id,col])=>!$(id).value||r[index(col)]===$(id).value)&&(!query||norm(r.join(" ")).includes(query)));
+$("status").textContent=filtered.length.toLocaleString("fr-FR")+" lignes";
+const frag=document.createDocumentFragment();for(const r of filtered.slice(0,shown)){const tr=document.createElement("tr");for(const i of order){const td=document.createElement("td"),value=r[i]||"",col=cols[i];
+if(col==="Gender"&&["M","W"].includes(value))td.classList.add("sex-"+value.toLowerCase());
+if(col==="Disciplinecode"&&["SL","GS","SG","DH"].includes(value))td.classList.add("disc-"+value.toLowerCase());
+if(/Points$| Pts$/.test(col))td.classList.add("points-red");
+if(/^Course_/.test(col))td.classList.add("course");
+if(col==="LinkFisBio"){try{const url=new URL(value);if(url.protocol==="https:"&&url.hostname==="www.fis-ski.com"){const a=document.createElement("a");a.href=url.href;a.target="_blank";a.rel="noopener noreferrer";a.textContent="Fiche FIS ↗";td.append(a)}}catch{}}
+else td.textContent=col==="Nationcode"?[flagOf(value),value].filter(Boolean).join(" "):value;
+tr.append(td)}frag.append(tr)}$("rows").replaceChildren(frag);$("more").hidden=filtered.length<=shown;
+}
+window.receivePerfs=function(resp){if(resp?.status!=="ok"||!resp.table){$("status").textContent="Impossible de lire les données Google Sheets.";return}
+const t=resp.table;const used=t.cols.map((c,i)=>c.label?.trim()?i:-1).filter(i=>i>=0);cols=used.map(i=>t.cols[i].label.trim());data=t.rows.map(r=>used.map(i=>String(r.c?.[i]?.f??r.c?.[i]?.v??""))).filter(r=>r.some(Boolean));
+const name=index("Fullname");order=[name,...cols.map((_,i)=>i).filter(i=>i!==name)].filter(i=>i>=0);
+const labels={Fullname:"Athlète",FisCode:"Code FIS",BirthYear:"Année",Gender:"Sexe",Nationcode:"Nation",Disciplinecode:"Disc",nbResults:"Nb résultats",BasicRank:"Rang BL27",Course_1:"Course 1",Course_2:"Course 2",Course_3:"Course 3",LinkFisBio:"Fiche FIS"};
+const tr=document.createElement("tr");for(const i of order){const th=document.createElement("th");th.textContent=labels[cols[i]]||cols[i];tr.append(th)}$("head").replaceChildren(tr);
+for(const [id,col] of [["disc","Disciplinecode"],["nation","Nationcode"],["year","BirthYear"]]){for(const v of [...new Set(data.map(r=>r[index(col)]).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"fr",{numeric:true}))){const o=document.createElement("option");o.value=v;o.textContent=v;$(id).append(o)}}render();
+};
+for(const id of ["search","disc","sex","nation","year"])$(id).addEventListener("input",()=>{shown=100;render()});$("more").onclick=()=>{shown+=100;render()};
+const script=document.createElement("script");script.src="https://docs.google.com/spreadsheets/d/1LS2R264dE46_l2mcZ4PG1lnRjz0NQm10FqlmpDXY4ao/gviz/tq?gid=1864139887&range=A:R&headers=1&tqx="+encodeURIComponent("out:json;responseHandler:receivePerfs")+"&cache="+Date.now();script.onerror=()=>{$("status").textContent="Impossible de contacter Google Sheets."};document.head.append(script);
+</script></body></html>
