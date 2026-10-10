@@ -13,7 +13,7 @@ label{font-size:13px;font-weight:750;display:block;margin-bottom:6px}select,inpu
 .discipline button.active{box-shadow:inset 0 0 0 2px currentColor}
 .discipline button[data-value="ALL"]{background:#edf2f7;color:#264862;border-color:#a7b8c7}
 .status{font-size:14px;margin-top:12px;color:#425972}.status.error{color:#ac2828}
-.tablewrap{overflow:auto;border:1px solid var(--line);border-radius:9px}table{border-collapse:collapse;width:100%;font-size:14px}th{position:sticky;top:0;text-align:left;background:#dbeaf7;padding:10px 9px;white-space:nowrap}td{padding:10px 9px;border-top:1px solid #e0e8ef}tr:nth-child(even){background:#f5f9fd}tr{vertical-align:top}
+.tablewrap{overflow:auto;border:1px solid var(--line);border-radius:9px}table{border-collapse:collapse;width:100%;font-size:14px}th{position:sticky;top:0;text-align:left;background:#dbeaf7;padding:10px 9px;white-space:nowrap}td{padding:10px 9px;border-top:1px solid #e0e8ef}tr:nth-child(even){background:#f5f9fd}tr{vertical-align:middle}
 thead th:first-child,tbody td:first-child{font-weight:800;color:#00549f}#headline{font-size:19px;margin:0 0 10px}#count{font-weight:500;color:#66778b;font-size:14px}
 .more{display:block;margin:14px auto 0;border:0;background:var(--blue);color:#fff;border-radius:8px;padding:10px 15px;font:inherit;font-weight:700;cursor:pointer}
 .note{font-size:13px;color:#526578;line-height:1.5}
@@ -35,6 +35,11 @@ label{margin-bottom:3px;font-size:12px}select,input{height:37px;padding:6px 8px;
 body.has-place .tablewrap tr>*:first-child{position:sticky;left:0;z-index:5;min-width:128px;width:128px;max-width:128px;white-space:normal;overflow-wrap:anywhere;color:#00549f;font-weight:800;background:#e6f2ff;box-shadow:2px 0 0 #7f9fbb}
 body.has-place .tablewrap tbody tr:nth-child(even)>*:first-child{background:#dcecff}
 body.has-place .tablewrap thead tr>*:first-child{top:0;z-index:8;background:#c9e1fa}
+.tablewrap tbody tr td.sex-m,.tablewrap tbody tr td.disc-sl{background:#deedff;color:#004b92;font-weight:700}
+.tablewrap tbody tr td.sex-w,.tablewrap tbody tr td.disc-gs{background:#ffe2ec;color:#9b2158;font-weight:700}
+.tablewrap tbody tr td.disc-sg{background:#dff3e3;color:#176f38;font-weight:700}
+.tablewrap tbody tr td.disc-dh{background:#fff1b8;color:#695200;font-weight:700}
+.tablewrap tbody td.points-red{color:#b42318;font-weight:700}
 .flag{margin-right:5px;font-size:17px;white-space:nowrap}
 @media(max-width:750px){
 header{padding:5px 10px}header h1{font-size:19px}
@@ -102,6 +107,13 @@ function render(){
  const tr=document.createElement("tr");
  displayOrder.forEach(i=>{
   const td=document.createElement("td");
+  const value=normalize(get(r,i));
+  if(i===index.gender){
+   if(["m","men","hommes","homme","male","h"].includes(value))td.classList.add("sex-m");
+   if(["w","f","women","dames","dame","female","d"].includes(value))td.classList.add("sex-w");
+  }
+  if(i===index.discipline&&["sl","gs","sg","dh"].includes(value))td.classList.add("disc-"+value);
+  if(/^(racepts|winfispts|winu18pts|applipena|apply\d*|appliedpenalty)$/.test(normalize(cols[i]).replace(/[^a-z0-9]/g,"")))td.classList.add("points-red");
   if(i===displayOrder[0]&&index.nation>=0){
    const flag=flagOf(get(r,index.nation));
    if(flag){const span=document.createElement("span");span.className="flag";span.textContent=flag;span.setAttribute("aria-hidden","true");td.append(span)}
