@@ -90,7 +90,7 @@ mark.search-highlight{background:#ffeb00!important;color:#111!important;padding:
   }
   document.getElementById('search-form').addEventListener('submit', event => { event.preventDefault(); search(); });
   query.addEventListener('input', () => { if (!query.value) search(); });
-  more.addEventListener('click', render);
+  more.addEventListener('click', () => { render(); highlightTerms(); });
   list.addEventListener('click', event => { if(event.target.closest('a')) highlightTerms(); });
   function revealTarget() {
     highlightTerms();
@@ -117,11 +117,13 @@ mark.search-highlight{background:#ffeb00!important;color:#111!important;padding:
     clearHighlights();
     const needles = [...new Set(terms.filter(Boolean))].sort((a,b) => b.length-a.length);
     if (!needles.length) return;
-    const walker = document.createTreeWalker(article, NodeFilter.SHOW_TEXT);
     const nodes = [];
-    while (walker.nextNode()) {
-      const node = walker.currentNode;
-      if (node.nodeValue.trim() && !node.parentElement.closest('script,style,mark')) nodes.push(node);
+    for (const root of [article, list]) {
+      const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+      while (walker.nextNode()) {
+        const node = walker.currentNode;
+        if (node.nodeValue.trim() && !node.parentElement.closest('script,style,mark')) nodes.push(node);
+      }
     }
     for (const node of nodes) {
       const source = node.nodeValue;
