@@ -63,6 +63,22 @@ body.has-place .tablewrap thead tr>*:nth-child(3){z-index:12}
 .tablewrap tbody tr:nth-child(even)>*:is(:first-child,:nth-child(2),:nth-child(3)){background:#e9f2fa}
 .tablewrap tbody tr:nth-child(odd)>*:is(:first-child,:nth-child(2),:nth-child(3)){background:#fff}
 @media(max-width:750px){.tablewrap{height:calc(100dvh - 190px);max-height:none;min-height:280px}body.has-name .tablewrap tr>*:nth-child(2){min-width:105px;width:105px;max-width:105px}body.has-place .tablewrap tr>*:nth-child(3){left:148px!important;min-width:92px;width:92px;max-width:92px}}
+
+/* Place est le seul repère horizontal figé. Race Date est juste après. */
+.tablewrap tr>*{position:static!important;left:auto!important;box-shadow:none}
+.tablewrap thead th{position:sticky!important;top:0!important;z-index:8; background:#d2e6f8}
+body.has-place .tablewrap tr>*:first-child{
+ position:sticky!important;left:0!important;
+ width:128px!important;min-width:128px!important;max-width:128px!important;
+ white-space:normal;overflow-wrap:anywhere;font-weight:800;
+ color:#00549f!important;background:#e6f2ff!important;z-index:6;
+ box-shadow:2px 0 0 #7f9fbb
+}
+body.has-place .tablewrap thead tr>*:first-child{z-index:12;background:#c9e1fa!important}
+body.has-place .tablewrap tbody tr:nth-child(even)>*:first-child{background:#dcecff!important}
+@media(max-width:750px){
+ body.has-place .tablewrap tr>*:first-child{width:110px!important;min-width:110px!important;max-width:110px!important}
+}
 </style></head><body>
 <header><a href="/data-statistiques/">← Data et statistiques</a><h1>Résultats FRA — saison 2027</h1><p>Historique chronologique des résultats des coureurs français</p></header>
 <main>
@@ -88,8 +104,8 @@ function identify(){
  return {name:firstCol([/competitorname/,/athlet/,/coureur/,/nom.*prenom/,/^nom$/, /name/]),
  discipline:firstCol([/discipline/,/disziplin/,/^disc/,/^event$/]),
  gender:firstCol([/^sexe$/, /gender/, /^sex$/, /categorie/]),
- date:firstCol([/^date$/, /racedate/, /date.*course/, /jour/]),
- location:firstCol([/^lieu$/, /station/, /race.*place/, /place.*course/, /localit/, /location/, /resort/, /^site$/, /^place$/, /^ville$/])};
+ date:firstCol([/^race\s*_?\s*date$/, /^date$/, /racedate/, /date.*course/, /jour/]),
+ location:firstCol([/^place$/, /^race\s*_?\s*place$/, /^lieu$/, /station/, /race.*place/, /place.*course/, /localit/, /location/, /resort/, /^site$/, /^ville$/])};
 }
 function safeDate(x){const z=String(x||"");let m=z.match(/^(\d{4})-(\d{2})-(\d{2})/);if(m)return +m[1]*10000+(+m[2])*100+(+m[3]);m=z.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})/);return m?+m[3]*10000+(+m[2])*100+(+m[1]):null}
 const valueCell=c=>{if(!c)return"";const v=c.f??c.v??"";if(typeof v==="string"){const dt=v.match(/^Date\((\d+),(\d+),(\d+)/);if(dt)return dt[3].padStart(2,"0")+"/"+String(+dt[2]+1).padStart(2,"0")+"/"+dt[1]}return String(v)};
@@ -115,15 +131,12 @@ function load(resp){
  const t=resp.table;cols=(t.cols||[]).map((c,i)=>c.label||c.id||("Colonne "+(i+1)));records=(t.rows||[]).map(row=>(row.c||[]).map(valueCell)).filter(r=>r.some(v=>v.trim()));
  if(!records.length){$("status").className="status error";$("status").textContent="La feuille est accessible mais ne renvoie aucune ligne. Vérifier l'onglet source.";return}
  const idx=identify();
- const keyColumns=[idx.name,idx.location].filter((v,i,a)=>v>=0&&a.indexOf(v)===i);
+ const keyColumns=[idx.location,idx.date].filter((v,i,a)=>v>=0&&a.indexOf(v)===i);
  displayOrder=[...keyColumns,...cols.map((_,i)=>i).filter(i=>!keyColumns.includes(i))];
- const head=document.createElement("tr");const th=document.createElement("th");th.textContent="N°";head.append(th);
+ const head=document.createElement("tr");
  displayOrder.forEach(i=>{const el=document.createElement("th");el.textContent=cols[i];head.append(el)});$("headers").replaceChildren(head);
- document.body.classList.toggle("has-name",idx.name>=0);
- document.body.classList.toggle("has-place",idx.name>=0&&idx.location>=0);
- // Ajouter la numérotation de ligne sans altérer le contenu original.
- const originalRender=render;
- window.render=function(){originalRender();Array.from($("rows").children).forEach((tr,i)=>{const td=document.createElement("td");td.textContent=String(i+1);tr.prepend(td)})};
+ document.body.classList.toggle("has-place",idx.location>=0);
+ window.render=render;
  let caveats=[];
  if(idx.discipline<0)caveats.push("discipline");
  if(idx.gender<0)caveats.push("sexe");
