@@ -70,7 +70,7 @@ function identify(){
  discipline:firstCol([/discipline/,/disziplin/,/^disc/,/^event$/]),
  gender:firstCol([/^sexe$/, /gender/, /^sex$/, /categorie/]),
  level:firstCol([/^level$/, /^niveau$/, /race.*level/, /niveau.*course/, /^category$/]),
- date:firstCol([/^race\s*_?\s*date$/, /^date$/, /racedate/, /date.*course/, /jour/]),
+ date:firstCol([/^dates?$/, /^race\s*_?\s*date$/, /racedate/, /date.*course/, /jour/]),
  location:firstCol([/^place$/, /^race\s*_?\s*place$/, /^lieu$/, /station/, /race.*place/, /place.*course/, /localit/, /location/, /resort/, /^site$/, /^ville$/]),
  nation:firstCol([/^nation$/, /^nationcode$/, /^country$/, /^countrycode$/, /^pays$/, /^nat$/])};
 }
@@ -125,7 +125,7 @@ function load(resp){
  const keyColumns=[locationIndex].filter(v=>v>=0);
  displayOrder=[...keyColumns,...cols.map((_,i)=>i).filter(i=>!keyColumns.includes(i))];
  const head=document.createElement("tr");
- displayOrder.forEach(i=>{const el=document.createElement("th");el.textContent=cols[i];head.append(el)});$("headers").replaceChildren(head);
+ displayOrder.forEach(i=>{const el=document.createElement("th");el.textContent=i===idx.date?"Dates":cols[i];head.append(el)});$("headers").replaceChildren(head);
  document.body.classList.toggle("has-place",locationIndex>=0);
  window.render=render;
  let caveats=[];
