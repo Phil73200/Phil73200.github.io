@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Liste FIS interactive — Infos FIS</title>
+<style>
+:root{--blue:#00549f;--ink:#162637;--line:#d6e0e9;--bg:#edf4fa}*{box-sizing:border-box}
+body{margin:0;font:16px -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink)}
+header{background:var(--blue);color:white;padding:16px max(15px,calc((100vw - 1150px)/2));border-bottom:5px solid transparent;border-image:linear-gradient(90deg,#0055a4 33%,#fff 33% 66%,#ef4135 66%) 1}
+header a{color:white;text-decoration:none;font-weight:700}header h1{font-size:clamp(23px,4vw,32px);margin:10px 0 3px}
+header p{margin:0;font-size:14px;color:#e4f1fd}
+main{max-width:1150px;margin:auto;padding:16px}
+.panel{background:white;border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:12px}
+.controls{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.5fr;gap:12px;align-items:end}
+label{display:block;font-size:13px;font-weight:750;margin-bottom:6px}
+select,input{width:100%;height:43px;border:1px solid #9cb4cc;border-radius:8px;background:#fff;padding:8px 10px;font:inherit;color:var(--ink)}
+select:focus,input:focus{outline:3px solid #a5d2fd;outline-offset:1px}
+.disc{display:flex;gap:4px}.disc button{flex:1;min-width:0;padding:11px 6px;border:1px solid #a5bed4;border-radius:7px;background:#f1f6fa;font-weight:800;cursor:pointer;color:#17426c}
+.disc button.active{background:var(--blue);color:white;border-color:var(--blue)}
+.headline{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 10px}
+.headline h2{margin:0;font-size:19px}.meta{font-size:13px;color:#52657c}
+.status{font-size:14px;margin-top:12px;color:#38506c}.status.error{color:#a12e26}
+.tablewrap{overflow:auto;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+thead th{position:sticky;top:0;background:#dceaf7;color:#123c64;font-size:13px;text-align:left;padding:11px 10px;white-space:nowrap}
+tbody td{padding:10px;border-top:1px solid #e6edf3;font-size:14px}
+tbody tr:nth-child(even){background:#f8fbfd}tbody tr.fra{background:#e4f1ff}tbody tr.fra:nth-child(even){background:#d9eafb}
+.rank{font-weight:800;color:var(--blue);width:65px}.num{text-align:right;white-space:nowrap}.name{font-weight:650}
+.nation{font-weight:600}button.more{display:block;margin:14px auto 2px;padding:10px 18px;border:0;border-radius:8px;background:var(--blue);color:white;font:inherit;font-weight:700;cursor:pointer}
+.notice{padding:12px;background:#fff6dd;border:1px solid #e4d19c;border-radius:9px;font-size:14px}
+.small{font-size:13px;color:#546477;line-height:1.5}
+@media(max-width:800px){main{padding:9px}.panel{padding:11px;border-radius:9px}.controls{grid-template-columns:1fr 1fr}.search{grid-column:span 2}thead th,tbody td{padding:9px 5px;font-size:13px}.headline h2{font-size:17px}}
+@media(max-width:430px){.controls{gap:9px}header{padding:12px}th:nth-child(4),td:nth-child(4){display:none}.name{max-width:185px;overflow-wrap:anywhere}.rank{width:42px}}
+</style></head><body>
+<header><a href="/data-statistiques/">← Data et statistiques</a><h1>Liste FIS interactive</h1><p>Classements SL · GS · SG · DH — Hommes et Dames</p></header>
+<main>
+<section class="panel">
+<div class="controls">
+<div><label>Discipline</label><div class="disc" id="discs"><button type="button" class="active" data-d="SL">SL</button><button type="button" data-d="GS">GS</button><button type="button" data-d="SG">SG</button><button type="button" data-d="DH">DH</button></div></div>
+<div><label for="gender">Catégorie</label><select id="gender"><option value="M">Hommes</option><option value="W">Dames</option></select></div>
+<div><label for="year">Année de naissance</label><select id="year"><option value="">Toutes</option></select></div>
+<div class="search"><label for="search">Rechercher un coureur / une nation</label><input id="search" type="search" placeholder="Nom ou code nation (FRA…)"></div>
+</div>
+<div class="status" id="status" role="status" aria-live="polite">Chargement de la liste FIS…</div>
+</section>
+<section class="panel"><div class="headline"><h2 id="heading">Classement SL — Hommes</h2><span class="meta" id="count"></span></div>
+<div class="tablewrap"><table><thead><tr><th>RgFiltre</th><th>Coureur</th><th>Nation</th><th>Naissance</th><th class="num">Pts FIS</th><th class="num">Rg FIS</th></tr></thead><tbody id="rows"></tbody></table></div>
+<button id="more" class="more" type="button" hidden>Afficher 100 coureurs supplémentaires</button>
+</section>
+<p class="small">RgFiltre : rang recalculé en continu dans la sélection (discipline, sexe, année et recherche). Rg FIS : rang officiel de la liste FIS. Les coureurs FRA sont surlignés en bleu. La page est en lecture seule.</p>
+</main>
+<script>
+"use strict";
+const COACH_ID="1-GAtRnmStxEb2T809dq_q1LHKX7aD_Km3c-bwNbQ1UA";
+let all=[],disc="SL",pageSize=100,loaded=false;
+const $=id=>document.getElementById(id);
+const toNum=v=>{if(v===null||v===undefined||v==="")return NaN;const x=Number(String(v).replace(",","."));return Number.isFinite(x)?x:NaN};
+const rawCell=c=>c?(c.v!==undefined&&c.v!==null?c.v:(c.f||"")):"";
+function status(t,error=false){$("status").textContent=t;$("status").className="status"+(error?" error":"")}
+function requestSource(){
+ const cb="fisCoachReceive";
+ window[cb]=function(response){
+  if(response.status!=="ok"||!response.table){status("La source Google Sheets n'est pas accessible depuis cette page. Une publication de données en lecture seule est nécessaire.",true);return}
+  const t=response.table;
+  const records=(t.rows||[]).map(r=>(r.c||[]).map(rawCell)).filter(r=>r.length>=13&&r[0]&&String(r[0]).toLowerCase()!=="competitorname");
+  all=records.map(r=>({name:String(r[0]||""),year:Number(r[1])||"",nation:String(r[2]||"").trim().toUpperCase(),gender:String(r[3]||"").trim().toUpperCase(),
+   SL:[toNum(r[4]),toNum(r[5])],GS:[toNum(r[6]),toNum(r[7])],SG:[toNum(r[8]),toNum(r[9])],DH:[toNum(r[10]),toNum(r[11])],list:String(r[12]||"")}));
+  if(!all.length){status("Aucune donnée reçue. Vérifier l'accès de la feuille source et son format.",true);return}
+  loaded=true;const years=[...new Set(all.map(r=>r.year).filter(x=>x>=1900&&x<=2100))].sort((a,b)=>b-a);
+  for(const y of years){const o=document.createElement("option");o.value=String(y);o.textContent=y;$("year").append(o)}
+  status(all.length.toLocaleString("fr-FR")+" coureurs chargés · "+(all.find(r=>r.list)?.list||"Liste FIS")+" · actualisation à l'ouverture");
+  render();
+ };
+ const s=document.createElement("script");
+ s.src="https://docs.google.com/spreadsheets/d/"+encodeURIComponent(COACH_ID)+"/gviz/tq?sheet="+encodeURIComponent("_SOURCE")+"&headers=1&tqx="+encodeURIComponent("out:json;responseHandler:"+cb)+"&cache="+Date.now();
+ s.onerror=()=>status("Impossible de joindre la source des classements. L'accès public aux données reste à configurer.",true);
+ document.head.append(s);
+}
+function render(){
+ const sex=$("gender").value,year=$("year").value,q=$("search").value.trim().toLocaleUpperCase("fr");
+ $("heading").textContent="Classement "+disc+" — "+(sex==="M"?"Hommes":"Dames");
+ if(!loaded)return;
+ const filtered=all.filter(r=>r.gender===sex&&(!year||r.year===Number(year))&&(!q||r.name.toLocaleUpperCase("fr").includes(q)||r.nation.includes(q)));
+ filtered.sort((a,b)=>{
+  const ra=a[disc][1],rb=b[disc][1];
+  if(Number.isFinite(ra)!==Number.isFinite(rb))return Number.isFinite(ra)?-1:1;
+  if(Number.isFinite(ra)&&ra!==rb)return ra-rb;
+  const pa=a[disc][0],pb=b[disc][0];
+  if(Number.isFinite(pa)!==Number.isFinite(pb))return Number.isFinite(pa)?-1:1;
+  if(Number.isFinite(pa)&&pa!==pb)return pa-pb;
+  return a.name.localeCompare(b.name,"fr");
+ });
+ $("count").textContent=filtered.length.toLocaleString("fr-FR")+" coureurs";
+ const body=$("rows");body.replaceChildren();
+ const fmt=x=>Number.isFinite(x)?x.toFixed(2):"—";
+ const frag=document.createDocumentFragment();
+ filtered.slice(0,pageSize).forEach((r,i)=>{
+  const tr=document.createElement("tr");if(r.nation==="FRA")tr.className="fra";
+  const entries=[String(i+1),r.name,r.nation,String(r.year||"—"),fmt(r[disc][0]),Number.isFinite(r[disc][1])?String(r[disc][1]):"—"];
+  entries.forEach((value,j)=>{const td=document.createElement("td");td.textContent=value;if(j===0)td.className="rank";if(j===1)td.className="name";if(j===2)td.className="nation";if(j>=4)td.className="num";tr.append(td)});
+  frag.append(tr);
+ });
+ body.append(frag);
+ $("more").hidden=filtered.length<=pageSize;
+}
+$("discs").addEventListener("click",e=>{const b=e.target.closest("button[data-d]");if(!b)return;disc=b.dataset.d;document.querySelectorAll("#discs button").forEach(x=>x.classList.toggle("active",x===b));pageSize=100;render()});
+["gender","year","search"].forEach(id=>$(id).addEventListener("input",()=>{pageSize=100;render()}));
+$("more").addEventListener("click",()=>{pageSize+=100;render()});
+requestSource();
+</script></body></html>
