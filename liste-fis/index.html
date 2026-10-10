@@ -13,7 +13,7 @@ main{max-width:1150px;margin:auto;padding:16px}
 label{display:block;font-size:13px;font-weight:750;margin-bottom:6px}
 select,input{width:100%;height:43px;border:1px solid #9cb4cc;border-radius:8px;background:#fff;padding:8px 10px;font:inherit;color:var(--ink)}
 select:focus,input:focus{outline:3px solid #a5d2fd;outline-offset:1px}
-.disc{display:flex;gap:4px}.disc button{flex:1;min-width:0;padding:11px 6px;border:1px solid #a5bed4;border-radius:7px;background:#f1f6fa;font-weight:800;cursor:pointer;color:#17426c}
+.years-picker{position:relative}.years-picker summary{height:43px;border:1px solid #9cb4cc;border-radius:8px;background:#fff;padding:10px;cursor:pointer;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;list-style:none}.years-picker summary::-webkit-details-marker{display:none}.years-picker summary:after{content:"⌄";float:right}.years-options{position:absolute;z-index:20;top:43px;left:0;right:0;max-height:260px;overflow:auto;background:#fff;border:1px solid #9cb4cc;border-radius:8px;box-shadow:0 5px 15px #0002;padding:8px}.years-options label{display:flex;align-items:center;gap:9px;font-size:15px;font-weight:500;padding:7px 5px;margin:0;cursor:pointer}.years-options input{width:18px;height:18px;flex:none;margin:0}.disc{display:flex;gap:4px}.disc button{flex:1;min-width:0;padding:11px 6px;border:1px solid #a5bed4;border-radius:7px;background:#f1f6fa;font-weight:800;cursor:pointer;color:#17426c}
 .disc button[data-d="SL"]{background:#ddecfc;border-color:#75a8e4;color:#004c96}
 .disc button[data-d="GS"]{background:#fce3ed;border-color:#e8a4be;color:#9c2857}
 .disc button[data-d="SG"]{background:#dff3e5;border-color:#86c99a;color:#18743a}
@@ -55,7 +55,7 @@ tbody tr.fra td:nth-child(2){font-weight:850;color:#003f78}
 <div class="controls">
 <div><label>Discipline</label><div class="disc" id="discs"><button type="button" class="active" data-d="SL">SL</button><button type="button" data-d="GS">GS</button><button type="button" data-d="SG">SG</button><button type="button" data-d="DH">DH</button></div></div>
 <div><label for="gender">Catégorie</label><select id="gender"><option value="M">Hommes</option><option value="W">Dames</option></select></div>
-<div><label for="year">Année de naissance</label><select id="year"><option value="">Toutes</option></select></div>
+<div><label id="years-label">Années de naissance</label><details class="years-picker" id="years-picker"><summary id="years-summary">Toutes les années</summary><div class="years-options" id="years-options" aria-labelledby="years-label"></div></details></div>
 <div class="search"><label for="search">Rechercher un coureur / une nation</label><input id="search" type="search" placeholder="Nom ou code nation (FRA…)"></div>
 </div>
 <div class="status" id="status" role="status" aria-live="polite">Chargement de la liste FIS…</div>
@@ -74,7 +74,7 @@ tbody tr.fra td:nth-child(2){font-weight:850;color:#003f78}
 <div class="top-controls"><label for="top-x">Nombre de coureurs du classement :</label><select id="top-x"><option value="10">Top 10</option><option value="15">Top 15</option><option value="30" selected>Top 30</option><option value="50">Top 50</option><option value="60">Top 60</option><option value="100">Top 100</option><option value="200">Top 200</option><option value="500">Top 500</option></select></div>
 <div class="headline"><h2 id="nation-heading">Répartition par nation</h2><span class="meta" id="nation-count"></span></div>
 <div class="tablewrap"><table><thead><tr><th>Rang</th><th>Nation</th><th class="num">Coureurs</th><th class="num">% du Top X</th></tr></thead><tbody id="nation-rows"></tbody></table></div>
-<p class="small">Le Top X est établi sur le rang officiel FIS de la discipline et du sexe sélectionnés. Les filtres année et recherche s'appliquent ensuite au décompte, sans modifier le seuil officiel du Top X.</p>
+<p class="small">Le Top X est établi après sélection des années de naissance, dans l'ordre du classement FIS. Le tableau indique ensuite la répartition des X meilleurs coureurs par nation.</p>
 </div>
 </section>
 <p class="small">RgFiltre : rang recalculé en continu dans la sélection (discipline, sexe, année et recherche). Rg FIS : rang officiel de la liste FIS. Les coureurs FRA sont surlignés en bleu. La page est en lecture seule.</p>
@@ -97,7 +97,7 @@ function requestSource(){
    SL:[toNum(r[4]),toNum(r[5])],GS:[toNum(r[6]),toNum(r[7])],SG:[toNum(r[8]),toNum(r[9])],DH:[toNum(r[10]),toNum(r[11])],list:String(r[12]||"")}));
   if(!all.length){status("Aucune donnée reçue. Vérifier l'accès de la feuille source et son format.",true);return}
   loaded=true;const years=[...new Set(all.map(r=>r.year).filter(x=>x>=1900&&x<=2100))].sort((a,b)=>b-a);
-  for(const y of years){const o=document.createElement("option");o.value=String(y);o.textContent=y;$("year").append(o)}
+  const opts=$("years-options");const addYear=(value,label,checked)=>{const item=document.createElement("label"),input=document.createElement("input");input.type="checkbox";input.value=String(value);input.checked=checked;item.append(input,document.createTextNode(label));opts.append(item)};addYear("","Toutes les années",true);for(const y of years)addYear(y,String(y),false);
   status(all.length.toLocaleString("fr-FR")+" coureurs chargés · "+(all.find(r=>r.list)?.list||"Liste FIS")+" · actualisation à l'ouverture");
   render();
  };
@@ -111,17 +111,19 @@ function flagFor(code){const special={KOS:"🇽🇰",XKX:"🇽🇰",ROC:"🏳️
 const iso=alpha3[code];return iso?[...iso].map(c=>String.fromCodePoint(127397+c.charCodeAt(0))).join(""):"🌐"}
 function nationLabel(code){const names={SUI:"Suisse",AUT:"Autriche",GER:"Allemagne",SLO:"Slovénie",CZE:"Tchéquie",NED:"Pays-Bas",DEN:"Danemark",GBR:"Royaume-Uni",USA:"États-Unis",KOR:"Corée du Sud",ROC:"ROC",KOS:"Kosovo",XKX:"Kosovo"};
 if(names[code])return names[code];const iso={FRA:"FR",ITA:"IT",CAN:"CA",NOR:"NO",SWE:"SE",FIN:"FI",BEL:"BE",LUX:"LU",MON:"MC",MAR:"MA",SVK:"SK",CRO:"HR",POL:"PL",ESP:"ES",AND:"AD",POR:"PT",JPN:"JP",CHN:"CN",AUS:"AU",NZL:"NZ",ARG:"AR",CHI:"CL",BRA:"BR",UKR:"UA",RUS:"RU",ISR:"IL",TUR:"TR",ROU:"RO",BUL:"BG",HUN:"HU",LAT:"LV",LTU:"LT",EST:"EE",ISL:"IS",IRL:"IE",GRE:"GR",GEO:"GE",KAZ:"KZ",UZB:"UZ",BIH:"BA",SRB:"RS",MNE:"ME",MKD:"MK",LIE:"LI",ALB:"AL",IND:"IN",NEP:"NP"};return (iso[code]&&nationNames.of(iso[code]))||code}
+function selectedYears(){return [...document.querySelectorAll('#years-options input:checked')].map(x=>x.value).filter(Boolean).map(Number)}
+function yearMatch(r){const ys=selectedYears();return !ys.length||ys.includes(r.year)}
+function yearLabel(){const ys=selectedYears();return ys.length?ys.slice().sort((a,b)=>b-a).join(", "):"Toutes années"}
 function updateNationTable(){
  if(!loaded)return;
- const sex=$("gender").value,year=$("year").value,q=$("search").value.trim().toLocaleUpperCase("fr");
+ const sex=$("gender").value,q=$("search").value.trim().toLocaleUpperCase("fr");
  const top=Number($("top-x").value);
- const official=all.filter(r=>r.gender===sex&&Number.isFinite(r[disc][1])&&r[disc][1]<=top);
- const records=official.filter(r=>(!year||r.year===Number(year))&&(!q||r.name.toLocaleUpperCase("fr").includes(q)||r.nation.includes(q)));
+ const records=all.filter(r=>r.gender===sex&&yearMatch(r)&&Number.isFinite(r[disc][1])&&(!q||r.name.toLocaleUpperCase("fr").includes(q)||r.nation.includes(q))).sort((a,b)=>a[disc][1]-b[disc][1]||a[disc][0]-b[disc][0]).slice(0,top);
  const counts=new Map();
  for(const r of records)if(r.nation)counts.set(r.nation,(counts.get(r.nation)||0)+1);
  const sorted=[...counts].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0]));
- $("nation-heading").textContent="Nations — "+disc+" "+(sex==="M"?"Hommes":"Dames")+(year?" — Nés en "+year:"")+" — Top "+top;
- $("nation-count").textContent=records.length+" coureurs"+(year?" nés en "+year:"")+" · "+sorted.length+" nations";
+ $("nation-heading").textContent="Nations — "+disc+" "+(sex==="M"?"Hommes":"Dames")+" — Top "+top+" — "+yearLabel();
+ $("nation-count").textContent=records.length+" coureurs · "+sorted.length+" nations";
  const frag=document.createDocumentFragment();
  sorted.forEach(([code,n],i)=>{const tr=document.createElement("tr");if(code==="FRA")tr.className="fra";
  const cols=[String(i+1),flagFor(code)+"  "+nationLabel(code)+" ("+code+")",String(n),records.length?(100*n/records.length).toFixed(1).replace(".",",")+" %":"—"];
@@ -129,10 +131,10 @@ function updateNationTable(){
  $("nation-rows").replaceChildren(frag);
 }
 function render(){
- const sex=$("gender").value,year=$("year").value,q=$("search").value.trim().toLocaleUpperCase("fr");
+ const sex=$("gender").value,q=$("search").value.trim().toLocaleUpperCase("fr");
  $("heading").textContent="Classement "+disc+" — "+(sex==="M"?"Hommes":"Dames");
  if(!loaded)return;
- const filtered=all.filter(r=>r.gender===sex&&(!year||r.year===Number(year))&&(!q||r.name.toLocaleUpperCase("fr").includes(q)||r.nation.includes(q)));
+ const filtered=all.filter(r=>r.gender===sex&&yearMatch(r)&&(!q||r.name.toLocaleUpperCase("fr").includes(q)||r.nation.includes(q)));
  filtered.sort((a,b)=>{
   const ra=a[disc][1],rb=b[disc][1];
   if(Number.isFinite(ra)!==Number.isFinite(rb))return Number.isFinite(ra)?-1:1;
@@ -157,7 +159,8 @@ function render(){
  updateNationTable();
 }
 $("discs").addEventListener("click",e=>{const b=e.target.closest("button[data-d]");if(!b)return;disc=b.dataset.d;document.querySelectorAll("#discs button").forEach(x=>x.classList.toggle("active",x===b));pageSize=100;render()});
-["gender","year","search"].forEach(id=>$(id).addEventListener("input",()=>{pageSize=100;render()}));
+["gender","search"].forEach(id=>$(id).addEventListener("input",()=>{pageSize=100;render()}));
+$("years-options").addEventListener("change",e=>{if(e.target.type!=="checkbox")return;const inputs=[...document.querySelectorAll('#years-options input')],allBox=inputs[0];if(e.target===allBox){inputs.slice(1).forEach(x=>x.checked=false);allBox.checked=true}else{allBox.checked=false;if(!inputs.slice(1).some(x=>x.checked))allBox.checked=true}const ys=selectedYears();$("years-summary").textContent=ys.length?ys.slice().sort((a,b)=>b-a).join(", "):"Toutes les années";pageSize=100;render()});
 $("more").addEventListener("click",()=>{pageSize+=100;render()});
 $("top-x").addEventListener("change",updateNationTable);
 function chooseTab(nations){
