@@ -120,8 +120,8 @@ function updateNationTable(){
  const counts=new Map();
  for(const r of records)if(r.nation)counts.set(r.nation,(counts.get(r.nation)||0)+1);
  const sorted=[...counts].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0]));
- $("nation-heading").textContent="Nations — "+disc+" "+(sex==="M"?"Hommes":"Dames")+" — Top "+top;
- $("nation-count").textContent=records.length+" coureurs · "+sorted.length+" nations";
+ $("nation-heading").textContent="Nations — "+disc+" "+(sex==="M"?"Hommes":"Dames")+(year?" — Nés en "+year:"")+" — Top "+top;
+ $("nation-count").textContent=records.length+" coureurs"+(year?" nés en "+year:"")+" · "+sorted.length+" nations";
  const frag=document.createDocumentFragment();
  sorted.forEach(([code,n],i)=>{const tr=document.createElement("tr");if(code==="FRA")tr.className="fra";
  const cols=[String(i+1),flagFor(code)+"  "+nationLabel(code)+" ("+code+")",String(n),records.length?(100*n/records.length).toFixed(1).replace(".",",")+" %":"—"];
