@@ -79,6 +79,10 @@ body.has-place .tablewrap tbody tr:nth-child(even)>*:first-child{background:#dce
 @media(max-width:750px){
  body.has-place .tablewrap tr>*:first-child{width:110px!important;min-width:110px!important;max-width:110px!important}
 }
+
+/* Dernière règle : la première colonne Place reste collée à gauche. */
+.tablewrap tbody tr > td:first-child{position:sticky!important;left:0!important;color:#00549f!important;font-weight:800!important;background:#e8f3ff!important;z-index:7!important}
+.tablewrap thead tr > th:first-child{position:sticky!important;top:0!important;left:0!important;background:#cde4fa!important;color:#00549f!important;z-index:20!important}
 </style></head><body>
 <header><a href="/data-statistiques/">← Data et statistiques</a><h1>Résultats FRA — saison 2027</h1><p>Historique chronologique des résultats des coureurs français</p></header>
 <main>
@@ -131,11 +135,14 @@ function load(resp){
  const t=resp.table;cols=(t.cols||[]).map((c,i)=>c.label||c.id||("Colonne "+(i+1)));records=(t.rows||[]).map(row=>(row.c||[]).map(valueCell)).filter(r=>r.some(v=>v.trim()));
  if(!records.length){$("status").className="status error";$("status").textContent="La feuille est accessible mais ne renvoie aucune ligne. Vérifier l'onglet source.";return}
  const idx=identify();
- const keyColumns=[idx.location,idx.date].filter((v,i,a)=>v>=0&&a.indexOf(v)===i);
+ // La colonne nommée "Place" est le lieu de course, PAS un classement.
+ const placeIndex=cols.findIndex(c=>normalize(c).replace(/[^a-z]/g,"")==="place");
+ const locationIndex=placeIndex>=0?placeIndex:idx.location;
+ const keyColumns=[locationIndex,idx.date].filter((v,i,a)=>v>=0&&a.indexOf(v)===i);
  displayOrder=[...keyColumns,...cols.map((_,i)=>i).filter(i=>!keyColumns.includes(i))];
  const head=document.createElement("tr");
  displayOrder.forEach(i=>{const el=document.createElement("th");el.textContent=cols[i];head.append(el)});$("headers").replaceChildren(head);
- document.body.classList.toggle("has-place",idx.location>=0);
+ document.body.classList.toggle("has-place",locationIndex>=0);
  window.render=render;
  let caveats=[];
  if(idx.discipline<0)caveats.push("discipline");
